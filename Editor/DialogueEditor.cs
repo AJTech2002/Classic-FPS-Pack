@@ -326,8 +326,18 @@ public class DialogueEditor : Editor
             if (dialogue.interactions.Count > 0) {
                 if (GUILayout.Button("Create"))
                 {
-                        File.WriteAllText(Application.dataPath+"/Resources/Dialogue/"+dialogue.name+".txt", DialogueUtils.Serialize(dialogue.interactions));
-                        EditorUtility.SetDirty(dialogue);
+                    if (Directory.Exists(Application.dataPath + "/Resources/Dialogue"))
+                    {
+
+                    }
+                    else
+                    {
+                        // Try to create the directory.
+                        DirectoryInfo di = Directory.CreateDirectory(Application.dataPath + "/Resources/Dialogue");
+                    }
+
+                    File.WriteAllText(Application.dataPath+"/Resources/Dialogue/"+dialogue.name+".txt", DialogueUtils.Serialize(dialogue.interactions));
+                    EditorUtility.SetDirty(dialogue);
                     
                 }
             }
