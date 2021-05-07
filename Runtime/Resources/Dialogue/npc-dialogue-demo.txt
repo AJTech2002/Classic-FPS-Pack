@@ -1,0 +1,8 @@
+- Hello! Are you looking for an adventure? 
+    - Yes 
+        - That's great to hear, go find some guns to kill enemies. 
+            - Okay, thanks for the information :) 
+            - What do I do with the guns? 
+                - You shoot enemies 
+    - No, Leave me Alone 
+        - That's not very nice, I'm not going to help you now. 

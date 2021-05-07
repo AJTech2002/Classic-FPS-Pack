@@ -1,0 +1,12 @@
+{
+    "name": "com.AtmosGames.ClassicFPSPack",
+    "version": "1.0.0",
+    "displayName": "Classic FPS Pack",
+    "description": "Everything you need to start creating an FPS Package!",
+    "unity": "2019.4",
+    "author": {
+        "name": "Atmos Games",
+        "email": "ajays.workemail@gmail.com",
+        "url": ""
+    }
+}
