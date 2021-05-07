@@ -10,6 +10,11 @@
     },
     "samples": [
         {
+            "displayName": "Classic FPS Prefabs",
+            "description": "All the Prefabs to get you started",
+            "path": "Samples~/Prefabs"
+        },
+        {
             "displayName": "Feature Demos",
             "description": "Scene for each feature",
             "path": "Samples~/Feature Demos"
