@@ -183,7 +183,8 @@ namespace ClassicFPS.Guns
                     {
                         Debug.DrawLine(weaponController.weaponMount.position, hit.point, Color.red, 0.1f);
 
-                        SFXManager.PlayClipFromSource(shootSound, weaponController.weaponSoundSource);
+                        if (shootSounds.Count > 0)
+                        SFXManager.PlayClipFromSource(shootSounds[Random.Range(0,shootSounds.Count)].sound, weaponController.weaponSoundSource);
 
                         currentlyPickedObject = hit.transform;
 

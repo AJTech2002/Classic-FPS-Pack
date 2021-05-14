@@ -202,6 +202,11 @@ namespace ClassicFPS.Audio
     }
 
     [System.Serializable]
+    public class ListSound {
+        public Sound sound;
+    }
+
+    [System.Serializable]
     public class Sound
     {
         [SerializeField]

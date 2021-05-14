@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c816b3a0c3ad81468061509ad52d4e4, type: 3}
+  m_Name: Sound Manager
+  m_EditorClassIdentifier: 
+  soundGroups:
+  - group: Player
+    clips:
+    - {fileID: 8300000, guid: 9ed71ac2944b2b84c9479bf708172895, type: 3}
+    - {fileID: 8300000, guid: d24da641459cf0d43898868774440d0b, type: 3}
+    - {fileID: 8300000, guid: 2c8467c82bfda1a4cbbdd77346f3c5b1, type: 3}
+    - {fileID: 8300000, guid: 819623bf034cde34788c73f15ec2e6d1, type: 3}
+  - group: Enemy
+    clips:
+    - {fileID: 8300000, guid: 30c52587f8a515a429515ee57b84d368, type: 3}
+    - {fileID: 8300000, guid: 54080ddbb7599624792818243cbbcadb, type: 3}
+  - group: Gun
+    clips:
+    - {fileID: 8300000, guid: 2d739a3d867b6d549a37f312c7b1c246, type: 3}
+    - {fileID: 8300000, guid: a69502b4eaeb3cc4b8fee6d794ef8bb3, type: 3}
+    - {fileID: 8300000, guid: f82149beba41d71418564bea453eb823, type: 3}
+    - {fileID: 8300000, guid: d346696c0243e0d4886bbfc59b082444, type: 3}
+  - group: General
+    clips:
+    - {fileID: 8300000, guid: 8c4b7de6af6a2e14692804107d5279f0, type: 3}
+    - {fileID: 8300000, guid: 0dc9816b0ed49ae4e83e7771c17148ed, type: 3}
+    - {fileID: 8300000, guid: e3da12e779a7fa0478828584db8a123f, type: 3}
+  groundSounds:
+  - TerrainLayerNameOrTag: Grass
+    isTerrainLayer: 1
+    footsteps:
+    - {fileID: 8300000, guid: 5040045f244b6644fbc588f0dc36f112, type: 3}
+    - {fileID: 8300000, guid: ab68c6d4b41cc2042b277bb09338b523, type: 3}
+    - {fileID: 8300000, guid: 81a57c8069bc2de45ae4c811e25be7e7, type: 3}
+    - {fileID: 8300000, guid: e93b9544e7527b548b911bda296f31a2, type: 3}
+  - TerrainLayerNameOrTag: Path
+    isTerrainLayer: 1
+    footsteps:
+    - {fileID: 8300000, guid: 1bf8ff7bb20481044a1f443502ac0f02, type: 3}
+    - {fileID: 8300000, guid: 68fb49350de83fb4abafe803bc5dbebf, type: 3}
+    - {fileID: 8300000, guid: f3766f2d22462274482435b80e6ef399, type: 3}
+    - {fileID: 8300000, guid: 6321303ef50b8754788a71f264bef4f0, type: 3}
+    - {fileID: 8300000, guid: a31ca56f889e24842b13b9394cd1e3f3, type: 3}
+  - TerrainLayerNameOrTag: Untagged
+    isTerrainLayer: 0
+    footsteps:
+    - {fileID: 8300000, guid: 1bf8ff7bb20481044a1f443502ac0f02, type: 3}
+    - {fileID: 8300000, guid: 68fb49350de83fb4abafe803bc5dbebf, type: 3}
+    - {fileID: 8300000, guid: f3766f2d22462274482435b80e6ef399, type: 3}
+    - {fileID: 8300000, guid: 6321303ef50b8754788a71f264bef4f0, type: 3}
+    - {fileID: 8300000, guid: a31ca56f889e24842b13b9394cd1e3f3, type: 3}

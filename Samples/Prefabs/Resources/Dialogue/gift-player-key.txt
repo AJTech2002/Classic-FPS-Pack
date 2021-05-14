@@ -1,0 +1,6 @@
+- Hello! Are you looking for an orange key? 
+    - No... 
+        - Okay, Bye! 
+    - Yes! 
+        - Okay, take this key!! [KEY]
+            - Thanks random NPC! 

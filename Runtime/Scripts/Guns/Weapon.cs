@@ -14,7 +14,7 @@ namespace ClassicFPS.Guns
         [Header("SFX")]
         [HideInInspector]
         public AudioSource weaponSoundsSource;
-        public Sound shootSound;
+        public List<ListSound> shootSounds;
         [Space(10)]
         public Sound emptyAmmoSound;
 
@@ -130,7 +130,8 @@ namespace ClassicFPS.Guns
                 }
             }
 
-            SFXManager.PlayClipFromSource(shootSound, this.weaponSoundsSource);
+            if (shootSounds.Count > 0)
+            SFXManager.PlayClipFromSource(shootSounds[Random.Range(0,shootSounds.Count)].sound, this.weaponSoundsSource);
         }
 
         public virtual void RunNoAmmoAnimation()
