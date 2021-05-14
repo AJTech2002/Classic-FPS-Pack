@@ -261,7 +261,7 @@ MonoBehaviour:
   weaponSoundsSource: {fileID: 0}
   shootSound:
     group: Gun
-    clipName: explosion
+    clipName: trenchgun_shot1
   emptyAmmoSound:
     group: Gun
     clipName: no-ammo

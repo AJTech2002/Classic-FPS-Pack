@@ -188,9 +188,7 @@ namespace ClassicFPS.Audio
                     AudioClip clip = GetClip(sound);
                     if (source != null)
                     {
-                        source.Stop();
-                        source.clip = clip;
-                        source.Play();
+                        source.PlayOneShot(clip);
                     }
                 }
                 else
