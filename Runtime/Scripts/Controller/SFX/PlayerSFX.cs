@@ -64,9 +64,7 @@ namespace ClassicFPS.Controller.SFX
 
                 if (playingSound != null)
                 {
-                    movementAudioSource.Stop();
-                    movementAudioSource.clip = playingSound;
-                    movementAudioSource.Play();
+                    movementAudioSource.PlayOneShot(playingSound);
                 }
             }
         }
