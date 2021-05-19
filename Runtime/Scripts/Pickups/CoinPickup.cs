@@ -17,6 +17,7 @@ namespace ClassicFPS.Pickups
             if (!beenUsed && stats != null)
             {
                 RunSFX();
+                WeaponPickupAnimation();
                 stats.playerOptions.coins += pickupAmount;
                 stats.UpdateUI();
                 beenUsed = true;

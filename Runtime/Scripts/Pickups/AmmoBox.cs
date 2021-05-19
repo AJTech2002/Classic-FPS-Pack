@@ -34,6 +34,7 @@ namespace ClassicFPS.Pickups
                         beenUsed = true;
 
                         RunSFX();
+                        WeaponPickupAnimation();
                         EnableObject(false);
 
                         c.GetWeaponReference(ID).State.ammoRemaining += pickupAmount;
@@ -49,6 +50,7 @@ namespace ClassicFPS.Pickups
                         {
                             beenUsed = true;
                             RunSFX();
+                            WeaponPickupAnimation();
                             EnableObject(false);
 
                             c.GetCurrentWeapon().State.ammoRemaining += pickupAmount;

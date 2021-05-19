@@ -3,6 +3,8 @@ using ClassicFPS.Controller.Interaction;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using ClassicFPS.Controller.Movement;
+
 namespace ClassicFPS.Guns
 {
     //Base Class to be attached to all weapon instances
@@ -23,14 +25,10 @@ namespace ClassicFPS.Guns
         public bool requiresAmmo = true;
 
         [Header("Animations")]
-        //Name of the Animation used for Firing
-        public string fireAnimationName;
-
-        //Name of the Animation usd for indicating no Ammo
-        public string noAmmoAnimationName;
-
-        //Breathing animation
-        public string breathingAnimationName;
+        public Animator weaponAnimatorController;
+        public AnimatorOverrideController overrideController;
+        public float disableDelay = 0.3f;
+        public float enableDelay = 0.3f;
 
         [Header("Positioning")]
         //Used to reposition the gun (usually can be set at 0,0,0)
@@ -43,6 +41,18 @@ namespace ClassicFPS.Guns
         protected Animation animationComponent;
 
         private PlayerWeaponController foundWeaponController;
+
+        private PlayerInputManager foundPlayerInputManager;
+
+        protected PlayerInputManager inputManager
+        {
+            get
+            {
+                if (foundPlayerInputManager != null) return foundPlayerInputManager;
+                foundPlayerInputManager = GameObject.FindObjectOfType<PlayerInputManager>();
+                return foundPlayerInputManager;
+            }
+        }
 
         protected PlayerWeaponController weaponController
         {
@@ -67,8 +77,8 @@ namespace ClassicFPS.Guns
             transform.position = weaponController.weaponMount.TransformPoint(relativeToPlayer);
             transform.forward = weaponController.weaponMount.forward;
 
-            //Find Animation
-            animationComponent = GetComponentInChildren<Animation>();
+            if (overrideController != null) this.weaponAnimatorController.runtimeAnimatorController = overrideController;
+
 
             //Set the Parent to Weapon Mount
             transform.SetParent(weaponController.weaponMount);
@@ -76,9 +86,23 @@ namespace ClassicFPS.Guns
             //Sound Source 
             weaponSoundsSource = weaponController.weaponSoundSource;
 
+
+            if (weaponAnimatorController != null)
+            {
+
+                weaponAnimatorController.SetTrigger("enable");
+
+            }
+
             //This function can be overriden in child classes to do any other setup functionality
-            OnGunEquipped();
+            StartCoroutine(EquipAfter(enableDelay));
         }
+
+        IEnumerator EquipAfter (float delay)
+        {
+            yield return new WaitForSeconds(delay);
+            OnGunEquipped();
+        }    
 
         //Should override this
         public virtual void OnGunEquipped()
@@ -88,6 +112,12 @@ namespace ClassicFPS.Guns
 
         public virtual void Unequip()
         {
+            if (weaponAnimatorController != null)
+            {
+
+                weaponAnimatorController.SetTrigger("disable");
+
+            }
             //Change the crosshair back
             weaponController.RevertCrosshair();
 
@@ -96,7 +126,7 @@ namespace ClassicFPS.Guns
 
             //Destroy this GameOBject
             if (transform.gameObject != null)
-                GameObject.Destroy(transform.gameObject, 0.0f);
+                GameObject.Destroy(transform.gameObject, disableDelay);
 
         }
 
@@ -120,47 +150,64 @@ namespace ClassicFPS.Guns
         //Animation helpers that find and trigger the animation
         public virtual void RunShootAnimation()
         {
-            if (animationComponent != null)
+            if (weaponAnimatorController != null)
             {
-                if (animationComponent.GetClip(fireAnimationName) != null)
-                {
-                    animationComponent.Stop();
-                    animationComponent.wrapMode = WrapMode.Once;
-                    animationComponent.Play(fireAnimationName);
-                }
+                weaponAnimatorController.SetBool("hasAmmo", true);
+                weaponAnimatorController.SetTrigger("shooting");
             }
-
+            
             if (shootSounds.Count > 0)
             SFXManager.PlayClipFromSource(shootSounds[Random.Range(0,shootSounds.Count)].sound, this.weaponSoundsSource);
         }
 
         public virtual void RunNoAmmoAnimation()
         {
-            if (animationComponent != null)
+            if (weaponAnimatorController != null)
             {
-                if (animationComponent.GetClip(noAmmoAnimationName) != null)
-                {
-                    animationComponent.Stop();
-                    animationComponent.wrapMode = WrapMode.Once;
-                    animationComponent.Play(noAmmoAnimationName);
-                }
+                weaponAnimatorController.SetBool("hasAmmo", false);
+                weaponAnimatorController.SetTrigger("shooting");
             }
 
         }
 
-
-        public virtual void BeginBreathing()
+        public virtual void HandlePlayerAnimate ()
         {
-            if (animationComponent != null)
+            Vector3 inputData = inputManager.inputData;
+            PlayerController controller = inputManager.controller;
+
+            if (inputData.magnitude == 0 || controller.hasJumped || !controller.grounded)
             {
-                if (animationComponent.GetClip(breathingAnimationName) != null)
-                {
-                    animationComponent.Stop();
-                    animationComponent.Play(breathingAnimationName);
-                    Debug.Log(breathingAnimationName);
-                }
+               weaponAnimatorController.SetBool("walking", false);
             }
+            else
+            {
+               weaponAnimatorController.SetBool("walking", true);
+            }
+
+            if (inputManager.sprinting)
+            {
+               weaponAnimatorController.SetFloat("walkSpeed", 1.5f);
+            }
+            else
+            {
+               weaponAnimatorController.SetFloat("walkSpeed", 1);
+            }
+
+
         }
+
+        public virtual void HandlePlayerPickup ()
+        {
+            if (weaponAnimatorController != null)
+            {
+
+                weaponAnimatorController.SetTrigger("pickedUp");
+
+            }
+
+        }
+
+
 
 
     }

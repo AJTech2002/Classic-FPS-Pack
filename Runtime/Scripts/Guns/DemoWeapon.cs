@@ -223,6 +223,8 @@ namespace ClassicFPS.Guns
                 }
             }
 
+            HandlePlayerAnimate();
+
         }
 
         //Awake method for the guns

@@ -17,6 +17,7 @@ namespace ClassicFPS.Pickups
             if (!beenUsed && stats != null && stats.playerOptions.health < stats.maxHealth)
             {
                 RunSFX();
+                WeaponPickupAnimation();
                 stats.playerOptions.health = Mathf.Clamp(stats.playerOptions.health + healthPickupAmount, 0, stats.maxHealth);
                 stats.UpdateUI();
                 beenUsed = true;

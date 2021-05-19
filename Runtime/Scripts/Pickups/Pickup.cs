@@ -4,6 +4,7 @@ using ClassicFPS.Saving_and_Loading.States;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using ClassicFPS.Guns;
 
 namespace ClassicFPS.Pickups
 {
@@ -93,6 +94,12 @@ namespace ClassicFPS.Pickups
             foreach (Collider c in GetComponentsInChildren<Collider>()) {
                 c.enabled = render;
             }
+
+        }
+
+        public void WeaponPickupAnimation ()
+        {
+            GameObject.FindObjectOfType<Weapon>().HandlePlayerPickup();
 
         }
     

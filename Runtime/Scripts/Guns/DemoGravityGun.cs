@@ -166,6 +166,9 @@ namespace ClassicFPS.Guns
                     weaponController.crosshairUI.transform.localScale = Vector3.Lerp(weaponController.crosshairUI.transform.localScale, weaponController.GetCurrentWeapon().crosshairSize, Time.deltaTime * 8);
                 }
             }
+
+
+            HandlePlayerAnimate();
         }
 
         //Pick Up & Throw combined into one action
