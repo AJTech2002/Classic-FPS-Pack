@@ -15,7 +15,7 @@ MonoBehaviour:
   weapons:
   - WeaponUniqueID: Knife
     WeaponPrefab: {fileID: 4875827259870838140, guid: 612f16472be8cd444b9af766ff298d4d, type: 3}
-    isEquipped: 0
+    isEquipped: 1
     Default:
       gunName: Knife
       ammoRemaining: 5
@@ -36,7 +36,7 @@ MonoBehaviour:
       ammoRemaining: 10
     State:
       gunName: Pistol
-      ammoRemaining: 13
+      ammoRemaining: 10
     keyBindNumber: 2
     thumbnail: {fileID: -7775088828203107901, guid: b2a101b46c4c18d49946a4435c40f212, type: 3}
     crosshair: {fileID: 3882830906984562529, guid: b2a101b46c4c18d49946a4435c40f212, type: 3}
@@ -51,7 +51,7 @@ MonoBehaviour:
       ammoRemaining: 5
     State:
       gunName: Rifle
-      ammoRemaining: 4
+      ammoRemaining: 5
     keyBindNumber: 3
     thumbnail: {fileID: 3074158466157242919, guid: b2a101b46c4c18d49946a4435c40f212, type: 3}
     crosshair: {fileID: -6367315755759289210, guid: b2a101b46c4c18d49946a4435c40f212, type: 3}
@@ -66,7 +66,7 @@ MonoBehaviour:
       ammoRemaining: 30
     State:
       gunName: Automatic
-      ammoRemaining: 0
+      ammoRemaining: 30
     keyBindNumber: 4
     thumbnail: {fileID: 5017457691402967333, guid: b2a101b46c4c18d49946a4435c40f212, type: 3}
     crosshair: {fileID: 9196344110930793881, guid: b2a101b46c4c18d49946a4435c40f212, type: 3}
@@ -81,7 +81,7 @@ MonoBehaviour:
       ammoRemaining: 5
     State:
       gunName: Shotgun
-      ammoRemaining: 0
+      ammoRemaining: 5
     keyBindNumber: 5
     thumbnail: {fileID: 3074158466157242919, guid: b2a101b46c4c18d49946a4435c40f212, type: 3}
     crosshair: {fileID: -6367315755759289210, guid: b2a101b46c4c18d49946a4435c40f212, type: 3}
@@ -96,7 +96,7 @@ MonoBehaviour:
       ammoRemaining: 5
     State:
       gunName: RocketLauncher
-      ammoRemaining: 8
+      ammoRemaining: 5
     keyBindNumber: 6
     thumbnail: {fileID: 3074158466157242919, guid: b2a101b46c4c18d49946a4435c40f212, type: 3}
     crosshair: {fileID: -6367315755759289210, guid: b2a101b46c4c18d49946a4435c40f212, type: 3}

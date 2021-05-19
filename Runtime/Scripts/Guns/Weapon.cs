@@ -157,6 +157,7 @@ namespace ClassicFPS.Guns
                 {
                     animationComponent.Stop();
                     animationComponent.Play(breathingAnimationName);
+                    Debug.Log(breathingAnimationName);
                 }
             }
         }
