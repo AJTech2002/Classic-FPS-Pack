@@ -25,10 +25,13 @@ namespace ClassicFPS.Guns
         public bool requiresAmmo = true;
 
         [Header("Animations")]
-        public Animator weaponAnimatorController;
+       
         public AnimatorOverrideController overrideController;
         public float disableDelay = 0.3f;
-        public float enableDelay = 0.3f;
+        public float delayBeforeEnableAnimation = 0.3f;
+        public float enableDelay = 0.3f; 
+        [HideInInspector]
+        public Animator weaponAnimatorController;
 
         [Header("Positioning")]
         //Used to reposition the gun (usually can be set at 0,0,0)
@@ -37,8 +40,6 @@ namespace ClassicFPS.Guns
         [Header("Overrides")]
         public bool overridePicking;
 
-        //Finds the Animation in the Gun 
-        protected Animation animationComponent;
 
         private PlayerWeaponController foundWeaponController;
 
@@ -70,8 +71,10 @@ namespace ClassicFPS.Guns
         //Equipping procedures
         public virtual void Equip(string UID)
         {
-
+            
             this.UID = UID;
+
+            weaponAnimatorController = GetComponentInChildren<Animator>();
 
             //Set the position and rotation of Gun
             transform.position = weaponController.weaponMount.TransformPoint(relativeToPlayer);
@@ -86,6 +89,26 @@ namespace ClassicFPS.Guns
             //Sound Source 
             weaponSoundsSource = weaponController.weaponSoundSource;
 
+            StartCoroutine(StartAnimationAfter(delayBeforeEnableAnimation));
+
+            //This function can be overriden in child classes to do any other setup functionality
+            
+        }
+
+        IEnumerator StartAnimationAfter (float delay)
+        {
+            foreach (MeshRenderer r in GetComponentsInChildren<MeshRenderer>())
+            {
+                r.enabled = false;
+            }
+
+            yield return new WaitForSeconds(delay);
+            
+            foreach (MeshRenderer r in GetComponentsInChildren<MeshRenderer>())
+            {
+                r.enabled = true;
+            }
+            
 
             if (weaponAnimatorController != null)
             {
@@ -93,8 +116,6 @@ namespace ClassicFPS.Guns
                 weaponAnimatorController.SetTrigger("enable");
 
             }
-
-            //This function can be overriden in child classes to do any other setup functionality
             StartCoroutine(EquipAfter(enableDelay));
         }
 

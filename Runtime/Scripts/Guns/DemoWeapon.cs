@@ -239,11 +239,16 @@ namespace ClassicFPS.Guns
 
         private void ShootAction_canceled(InputAction.CallbackContext obj)
         {
+            if (holdShoot)
+                weaponAnimatorController.SetBool("holding", false);
             holding = false;
         }
 
         private void ShootAction_performed(InputAction.CallbackContext obj)
         {
+            if (holdShoot)
+                weaponAnimatorController.SetBool("holding",true);
+
             WeaponState tempState = GetState();
             if (tempState.ammoRemaining <= 0 && requiresAmmo)
             {
