@@ -58,6 +58,10 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 9372fd6a152844190b6628a644933341, type: 3}
     - {fileID: 8300000, guid: 9372fd6a152844190b6628a644933341, type: 3}
     - {fileID: 8300000, guid: 9372fd6a152844190b6628a644933341, type: 3}
+  - group: Rocket Launcher
+    clips:
+    - {fileID: 8300000, guid: 21c3244b1f21244aea5ff8dfc85d3a36, type: 3}
+    - {fileID: 8300000, guid: d33e6a3e3458b4c36a0ef2fe976c751a, type: 3}
   groundSounds:
   - TerrainLayerNameOrTag: Grass
     isTerrainLayer: 1
