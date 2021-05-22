@@ -25,6 +25,7 @@ namespace ClassicFPS.Enemy
         [Header("Drop Options")]
         [Space(20)]
         public bool alwaysDrop = false;
+        public bool dropAllItems = false;
         [Range(0f, 1f)]
         public float chanceOfDrop;
         public List<Transform> droppablePrefabs; //All the possible items that the object can drop, if more than 1 it will be selected randomly
@@ -81,12 +82,22 @@ namespace ClassicFPS.Enemy
 
         private void SpawnDrops()
         {
-            if (droppablePrefabs.Count > 0)
+            if (droppablePrefabs.Count > 0 && !dropAllItems)
             {
                 if (alwaysDrop || (Random.Range(0, 101) < chanceOfDrop * 100))
                 {
                     int random = Random.Range(0, droppablePrefabs.Count);
                     Instantiate(droppablePrefabs[random], transform.position + spawnOffset, Quaternion.identity);
+                }
+            }
+            else if (droppablePrefabs.Count > 0 && dropAllItems)
+            {
+                if (alwaysDrop || (Random.Range(0, 101) < chanceOfDrop * 100))
+                {
+                    for (int i = 0; i < droppablePrefabs.Count; i++)
+                    {
+                        Instantiate(droppablePrefabs[i], transform.position + spawnOffset, Quaternion.identity);
+                    }
                 }
             }
         }

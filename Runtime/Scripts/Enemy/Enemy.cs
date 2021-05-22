@@ -74,7 +74,7 @@ namespace ClassicFPS.Enemy
             {
                 GetComponent<Collider>().enabled = false;
             }
-
+            SpawnDrops();
         }
 
         private void OnTriggerEnter(Collider col)
