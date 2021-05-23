@@ -12,6 +12,7 @@ namespace ClassicFPS.Guns
     {
 
         protected string UID;
+        protected bool weaponEnabled = false;
 
         [Header("SFX")]
         [HideInInspector]
@@ -123,6 +124,7 @@ namespace ClassicFPS.Guns
         {
             yield return new WaitForSeconds(delay);
             OnGunEquipped();
+            weaponEnabled = true;
         }    
 
         //Should override this
@@ -133,6 +135,7 @@ namespace ClassicFPS.Guns
 
         public virtual void Unequip()
         {
+            weaponEnabled = false;
             if (weaponAnimatorController != null)
             {
 
@@ -193,28 +196,29 @@ namespace ClassicFPS.Guns
 
         public virtual void HandlePlayerAnimate ()
         {
-            Vector3 inputData = inputManager.inputData;
-            PlayerController controller = inputManager.controller;
+            if (weaponEnabled) {
+                Vector3 inputData = inputManager.inputData;
+                PlayerController controller = inputManager.controller;
 
-            if (inputData.magnitude == 0 || controller.hasJumped || !controller.grounded)
-            {
-               weaponAnimatorController.SetBool("walking", false);
-            }
-            else
-            {
-               weaponAnimatorController.SetBool("walking", true);
-            }
+                if (inputData.magnitude == 0 || controller.hasJumped || !controller.isApproximatelyGrounded())
+                {
+                weaponAnimatorController.SetBool("walking", false);
+                }
+                else
+                {
+                weaponAnimatorController.SetBool("walking", true);
+                }
 
-            if (inputManager.sprinting)
-            {
-               weaponAnimatorController.SetFloat("walkSpeed", 1.5f);
-            }
-            else
-            {
-               weaponAnimatorController.SetFloat("walkSpeed", 1);
-            }
+                if (inputManager.sprinting)
+                {
+                weaponAnimatorController.SetFloat("walkSpeed", 1.5f);
+                }
+                else
+                {
+                weaponAnimatorController.SetFloat("walkSpeed", 1);
+                }
 
-
+            }
         }
 
         public virtual void HandlePlayerPickup ()
