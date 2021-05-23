@@ -80,7 +80,7 @@ namespace ClassicFPS.Enemy
             gameObject.SetActive(false);
         }
 
-        private void SpawnDrops()
+        protected void SpawnDrops()
         {
             if (droppablePrefabs.Count > 0 && !dropAllItems)
             {
