@@ -19,10 +19,6 @@ MonoBehaviour:
     - {fileID: 8300000, guid: d24da641459cf0d43898868774440d0b, type: 3}
     - {fileID: 8300000, guid: 003c8a99ca8844c439614d0520ca707e, type: 3}
     - {fileID: 8300000, guid: 819623bf034cde34788c73f15ec2e6d1, type: 3}
-  - group: Enemy
-    clips:
-    - {fileID: 8300000, guid: 30c52587f8a515a429515ee57b84d368, type: 3}
-    - {fileID: 8300000, guid: 54080ddbb7599624792818243cbbcadb, type: 3}
   - group: General
     clips:
     - {fileID: 8300000, guid: 8c4b7de6af6a2e14692804107d5279f0, type: 3}
@@ -62,6 +58,10 @@ MonoBehaviour:
     clips:
     - {fileID: 8300000, guid: 21c3244b1f21244aea5ff8dfc85d3a36, type: 3}
     - {fileID: 8300000, guid: d33e6a3e3458b4c36a0ef2fe976c751a, type: 3}
+  - group: Baby Spider
+    clips:
+    - {fileID: 8300000, guid: 61186e73f81b24f04a391cb53899d058, type: 3}
+    - {fileID: 8300000, guid: 15aa510b4a49b4b09957f693131a6ce8, type: 3}
   groundSounds:
   - TerrainLayerNameOrTag: Grass
     isTerrainLayer: 1
