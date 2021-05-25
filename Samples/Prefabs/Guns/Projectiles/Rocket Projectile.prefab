@@ -167,7 +167,7 @@ MonoBehaviour:
   explosionRadius: 20
   explosionParticles: {fileID: 3050270949189289845}
   minimumImpactVelocity: 15
-  damage: 50
+  damage: 110
   stickToImpact: 0
   timeToImpact: 0
   isHomingMissile: 0

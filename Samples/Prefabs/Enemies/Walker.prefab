@@ -102,7 +102,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2789096003031008152}
-  - component: {fileID: 5113084938700193569}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -125,48 +124,6 @@ Transform:
   m_Father: {fileID: 7193217557504569795}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5113084938700193569
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6973035294951437128}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ee822a5a4890d54ca45c0b3957b8606, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FittingSpeed: 8.02
-  TotalSmoother: 0
-  TransformToRotate: {fileID: 0}
-  GlueToGround: 0
-  MildForwardValue: 0
-  MaxForwardRotation: 50
-  MildHorizontalValue: 0
-  MaxHorizontalRotation: 90
-  RaycastHeightOffset: 0.5
-  RaycastCheckRange: 5
-  LookAheadRaycast: 0.4
-  AheadBlend: 0.5
-  UpOffset: 0
-  GroundLayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  RelativeLookUp: 1
-  RelativeLookUpBias: 0.25
-  ZoneCast: 0
-  ZoneCastDimensions: {x: 0.3, y: 0.5}
-  ZoneCastOffset: {x: 0, y: 0, z: 0}
-  ZoneCastBias: 0
-  ZoneCastPrecision: 0.25
-  drawDebug: 1
-  drawGizmo: 1
-  HandleRootMotion: 0
-  parentTransform: {fileID: 0}
-  optionalCharContr: {fileID: 0}
-  rootMotionRotation: 1
-  UpdateClock: 0
 --- !u!82 &7816575676410224061
 AudioSource:
   m_ObjectHideFlags: 0
