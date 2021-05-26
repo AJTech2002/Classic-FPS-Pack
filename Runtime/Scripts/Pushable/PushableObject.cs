@@ -59,6 +59,7 @@ namespace ClassicFPS.Pushable
             inPushLoop = false;
         }
 
+
         private void StopMovement()
         {
             //If Player has stopped pushing
