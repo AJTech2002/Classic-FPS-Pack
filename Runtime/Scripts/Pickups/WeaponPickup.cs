@@ -26,6 +26,7 @@ namespace ClassicFPS.Pickups
                 {
                     beenUsed = true;
                     RunSFX();
+                    WeaponPickupAnimation();
                     EnableObject(false);
                 }
             }

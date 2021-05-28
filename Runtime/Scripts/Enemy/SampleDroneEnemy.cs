@@ -113,7 +113,7 @@ namespace ClassicFPS.Enemy
             {
                 GetComponent<Collider>().enabled = false;
             }
-
+            SpawnDrops();
         }
 
 

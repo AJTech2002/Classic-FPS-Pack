@@ -70,8 +70,12 @@ namespace ClassicFPS.Controller.Interaction
                         originalParent = currentlyPickedObject.parent;
 
                         if (currentlyPickedObjectComponent.precalculateBounds)
-                            currentlyPickedObjectComponent.objectHoldingOffset.z = currentlyPickedObject.lossyScale.magnitude * distanceFromCamera;
-
+                        {
+                            //Center Vertically
+                            currentlyPickedObjectComponent.objectHoldingOffset.y = 0;
+                            currentlyPickedObjectComponent.objectHoldingOffset.z = Mathf.Clamp(currentlyPickedObject.GetComponent<Collider>().bounds.extents.magnitude * currentlyPickedObject.lossyScale.magnitude * distanceFromCamera, 3, 30);
+                          
+                        }
                         //Assign a new layer to prevent Ray intersections
                         currentlyPickedObject.gameObject.layer = LayerMask.NameToLayer("Player");
 
@@ -93,7 +97,7 @@ namespace ClassicFPS.Controller.Interaction
         }
 
         //Function to Reset the object to its former state
-        private Rigidbody ResetObject()
+            private Rigidbody ResetObject()
         {
             //Can only be done if Player has an Object
             if (hasObject())

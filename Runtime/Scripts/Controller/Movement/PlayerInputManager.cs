@@ -7,11 +7,10 @@ namespace ClassicFPS.Controller.Movement
     public class PlayerInputManager : MonoBehaviour
     {
         //References to external scripts
-        private PlayerController controller;
+        [HideInInspector]
+        public PlayerController controller;
         private CharacterController _controller;
         private PlayerPhysics physics;
-
-        public Animator playerAnimator;
 
         //The gravity and sensitivity of the input keys
         private float gravity = 15f; //How quickly the values of inputs fall ('slippiness')
@@ -97,24 +96,6 @@ namespace ClassicFPS.Controller.Movement
 
                 processedX = Mathf.Clamp(processedX + (inputData.x * Time.deltaTime * sensitivity), -1, 1);
                 processedZ = Mathf.Clamp(processedZ + (inputData.y * Time.deltaTime * sensitivity), -1, 1);
-            }
-
-            if (inputData.magnitude == 0 || controller.hasJumped || !controller.grounded)
-            {
-                playerAnimator.SetBool("walking", false);
-            }
-            else
-            {
-                playerAnimator.SetBool("walking", true);
-            }
-
-            if (sprinting)
-            {
-                playerAnimator.SetFloat("speed", 1.5f);
-            }
-            else
-            {
-                playerAnimator.SetFloat("speed", 1);
             }
 
         }
