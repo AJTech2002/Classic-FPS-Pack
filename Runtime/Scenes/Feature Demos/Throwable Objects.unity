@@ -1729,6 +1729,10 @@ PrefabInstance:
       propertyPath: isTestingScene
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 132480139, guid: 343bd5698b7c7824b96f46f4bccd71d5, type: 3}
+      propertyPath: awaitingSceneLoad
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4562773163993856085, guid: 343bd5698b7c7824b96f46f4bccd71d5, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -2120,15 +2124,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7388886272728937313, guid: 42d618f07a76c624085d6f06ab934302, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.1314549
+      value: 0.93786496
       objectReference: {fileID: 0}
     - target: {fileID: 7388886272728937313, guid: 42d618f07a76c624085d6f06ab934302, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.47761512
+      value: 3.407545
       objectReference: {fileID: 0}
     - target: {fileID: 7388886272728937313, guid: 42d618f07a76c624085d6f06ab934302, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.20395228
+      value: 1.4550976
       objectReference: {fileID: 0}
     - target: {fileID: 7388886272728937313, guid: 42d618f07a76c624085d6f06ab934302, type: 3}
       propertyPath: m_LocalPosition.x
