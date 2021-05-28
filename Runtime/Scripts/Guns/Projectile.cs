@@ -21,6 +21,7 @@ namespace ClassicFPS.Guns
         public float explosionForce;
         public float upwardsForce;
         public float explosionRadius;
+        public ParticleSystem explosionParticles;
 
         [Header("Physics")]
         public float minimumImpactVelocity = 15;
@@ -99,7 +100,14 @@ namespace ClassicFPS.Guns
                 Rigidbody rb = hit.GetComponent<Rigidbody>();
                 DamageableEntity de = hit.GetComponent<DamageableEntity>();
 
-                if (doesExplode) SFXManager.PlayClipAt(explosionSound, transform.position, 0.2f);
+                //if (doesExplode) SFXManager.PlayClipAt(explosionSound, transform.position, 0.2f);
+                if (doesExplode) {
+                    SFXManager.PlayClipAt(explosionSound, GameObject.Find("Controller").transform.position, 0.2f);
+                    explosionParticles.gameObject.SetActive(true);
+                    explosionParticles.transform.parent = null;
+                    Destroy(explosionParticles.gameObject, 5f);
+                }
+
 
                 if (rb != null)
                 {

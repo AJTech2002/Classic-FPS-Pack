@@ -6,6 +6,7 @@ using ClassicFPS.Saving_and_Loading.States;
 using ClassicFPS.Managers;
 using ClassicFPS.Audio;
 using ClassicFPS.Saving_and_Loading;
+using ClassicFPS.Controller.Movement;
 
 namespace ClassicFPS.Enemy
 {
@@ -21,6 +22,10 @@ namespace ClassicFPS.Enemy
         {
             public float health;
         }
+
+        [Header("Graphics")]
+        [SerializeField] ParticleSystem hitParticles;
+
 
         [Header("Drop Options")]
         [Space(20)]
@@ -63,13 +68,15 @@ namespace ClassicFPS.Enemy
         public virtual void TakeDamage(float damage, float delay = 0.2f)
         {
             health -= damage;
-
+            if(hitParticles) hitParticles.Emit(5);
             //Play with small delay so gun shoot sound doesn't overlap with damage sound
-            SFXManager.PlayClipAt(onTakeDamage, transform.position, 1, delay);
+            SFXManager.PlayClipAt(onTakeDamage, (transform.position + GameManager.PlayerController.gameObject.transform.position)/2, 1f, delay);
+
+            StartCoroutine(FreezeFrameEffect(.03f));
 
             if (health <= 0)
             {
-                SFXManager.PlayClipAt(onDeath, transform.position, 1);
+                SFXManager.PlayClipAt(onDeath, GameManager.PlayerController.transform.position, 1.5f);
                 Die();
             }
         }
@@ -77,6 +84,7 @@ namespace ClassicFPS.Enemy
         public virtual void Die()
         {
             SpawnDrops();
+            Debug.Log("Dropped prefab");
             gameObject.SetActive(false);
         }
 
@@ -88,6 +96,8 @@ namespace ClassicFPS.Enemy
                 {
                     int random = Random.Range(0, droppablePrefabs.Count);
                     Instantiate(droppablePrefabs[random], transform.position + spawnOffset, Quaternion.identity);
+                    Debug.Log("Spawned" + droppablePrefabs[0]);
+
                 }
             }
             else if (droppablePrefabs.Count > 0 && dropAllItems)
@@ -100,6 +110,14 @@ namespace ClassicFPS.Enemy
                     }
                 }
             }
+        }
+
+        IEnumerator FreezeFrameEffect(float waitTime)
+        {
+            Time.timeScale = .3f;
+            yield return new WaitForSeconds(waitTime);
+            Time.timeScale = 1f;
+            print("WaitAndPrint " + Time.time);
         }
 
     }

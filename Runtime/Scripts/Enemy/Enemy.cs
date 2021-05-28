@@ -23,6 +23,11 @@ namespace ClassicFPS.Enemy
         [Header("Animations")]
         public Animator animator;
 
+        [Header("Graphics")]
+        public GameObject graphics;
+        [SerializeField] GameObject deathParticles;
+
+
         [Space(10)]
         public AIState currentState;
 
@@ -54,6 +59,14 @@ namespace ClassicFPS.Enemy
             agent.enabled = false;
             animator.enabled = false;
             trigger.enabled = false;
+
+            if (graphics) Destroy(graphics);
+
+            if (deathParticles)
+            {
+                deathParticles.transform.parent = null;
+                deathParticles.SetActive(true);
+            }
 
             foreach (MeshRenderer r in GetComponentsInChildren<MeshRenderer>())
             {

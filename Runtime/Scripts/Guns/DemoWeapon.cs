@@ -252,7 +252,7 @@ namespace ClassicFPS.Guns
             WeaponState tempState = GetState();
             if (tempState.ammoRemaining <= 0 && requiresAmmo)
             {
-                if (weaponSoundsSource != null && !weaponSoundsSource.isPlaying)
+                if (weaponSoundsSource != null)
                     SFXManager.PlayClipFromSource(emptyAmmoSound, this.weaponSoundsSource);
             }
 

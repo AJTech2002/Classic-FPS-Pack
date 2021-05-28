@@ -23,6 +23,8 @@ namespace ClassicFPS.Controller.PlayerState
         public Text healthText;
         public Text coinText;
         public KeyUI keyUI;
+        public Animator whiteFlashAnimator;
+        public Animator levelTitle;
 
         [Header("Saving Options")]
         public bool resetHealthOnLoad = true;
@@ -155,7 +157,7 @@ namespace ClassicFPS.Controller.PlayerState
         public void UpdateUI()
         {
             healthText.text = Mathf.RoundToInt(playerOptions.health).ToString();
-            coinText.text = "Coins: " + playerOptions.coins.ToString();
+            coinText.text = playerOptions.coins.ToString();
         }
 
         public void TakeDamage(float damage)
