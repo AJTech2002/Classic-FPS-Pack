@@ -1,3 +1,4 @@
+using ClassicFPS.Managers;
 using ClassicFPS.Audio;
 using ClassicFPS.Saving_and_Loading;
 using ClassicFPS.Saving_and_Loading.States;
@@ -21,7 +22,7 @@ namespace ClassicFPS.Pickups
         public Sound collectSFX;
         [Range(0f,2f)]
         public float volume = 0.5f;
-
+        [SerializeField] bool playFlashEffect;
 
         [System.Serializable]
         public struct EnabledState
@@ -57,9 +58,14 @@ namespace ClassicFPS.Pickups
             }
         }
 
-        public void RunSFX ()
+        public void RunSFX()
         {
-            SFXManager.PlayClipAt(collectSFX,transform.position, volume);
+            SFXManager.PlayClipAt(collectSFX, transform.position, volume);
+            if (playFlashEffect)
+            {
+                GameManager.PlayerStatistics.whiteFlashAnimator.ResetTrigger("Flash");
+                GameManager.PlayerStatistics.whiteFlashAnimator.SetTrigger("Flash");
+            }
         }
 
         public override bool ShouldSave()
@@ -83,6 +89,11 @@ namespace ClassicFPS.Pickups
             foreach (MeshRenderer r in GetComponentsInChildren<MeshRenderer>())
             {
                 r.enabled = render;
+            }
+
+            foreach (ParticleSystem p in GetComponentsInChildren<ParticleSystem>())
+            {
+                p.transform.gameObject.SetActive(false);
             }
 
             if (this.GetComponent<Collider>() != null)

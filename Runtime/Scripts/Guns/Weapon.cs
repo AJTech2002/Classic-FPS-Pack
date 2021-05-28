@@ -143,6 +143,8 @@ namespace ClassicFPS.Guns
                     animationComponent.Stop();
                     animationComponent.wrapMode = WrapMode.Once;
                     animationComponent.Play(noAmmoAnimationName);
+
+                    
                 }
             }
 
