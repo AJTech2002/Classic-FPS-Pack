@@ -209,8 +209,14 @@ namespace ClassicFPS.Guns
                         currentlyPickedObjectComponent = currentlyPickedObject.GetComponent<PushableObject>();
 
                         if (currentlyPickedObjectComponent.precalculateBounds)
-                            currentlyPickedObjectComponent.objectHoldingOffset.z = currentlyPickedObject.lossyScale.magnitude * distanceFromCamera;
-
+                        {
+                           
+                            //Center Vertically
+                            currentlyPickedObjectComponent.objectHoldingOffset.y = -currentlyPickedObject.InverseTransformPoint(currentlyPickedObject.GetComponent<Collider>().bounds.center).y * currentlyPickedObject.transform.localScale.y;
+                            currentlyPickedObjectComponent.objectHoldingOffset.x = 0;
+                            currentlyPickedObjectComponent.objectHoldingOffset.z = Mathf.Clamp(currentlyPickedObject.GetComponent<Collider>().bounds.extents.magnitude * currentlyPickedObject.localScale.magnitude * distanceFromCamera, 3, 30);
+                            currentlyPickedObject.transform.forward = playerCamera.transform.forward;
+                        }
                     }
 
                 }

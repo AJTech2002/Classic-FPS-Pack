@@ -72,8 +72,9 @@ namespace ClassicFPS.Controller.Interaction
                         if (currentlyPickedObjectComponent.precalculateBounds)
                         {
                             //Center Vertically
-                            currentlyPickedObjectComponent.objectHoldingOffset.y = 0;
-                            currentlyPickedObjectComponent.objectHoldingOffset.z = Mathf.Clamp(currentlyPickedObject.GetComponent<Collider>().bounds.extents.magnitude * currentlyPickedObject.lossyScale.magnitude * distanceFromCamera, 3, 30);
+                            currentlyPickedObjectComponent.objectHoldingOffset.y = -currentlyPickedObject.InverseTransformPoint(currentlyPickedObject.GetComponent<Collider>().bounds.center).y * currentlyPickedObject.transform.localScale.y;
+                            currentlyPickedObjectComponent.objectHoldingOffset.x = -currentlyPickedObject.InverseTransformPoint(currentlyPickedObject.GetComponent<Collider>().bounds.center).x * currentlyPickedObject.transform.localScale.x;
+                            currentlyPickedObjectComponent.objectHoldingOffset.z = Mathf.Clamp(currentlyPickedObject.GetComponent<Collider>().bounds.extents.magnitude * currentlyPickedObject.localScale.magnitude * distanceFromCamera, 3, 30);
                           
                         }
                         //Assign a new layer to prevent Ray intersections

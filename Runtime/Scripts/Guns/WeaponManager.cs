@@ -193,6 +193,7 @@ namespace ClassicFPS.Guns
         }
     }
 
+    #if UNITY_EDITOR
     [CustomPropertyDrawer(typeof(WeaponIDAttribute))]
     public class WeaponDrawer : PropertyDrawer
     {
@@ -247,4 +248,5 @@ namespace ClassicFPS.Guns
                 EditorGUI.LabelField(position, label.text, "You can only use this attribute with Strings");
         }
     }
+    #endif
 }

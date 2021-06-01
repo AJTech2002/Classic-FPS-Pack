@@ -12,6 +12,10 @@ namespace ClassicFPS.Controller.Movement
         [Header("References")]
         public Transform pivotTransform;
         public CinemachineVirtualCamera virtualCamera;
+        public CinemachineBasicMultiChannelPerlin virtualCameraNoise;
+        float virtualCameraNoiseAmplitudeOrig;
+        float virtualCameraNoiseFrequencyOrig;
+        float shakeSpringPower = 10;
 
         [Header("Mouse Properties")]
         public bool lockRotation;
@@ -58,6 +62,18 @@ namespace ClassicFPS.Controller.Movement
             inputManager = GetComponent<PlayerInputManager>();
             playerController = GetComponent<PlayerController>();
             defaultFov = virtualCamera.m_Lens.FieldOfView;
+
+            //Screen shake reference and values
+            virtualCameraNoise = virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+            virtualCameraNoiseAmplitudeOrig = virtualCameraNoise.m_AmplitudeGain;
+            virtualCameraNoiseFrequencyOrig = virtualCameraNoise.m_FrequencyGain;
+
+        }
+
+        private void Update()
+        {
+            virtualCameraNoise.m_AmplitudeGain += (virtualCameraNoiseAmplitudeOrig - virtualCameraNoise.m_AmplitudeGain) * Time.deltaTime * shakeSpringPower;
+            virtualCameraNoise.m_FrequencyGain += (virtualCameraNoiseFrequencyOrig - virtualCameraNoise.m_FrequencyGain) * Time.deltaTime * shakeSpringPower;
         }
 
         //Run the rotation on LateUpdate after movement for Player Controller has completed
@@ -120,6 +136,21 @@ namespace ClassicFPS.Controller.Movement
             //Based on 'data' which provides the deltas for mouse movement (how much the mouse moved per frame) add yaw and pitch
             yaw += data.x * mouseSensitivity;
             pitch -= data.y * mouseSensitivity;
+        }
+
+        public void ShakeScreen()
+        {
+            Debug.Log("Shake screen");
+
+        }
+
+        public IEnumerator ShakeScreen(float amplitudeGain, float frequencyGain, float shakeTime = .1f)
+        {
+            shakeSpringPower = 0;
+            virtualCameraNoise.m_AmplitudeGain = amplitudeGain;
+            virtualCameraNoise.m_FrequencyGain = frequencyGain;
+            yield return new WaitForSeconds(shakeTime);
+            shakeSpringPower = 10;
         }
 
     }

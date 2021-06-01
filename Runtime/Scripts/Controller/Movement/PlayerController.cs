@@ -22,6 +22,8 @@ namespace ClassicFPS.Controller.Movement
         public PlayerPhysics physics; // Physics Manager
         [HideInInspector]
         public PlayerInputManager inputManager; // Input Manager
+        [HideInInspector]
+        public PlayerCameraController playerCameraController;
 
         public PlayerSFX playerSFX;
 
@@ -80,6 +82,7 @@ namespace ClassicFPS.Controller.Movement
         {
             characterSpeed = walkSpeed;
             controller = GetComponent<CharacterController>();
+            playerCameraController = GetComponent<PlayerCameraController>();
             physics = GetComponent<PlayerPhysics>();
             inputManager = GetComponent<PlayerInputManager>();
 

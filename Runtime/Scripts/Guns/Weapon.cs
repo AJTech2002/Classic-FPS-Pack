@@ -177,6 +177,7 @@ namespace ClassicFPS.Guns
             if (weaponAnimatorController != null)
             {
                 weaponAnimatorController.SetBool("hasAmmo", true);
+                weaponAnimatorController.ResetTrigger("shooting");
                 weaponAnimatorController.SetTrigger("shooting");
             }
             
@@ -200,22 +201,24 @@ namespace ClassicFPS.Guns
                 Vector3 inputData = inputManager.inputData;
                 PlayerController controller = inputManager.controller;
 
-                if (inputData.magnitude == 0 || controller.hasJumped || !controller.isApproximatelyGrounded())
-                {
-                weaponAnimatorController.SetBool("walking", false);
-                }
-                else
-                {
-                weaponAnimatorController.SetBool("walking", true);
-                }
+                if (weaponAnimatorController) {
+                    if (inputData.magnitude == 0 || controller.hasJumped || !controller.isApproximatelyGrounded())
+                    {
+                        weaponAnimatorController.SetBool("walking", false);
+                    }
+                    else
+                    {
+                        weaponAnimatorController.SetBool("walking", true);
+                    }
 
-                if (inputManager.sprinting)
-                {
-                weaponAnimatorController.SetFloat("walkSpeed", 1.5f);
-                }
-                else
-                {
-                weaponAnimatorController.SetFloat("walkSpeed", 1);
+                    if (inputManager.sprinting)
+                    {
+                        weaponAnimatorController.SetFloat("walkSpeed", 1.5f);
+                    }
+                    else
+                    {
+                        weaponAnimatorController.SetFloat("walkSpeed", 1);
+                    }
                 }
 
             }

@@ -29,6 +29,7 @@ namespace ClassicFPS.Pushable
         public Sound impactSound;
         public Sound onShootSound;
         public float waitBeforePlayingSFXAgain = 0.4f;
+        [SerializeField] float minVelocityForSound;
 
         private bool inPushLoop = false;
 
@@ -101,7 +102,7 @@ namespace ClassicFPS.Pushable
                 rigidbody = GetComponent<Rigidbody>();
 
 
-            if (rigidbody.velocity.magnitude >= 0f && canBePickedUp && !waitingSFX)
+            if (rigidbody.velocity.magnitude >= minVelocityForSound && canBePickedUp && !waitingSFX)
             {
                 SFXManager.PlayClipAt(impactSound, transform.position);
                 WaitForSFX(waitBeforePlayingSFXAgain);
