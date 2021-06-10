@@ -129,8 +129,6 @@ namespace ClassicFPS.Guns
 
             }
 
-            Debug.Log("Setup Dictionary");
-
         }
 
 

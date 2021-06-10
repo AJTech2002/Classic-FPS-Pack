@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using System.Linq;
-
 using ClassicFPS.Guns;
 using ClassicFPS.Controller.Movement;
 using ClassicFPS.Pickups;
+using ClassicFPS.Audio;
 
 namespace ClassicFPS.Controller.Interaction
 {
@@ -55,6 +55,12 @@ namespace ClassicFPS.Controller.Interaction
         [Header("Input Options")]
         public InputAction numberKeys;
         public InputAction scrollWheel;
+
+        [Header("Weapon Effects")]
+        public GameObject bulletHitParticles;
+        public GameObject fleshHitParticles;
+        public Sound onHitObjectSFX;
+        public Sound onHitFleshSFX;
 
         private void Start()
         {

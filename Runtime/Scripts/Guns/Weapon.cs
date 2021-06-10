@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using ClassicFPS.Controller.Movement;
+using ClassicFPS.Managers;
 
 namespace ClassicFPS.Guns
 {
@@ -103,13 +104,24 @@ namespace ClassicFPS.Guns
                 r.enabled = false;
             }
 
+            foreach (SkinnedMeshRenderer r in GetComponentsInChildren<SkinnedMeshRenderer>())
+            {
+                r.enabled = false;
+            }
+
             yield return new WaitForSeconds(delay);
             
             foreach (MeshRenderer r in GetComponentsInChildren<MeshRenderer>())
             {
                 r.enabled = true;
             }
-            
+
+            foreach (SkinnedMeshRenderer r in GetComponentsInChildren<SkinnedMeshRenderer>())
+            {
+                r.enabled = true;
+            }
+
+
 
             if (weaponAnimatorController != null)
             {
@@ -211,7 +223,7 @@ namespace ClassicFPS.Guns
                         weaponAnimatorController.SetBool("walking", true);
                     }
 
-                    if (inputManager.sprinting)
+                    if (GameManager.PlayerController.sprinting)
                     {
                         weaponAnimatorController.SetFloat("walkSpeed", 1.5f);
                     }

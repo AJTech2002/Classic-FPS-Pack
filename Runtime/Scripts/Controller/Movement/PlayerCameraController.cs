@@ -39,6 +39,7 @@ namespace ClassicFPS.Controller.Movement
 
         public float fovZoomSpeed; //Speed of the FOV Effect
         public float tiltSpeed; //Speed of the Tilt Effect
+        public Vector2[] cameraNoiseAmplitudeAndFrequency; //Two values: walking, running
 
         [HideInInspector]
         public Vector3 currentRotation;

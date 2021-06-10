@@ -1,6 +1,7 @@
 using ClassicFPS.Audio;
 using ClassicFPS.Enemy;
 using ClassicFPS.Pushable;
+using ClassicFPS.Managers;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -44,10 +45,9 @@ namespace ClassicFPS.Guns
         public float maximumDamage;
         public float minimumDamage;
 
-        [Header("Custom SFX")]
-        public Sound onHitObjectSFX;
-
-
+        [Header("Custom Effects")]
+        [SerializeField] float bulletEffectDelay = .05f;
+      
         private bool holding = false;
 
         private List<Transform> itemsHit = new List<Transform>();
@@ -164,34 +164,45 @@ namespace ClassicFPS.Guns
                 {
                     //Run a SFX for just object hits
 
-                    SFXManager.PlayClipAt(onHitObjectSFX, hit.point, 0.5f, 0.1f);
+                    StartCoroutine(PlayBulletEffects(hit, hit.normal));
                 }
 
                 if (pushableObj != null && pushableObj.onShootSound.clipName != "")
                 {
 
-                    SFXManager.PlayClipAt(pushableObj.onShootSound, hit.point, 1f);
+                    StartCoroutine(PlayBulletEffects(hit, hit.normal));
                 }
 
-
-                //If it hits an Enemy or Breakable Object 
-                if (hit.transform.GetComponent<DamageableEntity>() != null)
+                if (percImpact > 0.2f)
                 {
-                    hit.transform.GetComponent<DamageableEntity>().TakeDamage(Mathf.Clamp(maximumDamage * percImpact, minimumDamage, maximumDamage));
-                }
-
-                Projectile proj = hit.transform.GetComponent<Projectile>();
-
-                if (proj != null)
-                {
-                    if (proj.isHomingMissile)
+                    //If it hits an Enemy or Breakable Object 
+                    if (hit.transform.GetComponent<DamageableEntity>() != null)
                     {
-                        //Blow up Missile in air if shot
-                        proj.Impact(true, true);
+                        hit.transform.GetComponent<DamageableEntity>().TakeDamage(Mathf.Clamp(maximumDamage * percImpact, minimumDamage, maximumDamage));
+                        if (hit.transform.GetComponent<SampleEnemy>()) { 
+                            StartCoroutine(PlayBulletEffects(hit, hit.normal, true));
+                            hit.transform.GetComponent<SampleEnemy>().FollowPlayer(true);
+                        }
+                        else
+                        {
+                            StartCoroutine(PlayBulletEffects(hit, hit.normal, false));
+                        }
+                    }
+
+                    Projectile proj = hit.transform.GetComponent<Projectile>();
+
+                    if (proj != null)
+                    {
+                        if (proj.isHomingMissile)
+                        {
+                            //Blow up Missile in air if shot
+                            proj.Impact(true, true);
+                        }
                     }
                 }
 
                 itemsHit.Add(hit.transform);
+                
             }
 
             if (shootsProjectiles)
@@ -273,6 +284,28 @@ namespace ClassicFPS.Guns
             OnGunUnequipped();
         }
 
+        IEnumerator PlayBulletEffects(RaycastHit hit, Vector3 hitNormal, bool isFlesh = false)
+        {
+            yield return new WaitForSeconds(bulletEffectDelay);
+
+            GameObject instantiateWhichObject;
+
+            if (isFlesh)
+            {
+                instantiateWhichObject = GameManager.WeaponController.fleshHitParticles;
+                SFXManager.PlayClipAt(GameManager.WeaponController.onHitFleshSFX, (GameManager.PlayerController.transform.position + hit.point) / 2, 1);
+
+            }
+            else
+            {
+                instantiateWhichObject = GameManager.WeaponController.bulletHitParticles;
+                SFXManager.PlayClipAt(GameManager.WeaponController.onHitObjectSFX, (GameManager.PlayerController.transform.position + hit.point) / 2, 1);
+
+            }
+
+            GameObject bulletHitParticlesClone = Instantiate(instantiateWhichObject, hit.point, Quaternion.LookRotation(hitNormal));
+            bulletHitParticlesClone.transform.parent = hit.transform;
+        }
     }
 
 }

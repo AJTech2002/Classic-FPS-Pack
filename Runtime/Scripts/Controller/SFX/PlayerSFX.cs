@@ -40,7 +40,7 @@ namespace ClassicFPS.Controller.SFX
         private float lastCharacterSpeed = 0f;
         private bool isTerrain = false;
 
-        public void PlayFootstepSound()
+        public void PlayFootstepSound(AudioSource whichAudioSource, float minVolume = .8f, float maxVolume = 1.1f)
         {
             if (controller.isApproximatelyGrounded())
             {
@@ -64,7 +64,7 @@ namespace ClassicFPS.Controller.SFX
 
                 if (playingSound != null)
                 {
-                    movementAudioSource.PlayOneShot(playingSound, movementAudioSource.volume * Random.Range(.8f, 1.1f));
+                    movementAudioSource.PlayOneShot(playingSound, movementAudioSource.volume * Random.Range(minVolume, maxVolume));
                 }
             }
         }

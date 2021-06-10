@@ -15,7 +15,7 @@ namespace ClassicFPS.Controller.SFX {
         public void PlayGroundSFX ()
         {
             if (playerSFX != null)
-            playerSFX.PlayFootstepSound();
+            playerSFX.PlayFootstepSound(playerSFX.movementAudioSource);
         }
 
     }

@@ -19,6 +19,12 @@ namespace ClassicFPS.Enemy
 
         [Header("Navigation")]
         public NavMeshAgent agent;
+        public Transform targetTransform;
+        public Transform[] patrollingDestinations;
+        [SerializeField] int patrolPoint = 0;
+        [SerializeField] float patrolLocationScatterMultiplier = 1;
+        [SerializeField] float walkRadius;
+        [SerializeField] LookAtObject headLookAt;
 
         [Header("Animations")]
         public Animator animator;
@@ -31,21 +37,21 @@ namespace ClassicFPS.Enemy
         [Space(10)]
         public AIState currentState;
 
-        protected PlayerController controller;
+        [SerializeField] protected PlayerController controller;
 
 
         private void Start()
         {
+            if(patrollingDestinations.Length != 0) SetUpPatrolDestinations();
             //The sphere collider should be a trigger
             trigger.isTrigger = true;
             controller = GameManager.PlayerController;
 
             if (controller == null)
                 controller = GameObject.FindObjectOfType<PlayerController>();
-        }
 
-        public virtual void OnStart()
-        {
+            if(!targetTransform) targetTransform = controller.transform;
+
 
         }
 
@@ -95,10 +101,7 @@ namespace ClassicFPS.Enemy
             if (col.transform.CompareTag("Player"))
             {
 
-                if (currentState == AIState.Idle)
-                {
-                    currentState = AIState.Following;
-                }
+                FollowPlayer(true);
 
             }
         }
@@ -119,12 +122,116 @@ namespace ClassicFPS.Enemy
             }
         }
 
+    
+
+        public void FollowPlayer(bool followPlayer = true)
+        {
+            if (followPlayer)
+            {
+                if (currentState == AIState.Idle || currentState == AIState.Patrolling)
+                {
+                    currentState = AIState.Following;
+                    if(headLookAt) headLookAt.target = GameManager.PlayerController.transform;
+                }
+            }
+            else
+            {
+                if (currentState == AIState.Following)
+                {
+                    currentState = AIState.Idle;
+                }
+            }
+        }
+
         public enum AIState
         {
             Idle,
+            Patrolling,
             Following,
             WaitingForPath,
             Dead
+        }
+
+        public void Patrol()
+        {
+
+            if (!agent.pathPending && agent.remainingDistance < 0.5f)
+
+                GoToNextPoint();
+        }
+
+        public void GoToNextPoint()
+        {
+            targetTransform = patrollingDestinations[patrolPoint];
+
+            
+            // Returns if no points have been set up
+            if (patrollingDestinations.Length == 0)
+                return;
+
+            // Set the agent to go to the currently selected destination.
+            agent.destination = patrollingDestinations[patrolPoint].position;
+
+            // Choose the next point in the array as the destination,
+            // cycling to the start if necessary.
+            patrolPoint = (patrolPoint + 1) % patrollingDestinations.Length;
+            
+
+           
+
+        }
+
+        void SetUpPatrolDestinations()
+        {
+            /*
+            Transform patrollingDestinationsParent = patrollingDestinations[0].transform.parent.transform;
+
+            patrollingDestinationsParent.parent = null;
+            for (int i = 0; i < patrollingDestinations.Length; i++)
+            {
+                patrollingDestinationsParent.Rotate(Vector3.up, 360 / patrollingDestinations.Length);
+                patrollingDestinations[i].transform.Translate(patrollingDestinationsParent.forward * patrolLocationScatterMultiplier);
+            }
+            */
+
+            Transform patrollingDestinationsParent = patrollingDestinations[0].transform.parent.transform;
+            bool pathWasInvalid = false;
+
+            patrollingDestinationsParent.parent = null;
+            for (int i = 0; i < patrollingDestinations.Length + 1; i++)
+            {
+                if (pathWasInvalid)
+                {
+                    i--;
+                    pathWasInvalid = false;
+                }
+
+                if (i < patrollingDestinations.Length)
+                {
+
+                    NavMeshPath path = new NavMeshPath();
+
+                    Vector3 randomDirection = Random.insideUnitSphere * walkRadius;
+
+                    randomDirection += transform.position;
+                    NavMeshHit hit;
+                    NavMesh.SamplePosition(randomDirection, out hit, walkRadius, 1);
+                    patrollingDestinations[i].position = hit.position;
+
+                    //patrollingDestinations[i].position += Vector3.down * 4;
+                    agent.CalculatePath(patrollingDestinations[i].position, path);
+                    Debug.Log(path.status);
+
+                    if (path.status == NavMeshPathStatus.PathPartial)
+                    {
+                        pathWasInvalid = true;
+                        Debug.Log("Path was invalid!");
+                        continue;
+                    }
+                }
+                
+            }
+
         }
 
     }

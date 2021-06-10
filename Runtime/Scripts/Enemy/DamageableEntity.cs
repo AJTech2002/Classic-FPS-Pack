@@ -65,10 +65,10 @@ namespace ClassicFPS.Enemy
         }
 
 
-        public virtual void TakeDamage(float damage, float delay = 0.2f)
+        public virtual void TakeDamage(float damage, float delay = 0.05f)
         {
             health -= damage;
-            if(hitParticles) hitParticles.Emit(5);
+            //if(hitParticles) hitParticles.Emit(5);
             //Play with small delay so gun shoot sound doesn't overlap with damage sound
             SFXManager.PlayClipAt(onTakeDamage, (transform.position + GameManager.PlayerController.gameObject.transform.position)/2, 1f, delay);
 
@@ -76,15 +76,16 @@ namespace ClassicFPS.Enemy
 
             if (health <= 0)
             {
-                SFXManager.PlayClipAt(onDeath, GameManager.PlayerController.transform.position, 1.5f);
+                SFXManager.PlayClipAt(onDeath, GameManager.PlayerController.transform.position, 1.5f, delay);
                 Die();
+                Debug.Log("Die!");
             }
         }
-
+     
         public virtual void Die()
         {
             SpawnDrops();
-            Debug.Log("Dropped prefab");
+            Debug.Log("Died!");
             gameObject.SetActive(false);
         }
 
@@ -114,10 +115,9 @@ namespace ClassicFPS.Enemy
 
         IEnumerator FreezeFrameEffect(float waitTime)
         {
-            Time.timeScale = .3f;
+            Time.timeScale = .6f;
             yield return new WaitForSeconds(waitTime);
             Time.timeScale = 1f;
-            print("WaitAndPrint " + Time.time);
         }
 
     }

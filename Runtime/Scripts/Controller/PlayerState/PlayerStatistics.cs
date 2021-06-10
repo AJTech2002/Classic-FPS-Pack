@@ -25,6 +25,8 @@ namespace ClassicFPS.Controller.PlayerState
         public KeyUI keyUI;
         public Animator whiteFlashAnimator;
         public Animator levelTitle;
+        public Image recoveryCircle;
+
 
         [Header("Saving Options")]
         public bool resetHealthOnLoad = true;
@@ -166,9 +168,11 @@ namespace ClassicFPS.Controller.PlayerState
 
             SFXManager.PlayClipFromSource(onTakeDamage, damageAudioSource, 0f);
 
-            playerOptions.health = Mathf.Clamp(playerOptions.health, 0, 1000);
+            StartCoroutine(GameManager.PlayerController.playerCameraController.ShakeScreen(3f, 7f, .14f));
+            GameManager.PlayerStatistics.whiteFlashAnimator.ResetTrigger("Hurt");
+            GameManager.PlayerStatistics.whiteFlashAnimator.SetTrigger("Hurt");
 
-            print("Player took " + damage.ToString() + " damage");
+            playerOptions.health = Mathf.Clamp(playerOptions.health, 0, 1000);
 
             UpdateUI();
 

@@ -4,6 +4,8 @@ using UnityEngine;
 
 using ClassicFPS.Controller.SFX;
 using ClassicFPS.Audio;
+using UnityEngine.InputSystem;
+using ClassicFPS.Managers;
 
 namespace ClassicFPS.Controller.Movement
 {
@@ -24,6 +26,7 @@ namespace ClassicFPS.Controller.Movement
         public PlayerInputManager inputManager; // Input Manager
         [HideInInspector]
         public PlayerCameraController playerCameraController;
+        [SerializeField] GameObject gunMountPosition;
 
         public PlayerSFX playerSFX;
 
@@ -31,7 +34,12 @@ namespace ClassicFPS.Controller.Movement
         [Header("Movement Options")]
         public float walkSpeed = 3f; // The walk speed
         public float sprintSpeed = 5f; // The sprint speed
+        [SerializeField] float sprintTimeMax = 5;
+        bool sprintTimeout = false; //If set to true, require the sprint timer to recover back to 0
+        float sprintTime = 0;
         public float jumpSpeed = 5f; // The acceleration imparted on Player when Jump is performed
+        public bool sprinting = false; // Are we sprinting? Not if the input "sprint" is true, but if we're actually sprinting! 
+
 
         [Header("Slope Options")]
         public float slopeSlipSpeed = 8f; // The acceleration at which a character slides down a slope
@@ -158,21 +166,73 @@ namespace ClassicFPS.Controller.Movement
                 SlopeSlip(ref input);
 
                 //Only change speed if the player is grounded
+                //transform.right.magnitude
 
-                if (grounded)
+
+
+
+                //controller.velocity.y
+                //strafe equation (-inputManager.inputData.x * 5)
+                Vector3 mouseSpeed = Mouse.current.delta.ReadValue();
+                float controllerFallVelocity = controller.velocity.y;
+                if (controller.isGrounded) controllerFallVelocity = 0;
+
+                Quaternion gunMountPositionRotation = Quaternion.Euler((-mouseSpeed.y / 4) + controllerFallVelocity/2f, mouseSpeed.x/4, 90);
+                gunMountPosition.transform.localRotation = Quaternion.Lerp(gunMountPosition.transform.localRotation, gunMountPositionRotation, 6f*Time.deltaTime);
+
+                if (!grounded) airTime += Time.deltaTime;
+
+                //Sprinting
+
+                airTime = 0f;
+                //Toggle Character Speed based on whether Sprinting action performed
+
+
+                if (sprinting || sprintTimeout)
                 {
-                    airTime = 0f;
-                    //Toggle Character Speed based on whether Sprinting action performed
-
-                    if (inputManager.sprinting)
-                        characterSpeed = sprintSpeed;
-                    else
-                        characterSpeed = walkSpeed;
+                    GameManager.PlayerStatistics.recoveryCircle.enabled = true;
+                    GameManager.PlayerStatistics.recoveryCircle.fillAmount = 1 - (sprintTime / sprintTimeMax);
+                    GameManager.PlayerStatistics.recoveryCircle.GetComponent<Animator>().SetBool("recovering", sprintTimeout);
                 }
                 else
                 {
-                    airTime += Time.deltaTime;
+                    GameManager.PlayerStatistics.recoveryCircle.enabled = false;
                 }
+
+                if (inputManager.sprinting && sprintTime < sprintTimeMax && !sprintTimeout)
+                {
+                    playerCameraController.virtualCameraNoise.m_AmplitudeGain = playerCameraController.cameraNoiseAmplitudeAndFrequency[1].x;
+                    playerCameraController.virtualCameraNoise.m_FrequencyGain = playerCameraController.cameraNoiseAmplitudeAndFrequency[1].y;
+                    characterSpeed = sprintSpeed;
+                    sprintTime += Time.deltaTime;
+                    sprinting = true;
+                }
+                else
+                {
+
+                    if (Mathf.Abs(controller.velocity.x) > 0 || Mathf.Abs(controller.velocity.z) > 0)
+                    {
+                        playerCameraController.virtualCameraNoise.m_AmplitudeGain = playerCameraController.cameraNoiseAmplitudeAndFrequency[0].x;
+                        playerCameraController.virtualCameraNoise.m_FrequencyGain = playerCameraController.cameraNoiseAmplitudeAndFrequency[0].y;
+                    }
+
+                    characterSpeed = walkSpeed;
+                    sprinting = false;
+
+                    if (sprintTime >= sprintTimeMax) sprintTimeout = true;
+
+                    if (sprintTime >= 0)
+                    {
+                        sprintTime -= Time.deltaTime / 2;
+                    }
+                    else
+                    {
+                        sprintTime = 0;
+                        sprintTimeout = false;
+                    }
+
+                }
+
 
                 lastVelocity = (transform.position - lastPosition) / Time.deltaTime;
 
@@ -192,7 +252,6 @@ namespace ClassicFPS.Controller.Movement
 
                     //Add acceleration from input, slopeForce, externallyAppliedForce, verticalForce all multiplied by Time.deltaTIme for consistency
                     acceleration = input * Time.deltaTime;
-
 
 
                     acceleration += slopeForce * Time.deltaTime;

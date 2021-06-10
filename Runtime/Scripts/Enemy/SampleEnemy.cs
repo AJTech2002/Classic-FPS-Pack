@@ -10,11 +10,11 @@ namespace ClassicFPS.Enemy
     public class SampleEnemy : Enemy
     {
         [Header("Player Injury Options")]
-        public float injuryRadius;
-        public float injuryDelay;
+        public float attackRadius;
+        public float attackDelay;
         public float damageByProximity;
-
-        private float injuryTimeout;
+        [SerializeField] private bool usesHurtBox = false;
+        private float attackTimeout;
 
         [Header("Aiming")]
         public float aimSpeed = 5;
@@ -29,11 +29,11 @@ namespace ClassicFPS.Enemy
         private void Update()
         {
 
-            if (currentState == AIState.Following && controller != null)
+            if ((currentState == AIState.Following || currentState == AIState.Patrolling) && controller != null)
             {
                 float dist = Vector3.Distance(transform.position, controller.transform.position);
 
-                if (agent.velocity.magnitude > 0.05f && dist > injuryRadius)
+                if (agent.velocity.magnitude > 0.05f && dist > attackRadius)
                 {
                     animator.SetBool("walking", true);
                 }
@@ -42,22 +42,40 @@ namespace ClassicFPS.Enemy
                     animator.SetBool("walking", false);
                 }
 
-                Vector3 lookAt = new Vector3(controller.transform.position.x, transform.position.y, controller.transform.position.z);
+                //Vector3 lookAt = new Vector3(targetTransform.position.x, transform.position.y, targetTransform.transform.position.z);
 
-                transform.LookAt(Vector3.Lerp(transform.forward, lookAt, aimSpeed));
+                //transform.LookAt(Vector3.Lerp(transform.forward, lookAt, aimSpeed));
 
-                if (dist >= injuryRadius - 0.5f)
+                Vector3 dir = targetTransform.position - transform.position;
+                dir.y = 0;//This allows the object to only rotate on its y axis
+                Quaternion rot = Quaternion.LookRotation(dir);
+                transform.rotation = Quaternion.Lerp(transform.rotation, rot, aimSpeed * Time.deltaTime);
+
+                if (dist >= attackRadius - 0.5f)
                 {
 
                     agent.isStopped = false;
-                    agent.destination = controller.transform.position;
+
+                    agent.destination = targetTransform.position;
+
+                    //Patrolling
+                    if (currentState == AIState.Patrolling)
+                    {
+                        Patrol();
+                        Debug.Log("trying to patrol");
+                    } else if (currentState == AIState.Following)
+                    {
+                        targetTransform = controller.transform;
+                        Debug.Log("trying to follow");
+
+                    }
 
                     if (shootProjectiles)
                     {
                         gunModel.LookAt(Vector3.Lerp(gunModel.transform.forward, controller.transform.position, aimSpeed));
                     }
 
-                    if (injuryTimeout >= injuryDelay)
+                    if (attackTimeout >= attackDelay)
                     {
                         if (shootProjectiles)
                         {
@@ -74,14 +92,12 @@ namespace ClassicFPS.Enemy
                             {
                                 CreateProjectile(ray.GetPoint(100) - projectileSpawnPoint.position, ray.GetPoint(100));
                             }
-
-
                         }
 
-                        injuryTimeout = 0f;
+                        attackTimeout = 0f;
                     }
 
-                    injuryTimeout += Time.deltaTime;
+                    attackTimeout += Time.deltaTime;
 
                 }
                 else
@@ -90,16 +106,11 @@ namespace ClassicFPS.Enemy
                     agent.destination = transform.position;
                 }
 
-                if (dist <= injuryRadius)
+                if (dist <= attackRadius)
                 {
-                    if (injuryTimeout >= injuryDelay)
-                    {
-                        animator.SetBool("attacking", true);
-                        GameObject.FindObjectOfType<PlayerStatistics>().TakeDamage(damageByProximity);
-                        injuryTimeout = 0;
-                    }
-
-                    injuryTimeout += Time.deltaTime;
+                    animator.SetBool("attacking", true);
+                    if (!usesHurtBox) GameObject.FindObjectOfType<PlayerStatistics>().TakeDamage(damageByProximity);
+                    attackTimeout = 0;
                 }
                 else
                 {
@@ -130,8 +141,12 @@ namespace ClassicFPS.Enemy
                 if (currentState == AIState.Idle) Gizmos.color = Color.green;
                 else if (currentState == AIState.Following) Gizmos.color = Color.red;
 
-                Gizmos.DrawWireSphere(transform.position, injuryRadius); //Radius of injury
+                Gizmos.DrawWireSphere(transform.position, attackRadius); //Radius of attack
             }
         }
+    }
+
+    public class LookAt
+    {
     }
 }
