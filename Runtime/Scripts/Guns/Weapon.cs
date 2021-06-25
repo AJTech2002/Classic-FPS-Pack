@@ -31,7 +31,8 @@ namespace ClassicFPS.Guns
         public AnimatorOverrideController overrideController;
         public float disableDelay = 0.3f;
         public float delayBeforeEnableAnimation = 0.3f;
-        public float enableDelay = 0.3f; 
+        public float enableDelay = 0.3f;
+
         [HideInInspector]
         public Animator weaponAnimatorController;
 
@@ -68,7 +69,6 @@ namespace ClassicFPS.Guns
                 }
             }
         }
-
 
         //Equipping procedures
         public virtual void Equip(string UID)
@@ -183,18 +183,27 @@ namespace ClassicFPS.Guns
             weaponController.UpdateUI();
         }
 
-        //Animation helpers that find and trigger the animation
-        public virtual void RunShootAnimation()
+        public virtual IEnumerator RunShootAnimation()
         {
+
             if (weaponAnimatorController != null)
             {
                 weaponAnimatorController.SetBool("hasAmmo", true);
                 weaponAnimatorController.ResetTrigger("shooting");
                 weaponAnimatorController.SetTrigger("shooting");
             }
-            
+
+            PlayerController controller = inputManager.controller;
+
+            controller.isShooting = true;
             if (shootSounds.Count > 0)
-            SFXManager.PlayClipFromSource(shootSounds[Random.Range(0,shootSounds.Count)].sound, this.weaponSoundsSource);
+                SFXManager.PlayClipFromSource(shootSounds[Random.Range(0, shootSounds.Count)].sound, this.weaponSoundsSource);
+
+            yield return new WaitForSeconds(.5f);
+
+         
+            controller.isShooting = false;
+
         }
 
         public virtual void RunNoAmmoAnimation()

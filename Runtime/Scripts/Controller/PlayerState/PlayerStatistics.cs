@@ -171,7 +171,7 @@ namespace ClassicFPS.Controller.PlayerState
             StartCoroutine(GameManager.PlayerController.playerCameraController.ShakeScreen(3f, 7f, .14f));
             GameManager.PlayerStatistics.whiteFlashAnimator.ResetTrigger("Hurt");
             GameManager.PlayerStatistics.whiteFlashAnimator.SetTrigger("Hurt");
-
+            Debug.Log("TakeDamange!!");
             playerOptions.health = Mathf.Clamp(playerOptions.health, 0, 1000);
 
             UpdateUI();

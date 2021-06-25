@@ -1,4 +1,5 @@
 using ClassicFPS.Controller.PlayerState;
+using ClassicFPS.Managers;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,9 +17,6 @@ namespace ClassicFPS.Enemy
         [SerializeField] private bool usesHurtBox = false;
         private float attackTimeout;
 
-        [Header("Aiming")]
-        public float aimSpeed = 5;
-
         [Header("Projectile Options")]
         public bool shootProjectiles;
         public Transform projectilePrefab;
@@ -26,8 +24,33 @@ namespace ClassicFPS.Enemy
         public Transform projectileSpawnPoint;
         public float projectileSpeed;
 
+        [Header("Hearing")]
+        [SerializeField] float hearingPower = 5;
+        Vector3 boxColliderCenterOrig;
+        Vector3 boxColliderSizeOrig;
+        [SerializeField]BoxCollider boxCollider;
+
+        private void Awake()
+        {
+            boxCollider = GetComponent<BoxCollider>();
+            boxColliderSizeOrig = boxCollider.size;
+            boxColliderCenterOrig = boxCollider.center;
+        }
+
         private void Update()
         {
+            if (GameManager.PlayerController.isShooting)
+            {
+                boxCollider.size = boxColliderSizeOrig * hearingPower;
+                boxCollider.center = Vector3.zero;
+            }
+            else
+            {
+                boxCollider.size = boxColliderSizeOrig;
+                boxCollider.center = boxColliderCenterOrig;
+            }
+
+           
 
             if ((currentState == AIState.Following || currentState == AIState.Patrolling) && controller != null)
             {
@@ -62,12 +85,9 @@ namespace ClassicFPS.Enemy
                     if (currentState == AIState.Patrolling)
                     {
                         Patrol();
-                        Debug.Log("trying to patrol");
                     } else if (currentState == AIState.Following)
                     {
                         targetTransform = controller.transform;
-                        Debug.Log("trying to follow");
-
                     }
 
                     if (shootProjectiles)
@@ -144,9 +164,6 @@ namespace ClassicFPS.Enemy
                 Gizmos.DrawWireSphere(transform.position, attackRadius); //Radius of attack
             }
         }
-    }
 
-    public class LookAt
-    {
     }
 }

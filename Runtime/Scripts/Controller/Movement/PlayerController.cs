@@ -58,7 +58,7 @@ namespace ClassicFPS.Controller.Movement
         [HideInInspector]
         public bool hasJumped; // If the PlayerController is currently in the middle of a jump
         public RaycastHit groundHit; // The RayCastHit containing the properties of the current ground
-
+        public bool isShooting; //Checks to see if the player is shooting. Enemies hear using this!
 
         //Movement States
         private float verticalForce; // The current vertical force of the player (includes gravity and jumping force)

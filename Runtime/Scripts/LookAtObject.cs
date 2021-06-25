@@ -19,18 +19,18 @@ public class LookAtObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        initialRotation = parentObject.transform.rotation;
-        Vector3 lookPos = parentObject.transform.forward;
-
-        if (target)
+      
+        if (target && parentObject)
         {
-          lookPos = target.position - parentObject.transform.position;
+            initialRotation = parentObject.transform.rotation;
+            Vector3 lookPos = parentObject.transform.forward;
+
+            lookPos = target.position - parentObject.transform.position;
+            lookPos.y = 0;
+            float angle = Vector3.SignedAngle(initialRotation * Vector3.forward, lookPos, Vector3.up);
+            Quaternion rotation = initialRotation * Quaternion.AngleAxis(Mathf.Clamp(angle, -90, 90), Vector3.up);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * damping);
         }
-        
-        lookPos.y = 0;
-        float angle = Vector3.SignedAngle(initialRotation * Vector3.forward, lookPos, Vector3.up);
-        Quaternion rotation = initialRotation * Quaternion.AngleAxis(Mathf.Clamp(angle, -90, 90), Vector3.up);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * damping);
 
     }
 }

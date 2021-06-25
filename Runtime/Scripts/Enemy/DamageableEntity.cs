@@ -39,7 +39,6 @@ namespace ClassicFPS.Enemy
         [Header("Sound Effects")]
         public Sound onTakeDamage;
         public Sound onDeath;
-
         private HealthState savedState = new HealthState();
 
         public override string SaveState()
@@ -78,15 +77,12 @@ namespace ClassicFPS.Enemy
             {
                 SFXManager.PlayClipAt(onDeath, GameManager.PlayerController.transform.position, 1.5f, delay);
                 Die();
-                Debug.Log("Die!");
             }
         }
      
         public virtual void Die()
         {
             SpawnDrops();
-            Debug.Log("Died!");
-            gameObject.SetActive(false);
         }
 
         protected void SpawnDrops()

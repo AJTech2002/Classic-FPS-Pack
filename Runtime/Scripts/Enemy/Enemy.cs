@@ -1,3 +1,4 @@
+using ClassicFPS.Audio;
 using ClassicFPS.Controller.Movement;
 using ClassicFPS.Managers;
 using System.Collections;
@@ -25,13 +26,27 @@ namespace ClassicFPS.Enemy
         [SerializeField] float patrolLocationScatterMultiplier = 1;
         [SerializeField] float walkRadius;
         [SerializeField] LookAtObject headLookAt;
+        [SerializeField] float patrolPauseTime = 5; //How long I pause between each patrol position
+        [SerializeField] float patrolPauseTimeTemp; 
+        bool pausingInPatrol = false;
 
         [Header("Animations")]
         public Animator animator;
 
-        [Header("Graphics")]
+
+        [Header("Aiming")]
+        public float aimSpeed = 5;
+        float aimSpeedOrig = 0;
+
+        [Header("Effects")]
         public GameObject graphics;
         [SerializeField] GameObject deathParticles;
+        [SerializeField] Sound awakenSound;
+        [SerializeField] GameObject preservedObjectAfterDeath;
+
+        [Header("Ragdoll Effecrts")]
+        [SerializeField] bool isRagdoll;
+        [SerializeField] Ragdoll ragdoll;
 
 
         [Space(10)]
@@ -42,7 +57,9 @@ namespace ClassicFPS.Enemy
 
         private void Start()
         {
-            if(patrollingDestinations.Length != 0) SetUpPatrolDestinations();
+            patrolPauseTime += Random.Range(-4f, 4f);
+            aimSpeedOrig = aimSpeed;
+            if (patrollingDestinations.Length != 0) SetUpPatrolDestinations();
             //The sphere collider should be a trigger
             trigger.isTrigger = true;
             controller = GameManager.PlayerController;
@@ -66,7 +83,9 @@ namespace ClassicFPS.Enemy
             animator.enabled = false;
             trigger.enabled = false;
 
-            if (graphics) Destroy(graphics);
+            if (preservedObjectAfterDeath) preservedObjectAfterDeath.transform.parent = null;
+
+            SpawnDrops();
 
             if (deathParticles)
             {
@@ -74,26 +93,38 @@ namespace ClassicFPS.Enemy
                 deathParticles.SetActive(true);
             }
 
-            foreach (MeshRenderer r in GetComponentsInChildren<MeshRenderer>())
+            if (isRagdoll)
             {
-                r.enabled = false;
+                ragdoll.EnableRagdoll(true);
+            }
+            else
+            {
+                if (graphics) Destroy(graphics);
+
+                foreach (MeshRenderer r in GetComponentsInChildren<MeshRenderer>())
+                {
+                    r.enabled = false;
+                }
+
+                if (GetComponent<MeshRenderer>() != null)
+                {
+                    GetComponent<MeshRenderer>().enabled = false;
+                }
+
+                foreach (Collider r in GetComponentsInChildren<Collider>())
+                {
+                    r.enabled = false;
+                }
+
+                if (GetComponent<Collider>() != null)
+                {
+                    GetComponent<Collider>().enabled = false;
+                }
             }
 
-            if (GetComponent<MeshRenderer>() != null)
-            {
-                GetComponent<MeshRenderer>().enabled = false;
-            }
-
-            foreach (Collider r in GetComponentsInChildren<Collider>())
-            {
-                r.enabled = false;
-            }
-
-            if (GetComponent<Collider>() != null)
-            {
-                GetComponent<Collider>().enabled = false;
-            }
-            SpawnDrops();
+            Destroy(gameObject);
+            Time.timeScale = 1;
+            
         }
 
         private void OnTriggerEnter(Collider col)
@@ -132,6 +163,9 @@ namespace ClassicFPS.Enemy
                 {
                     currentState = AIState.Following;
                     if(headLookAt) headLookAt.target = GameManager.PlayerController.transform;
+                    aimSpeed = aimSpeedOrig;
+                    //Play awake SFX
+                    SFXManager.PlayClipAt(awakenSound, GameManager.PlayerController.transform.position, 1.2f, 0);
                 }
             }
             else
@@ -154,20 +188,21 @@ namespace ClassicFPS.Enemy
 
         public void Patrol()
         {
-
-            if (!agent.pathPending && agent.remainingDistance < 0.5f)
-
-                GoToNextPoint();
+            if (!agent.pathPending && agent.remainingDistance < 0.5f && !pausingInPatrol)
+                StartCoroutine(GoToNextPoint());
         }
 
-        public void GoToNextPoint()
+        IEnumerator GoToNextPoint()
         {
+            pausingInPatrol = true;
+            aimSpeed = 0;
+            yield return new WaitForSeconds(patrolPauseTimeTemp);
+
             targetTransform = patrollingDestinations[patrolPoint];
 
-            
             // Returns if no points have been set up
             if (patrollingDestinations.Length == 0)
-                return;
+                yield break;
 
             // Set the agent to go to the currently selected destination.
             agent.destination = patrollingDestinations[patrolPoint].position;
@@ -175,11 +210,12 @@ namespace ClassicFPS.Enemy
             // Choose the next point in the array as the destination,
             // cycling to the start if necessary.
             patrolPoint = (patrolPoint + 1) % patrollingDestinations.Length;
-            
-
-           
-
+            patrolPauseTimeTemp = patrolPauseTime;
+            pausingInPatrol = false;
+            aimSpeed = aimSpeedOrig;
         }
+
+
 
         void SetUpPatrolDestinations()
         {
@@ -222,7 +258,7 @@ namespace ClassicFPS.Enemy
                     agent.CalculatePath(patrollingDestinations[i].position, path);
                     Debug.Log(path.status);
 
-                    if (path.status == NavMeshPathStatus.PathPartial)
+                    if (path.status == NavMeshPathStatus.PathPartial || PathLength(path) > walkRadius)
                     {
                         pathWasInvalid = true;
                         Debug.Log("Path was invalid!");
@@ -232,6 +268,24 @@ namespace ClassicFPS.Enemy
                 
             }
 
+        }
+
+        float PathLength(NavMeshPath path)
+        {
+            if (path.corners.Length < 2)
+                return 0;
+
+            Vector3 previousCorner = path.corners[0];
+            float lengthSoFar = 0.0F;
+            int i = 1;
+            while (i < path.corners.Length)
+            {
+                Vector3 currentCorner = path.corners[i];
+                lengthSoFar += Vector3.Distance(previousCorner, currentCorner);
+                previousCorner = currentCorner;
+                i++;
+            }
+            return lengthSoFar;
         }
 
     }

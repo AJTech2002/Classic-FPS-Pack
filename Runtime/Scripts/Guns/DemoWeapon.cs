@@ -66,7 +66,7 @@ namespace ClassicFPS.Guns
                 lastShotDelay = 0f;
 
                 //Run the animation
-                RunShootAnimation();
+                StartCoroutine(RunShootAnimation());
 
                 //Reduce ammo
 

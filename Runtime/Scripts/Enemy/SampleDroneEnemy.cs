@@ -16,6 +16,7 @@ namespace ClassicFPS.Enemy
         [Header("Shooting")]
         public float injuryDelay;
         public float projectileSpeed;
+        [SerializeField] ParticleSystem shootParticles;
 
         private float injuryTimeout;
 
@@ -24,6 +25,9 @@ namespace ClassicFPS.Enemy
         public SphereCollider hitCollider;
         public Transform projectilePrefab;
         public Transform projectileSpawnPoint;
+
+        [Header("Flying")]
+        [SerializeField] Vector3 flyOffset;
 
         Vector3 lastPlayerPos;
 
@@ -39,7 +43,7 @@ namespace ClassicFPS.Enemy
                
 
                 hitCollider.center = transform.InverseTransformPoint(geometry.position);
-                geometry.transform.position = Vector3.Lerp(geometry.transform.position, new Vector3(geometry.transform.position.x, controller.transform.position.y + 1, geometry.transform.position.z), followSpeed * Time.deltaTime);
+                geometry.transform.position = Vector3.Lerp(geometry.transform.position, new Vector3(geometry.transform.position.x, controller.transform.position.y + flyOffset.y, geometry.transform.position.z), followSpeed * Time.deltaTime);
 
                 if (dist <= stoppingRadius)
                 {
@@ -81,6 +85,7 @@ namespace ClassicFPS.Enemy
         private void CreateProjectile(Vector3 directionMove, Vector3 end)
         {
             Transform t = Instantiate(projectilePrefab, projectileSpawnPoint.position, Quaternion.identity);
+            shootParticles.Emit(7);
         }
 
         public override void Die()

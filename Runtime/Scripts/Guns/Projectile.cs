@@ -32,6 +32,9 @@ namespace ClassicFPS.Guns
         [Header("Delay")]
         public bool stickToImpact;
         public float timeToImpact;
+        [SerializeField] float delayActiveCollider = 0f;
+        [SerializeField] Collider collider;
+
 
         [Header("Homing")]
         public bool isHomingMissile = false;
@@ -48,9 +51,17 @@ namespace ClassicFPS.Guns
 
         private void Awake()
         {
+            if(delayActiveCollider > 0)
+            {
+                if (!collider) collider = GetComponentInChildren<Collider>();
+                collider.enabled = false;
+                StartCoroutine(ActivateCollider());
+            }
+
             rBody = GameObject.FindObjectOfType<Rigidbody>();
 
             controller = GameManager.PlayerController;
+            
 
             if (gameObject != null)
             {
@@ -102,10 +113,7 @@ namespace ClassicFPS.Guns
 
                 //if (doesExplode) SFXManager.PlayClipAt(explosionSound, transform.position, 0.2f);
                 if (doesExplode) {
-                    SFXManager.PlayClipAt(explosionSound, GameObject.Find("Controller").transform.position, 0.2f);
-                    explosionParticles.gameObject.SetActive(true);
-                    explosionParticles.transform.parent = null;
-                    Destroy(explosionParticles.gameObject, 5f);
+                    ExplosionEffect();
                 }
 
 
@@ -139,7 +147,7 @@ namespace ClassicFPS.Guns
                 DamageableEntity de = hit.GetComponent<DamageableEntity>();
                 PlayerStatistics stat = hit.GetComponent<PlayerStatistics>();
 
-                if (doesExplode) SFXManager.PlayClipAt(explosionSound, transform.position, 0.2f);
+                if (doesExplode) ExplosionEffect();
 
                 if (rb != null)
                 {
@@ -147,6 +155,7 @@ namespace ClassicFPS.Guns
                     {
 
                         rb.AddExplosionForce(explosionForce, transform.position, explosionRadius, upwardsForce);
+
                     }
                     rb.velocity += (rb.transform.position - transform.position).normalized * minimumImpactVelocity;
                 }
@@ -172,6 +181,14 @@ namespace ClassicFPS.Guns
             GameObject.Destroy(this.gameObject, 0.0f);
         }
 
+        private void ExplosionEffect()
+        {
+            SFXManager.PlayClipAt(explosionSound, GameObject.Find("Controller").transform.position, .6f);
+            explosionParticles.gameObject.SetActive(true);
+            explosionParticles.transform.parent = null;
+            Destroy(explosionParticles.gameObject, 5f);
+            Debug.Log("Explode!" + gameObject.name);
+        }
 
         private void ImpactPlayer()
         {
@@ -228,6 +245,13 @@ namespace ClassicFPS.Guns
                 StartCoroutine("Stick");
             }
         }
+
+        IEnumerator ActivateCollider()
+        {
+            yield return new WaitForSeconds(delayActiveCollider);
+            collider.enabled = true;
+        }
+
 
     }
 
