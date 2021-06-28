@@ -72,8 +72,6 @@ namespace ClassicFPS.Enemy
             //Play with small delay so gun shoot sound doesn't overlap with damage sound
             SFXManager.PlayClipAt(onTakeDamage, (transform.position + GameManager.PlayerController.gameObject.transform.position)/2, 1f, delay);
 
-            StartCoroutine(FreezeFrameEffect(.03f));
-
             if (health <= 0)
             {
                 SFXManager.PlayClipAt(onDeath, GameManager.PlayerController.transform.position, 1.5f);
@@ -110,14 +108,6 @@ namespace ClassicFPS.Enemy
                     }
                 }
             }
-        }
-
-        IEnumerator FreezeFrameEffect(float waitTime)
-        {
-            Time.timeScale = .3f;
-            yield return new WaitForSeconds(waitTime);
-            Time.timeScale = 1f;
-            print("WaitAndPrint " + Time.time);
         }
 
     }
