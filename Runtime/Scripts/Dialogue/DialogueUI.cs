@@ -33,7 +33,7 @@ namespace ClassicFPS.Dialogue
         public System.Action<DialogueInteraction> OnDialogueStarted;
         public System.Action OnDialogueCompleted;
         public bool playPlayerReplies;
-        private bool hasOptions = false;
+
 
 
         private void Awake()

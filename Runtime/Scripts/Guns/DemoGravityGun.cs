@@ -171,6 +171,19 @@ namespace ClassicFPS.Guns
             HandlePlayerAnimate();
         }
 
+        IEnumerator WaitAndRealign ()
+        {
+            yield return new WaitForFixedUpdate();
+            if (currentlyPickedObjectComponent.precalculateBounds)
+            {
+                currentlyPickedObjectComponent.objectHoldingOffset.y = -currentlyPickedObject.InverseTransformPoint(currentlyPickedObject.GetComponent<Collider>().bounds.center).y * currentlyPickedObject.transform.localScale.y;
+                currentlyPickedObjectComponent.objectHoldingOffset.x = 0;
+                currentlyPickedObjectComponent.objectHoldingOffset.z = Mathf.Clamp(currentlyPickedObject.GetComponent<Collider>().bounds.extents.magnitude * currentlyPickedObject.localScale.magnitude * distanceFromCamera, 3, 30);
+                currentlyPickedObject.transform.forward = playerCamera.transform.forward;
+                //   currentlyPickedObjectComponent.objectHoldingOffset.z = currentlyPickedObject.lossyScale.magnitude * distanceFromCamera;
+            }
+        }
+
         //Pick Up & Throw combined into one action
         private void PickupActionPerformed(InputAction.CallbackContext obj)
         {
@@ -208,9 +221,7 @@ namespace ClassicFPS.Guns
 
                         currentlyPickedObjectComponent = currentlyPickedObject.GetComponent<PushableObject>();
 
-                        if (currentlyPickedObjectComponent.precalculateBounds)
-                            currentlyPickedObjectComponent.objectHoldingOffset.z = currentlyPickedObject.lossyScale.magnitude * distanceFromCamera;
-
+                        StartCoroutine("WaitAndRealign");
                     }
 
                 }

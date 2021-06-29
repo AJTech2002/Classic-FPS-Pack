@@ -39,7 +39,6 @@ public class DialogueEditor : Editor
             dialogue.showProperties = value;
         }
     }
-    private int lastIndex = -1; 
     public string tempString;
     private string lastCommandsString = "--";
     private string lastTempString = "--";
@@ -68,13 +67,13 @@ public class DialogueEditor : Editor
 
             if (dialogue.showSave)
             {
-                if (!File.Exists(Application.dataPath+"/Resources/Dialogue/"+dialogue.name+".txt"))
+                if (!File.Exists(Application.dataPath+"/Resources/Dialogue/"+dialogue.interactionName+".txt"))
                 {   
                     EditorGUILayout.LabelField("Dialogue File Doesn't Exist");
                     LoadSave(false, null);
                 }
                 else {
-                    string dialogueData = File.ReadAllText(Application.dataPath+"/Resources/Dialogue/"+dialogue.name+".txt");
+                    string dialogueData = File.ReadAllText(Application.dataPath+"/Resources/Dialogue/"+dialogue.interactionName+".txt");
                     EditorGUILayout.LabelField("Found Dialogue File");
                     LoadSave(true, dialogueData);
                 }
@@ -308,7 +307,7 @@ public class DialogueEditor : Editor
                 
                 //TODO: Update the text of existing file
 
-                File.WriteAllText(Application.dataPath+"/Resources/Dialogue/"+dialogue.name+".txt", DialogueUtils.Serialize(dialogue.interactions));
+                File.WriteAllText(Application.dataPath+"/Resources/Dialogue/"+dialogue.interactionName+".txt", DialogueUtils.Serialize(dialogue.interactions));
                 EditorUtility.SetDirty(dialogue);
 
             }
@@ -336,7 +335,7 @@ public class DialogueEditor : Editor
                         DirectoryInfo di = Directory.CreateDirectory(Application.dataPath + "/Resources/Dialogue");
                     }
 
-                    File.WriteAllText(Application.dataPath+"/Resources/Dialogue/"+dialogue.name+".txt", DialogueUtils.Serialize(dialogue.interactions));
+                    File.WriteAllText(Application.dataPath+"/Resources/Dialogue/"+dialogue.interactionName+".txt", DialogueUtils.Serialize(dialogue.interactions));
                     EditorUtility.SetDirty(dialogue);
                     
                 }

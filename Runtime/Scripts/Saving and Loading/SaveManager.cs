@@ -85,7 +85,7 @@ namespace ClassicFPS.Saving_and_Loading
             if (state.ShouldSave())
             {
                 string json = state.SaveState();
-                Task writeFile = instance.WriteFileAsync(Application.persistentDataPath + "/" + state.GetUID() + ".save", json);
+                instance.WriteFileAsync(Application.persistentDataPath + "/" + state.GetUID() + ".save", json);
             }
         }
 
@@ -189,14 +189,13 @@ namespace ClassicFPS.Saving_and_Loading
         }
 
         //Should Save Async so it doesn't affect the Gameplay while the Character is moving
-        public async Task WriteFileAsync(string path, string json)
+        public void WriteFileAsync(string path, string json)
         {
             using (StreamWriter outputFile = new StreamWriter(path))
             {
-                await outputFile.WriteAsync(json);
+                outputFile.WriteAsync(json);
             }
         }
-
 
         //Can be called whenever the Game needs to be reloaded
         public void LoadAllStates()

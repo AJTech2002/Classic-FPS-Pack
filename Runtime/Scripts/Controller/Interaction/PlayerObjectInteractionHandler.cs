@@ -45,6 +45,19 @@ namespace ClassicFPS.Controller.Interaction
         public bool hasObject()
         {
             return (currentlyPickedObject != null);
+        }//
+
+        IEnumerator WaitAndRealign ()
+        {
+            yield return new WaitForFixedUpdate();
+            if (currentlyPickedObjectComponent.precalculateBounds)
+            {
+                currentlyPickedObjectComponent.objectHoldingOffset.y = -currentlyPickedObject.InverseTransformPoint(currentlyPickedObject.GetComponent<Collider>().bounds.center).y * currentlyPickedObject.transform.localScale.y;
+                currentlyPickedObjectComponent.objectHoldingOffset.x = 0;
+                currentlyPickedObjectComponent.objectHoldingOffset.z = Mathf.Clamp(currentlyPickedObject.GetComponent<Collider>().bounds.extents.magnitude * currentlyPickedObject.localScale.magnitude * distanceFromCamera, 3, 30);
+                currentlyPickedObject.transform.forward = playerCamera.transform.forward;
+                //   currentlyPickedObjectComponent.objectHoldingOffset.z = currentlyPickedObject.lossyScale.magnitude * distanceFromCamera;
+            }
         }
 
         //On Pickup Button Pressed
@@ -69,13 +82,7 @@ namespace ClassicFPS.Controller.Interaction
                         originalLayer = currentlyPickedObject.gameObject.layer;
                         originalParent = currentlyPickedObject.parent;
 
-                        if (currentlyPickedObjectComponent.precalculateBounds)
-                        {
-                            //Center Vertically
-                            currentlyPickedObjectComponent.objectHoldingOffset.y = 0;
-                            currentlyPickedObjectComponent.objectHoldingOffset.z = Mathf.Clamp(currentlyPickedObject.GetComponent<Collider>().bounds.extents.magnitude * currentlyPickedObject.lossyScale.magnitude * distanceFromCamera, 3, 30);
-                          
-                        }
+                        StartCoroutine("WaitAndRealign");
                         //Assign a new layer to prevent Ray intersections
                         currentlyPickedObject.gameObject.layer = LayerMask.NameToLayer("Player");
 

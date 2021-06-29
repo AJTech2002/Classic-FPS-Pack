@@ -16,8 +16,7 @@ namespace ClassicFPS.Editor
         float totalHeight = 0;
 
         int selectedGroup = 0;
-        int selectedID = 0;
-    
+  
         // Draw the property inside the given rect
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {

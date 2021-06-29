@@ -24,10 +24,30 @@ public class Setup : UnityEditor.EditorWindow
         "EnemyProjectile"
     };
 
+    string[] expectedTags = new string[]
+    {
+        "Respawn",
+        "Finish",
+        "Player",
+        "GameController",
+        "Pushable",
+        "Crosshair",
+        "GameManager",
+        "Interactable",
+        "SpawnPoint",
+        "Weapon Mount",
+        "Enemy",
+        "Terrain",
+        "Bridge",
+        "Stairs"
+    };
+
     Dictionary<int, string> layerDictionary = new Dictionary<int, string>() 
     {
-        {3, "Player"}
-
+        {3, "Player"},
+        {7, "Pushable"},
+        {8, "Enemy"},
+        {9, "EnemyProjectile"} 
     };
 
 
@@ -39,14 +59,50 @@ public class Setup : UnityEditor.EditorWindow
 
         if (GUILayout.Button("Setup Tags"))
         {
-            
+            SerializedObject tagManager = new SerializedObject(AssetDatabase.LoadAllAssetsAtPath("ProjectSettings/TagManager.asset")[0]);
+            SerializedProperty tagsProp = tagManager.FindProperty("tags");
+            SerializedProperty layersProp = tagManager.FindProperty("layers");
+
+            foreach (string tag in expectedTags)
+            {
+                bool found = false;
+                for (int i = 0; i < tagsProp.arraySize; i++)
+                {
+                    SerializedProperty t = tagsProp.GetArrayElementAtIndex(i);
+                    if (t.stringValue.Equals(tag)) { found = true; break; }
+                }
+
+                if (!found)
+                {
+                    tagsProp.InsertArrayElementAtIndex(0);
+                    SerializedProperty n = tagsProp.GetArrayElementAtIndex(0);
+                    n.stringValue = tag;
+                }
+            }
+
+            tagManager.ApplyModifiedProperties();
+
         }
         GUILayout.Space(20);
         GUILayout.Label("Will Override the Layers you have from index of 0 - 10");
         if (GUILayout.Button("Setup Layers"))
         {
-            
+            SerializedObject tagManager = new SerializedObject(AssetDatabase.LoadAllAssetsAtPath("ProjectSettings/TagManager.asset")[0]);
+            SerializedProperty tagsProp = tagManager.FindProperty("tags");
+            SerializedProperty layersProp = tagManager.FindProperty("layers");
+
+            foreach (KeyValuePair<int,string> pair in layerDictionary)
+            {
+                SerializedProperty sp = layersProp.GetArrayElementAtIndex(pair.Key);
+                if (sp != null) sp.stringValue = pair.Value;
+            }
+
+            tagManager.ApplyModifiedProperties();
+
         }
+
+        GUILayout.Space(20);
+        GUILayout.Label("Follow the remaining steps in the Setup Guide tutorial to finish the project setup! Enjoy the pack!");
     }
 }
 

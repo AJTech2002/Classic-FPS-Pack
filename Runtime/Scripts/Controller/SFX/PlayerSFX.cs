@@ -36,9 +36,6 @@ namespace ClassicFPS.Controller.SFX
         }
 
         //State Switchers
-        private string lastGround = "";
-        private float lastCharacterSpeed = 0f;
-        private bool isTerrain = false;
 
         public void PlayFootstepSound()
         {

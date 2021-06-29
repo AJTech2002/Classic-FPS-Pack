@@ -11,7 +11,7 @@ namespace ClassicFPS.Dialogue
     public class Dialogue : ScriptableObject
     {
         [Header("Properties")]
-        public string name;
+        public string interactionName;
 
         [HideInInspector]
         public string InputText;
@@ -147,7 +147,6 @@ namespace ClassicFPS.Dialogue
             Dictionary<string, DialogueInteraction> indexedInteractions = new Dictionary<string, DialogueInteraction>();
             List<DialogueInteraction> tempInteractions = new List<DialogueInteraction>();
 
-            string lastSymbol = "-";
             int tabLength = 1;
 
             for (int d = 0; d < lines.Length; d++)

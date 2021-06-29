@@ -19,6 +19,7 @@ namespace ClassicFPS.Pushable
         [Header("Safety Options")]
         [Range(0, 100)]
         public float maximumVelocity = 20; //Maximum velocity of the object after the Player interacts with it
+        public float minimumVelocityBeforeAudio = 1;
 
         [Header("Pickup Options")]
         public bool canBePickedUp = false; //Whether or not this object can be picked up by the Player
@@ -36,7 +37,7 @@ namespace ClassicFPS.Pushable
         private bool beingPushed = true;
 
         //Rigidbody Reference
-        private Rigidbody rigidbody;
+        private Rigidbody objectRigidbody;
 
         //Coroutine that runs only when the Player is pushing the object (this is so that every Pushable object doesn't use Update() which cab become slow)
 
@@ -47,7 +48,7 @@ namespace ClassicFPS.Pushable
             inPushLoop = true;
             frames = 0;
             //If the object is in motion
-            while ((beingPushed || rigidbody.velocity.magnitude > 0.1) && frames < 100)
+            while ((beingPushed || objectRigidbody.velocity.magnitude > 0.1) && frames < 100)
             {
                 yield return new WaitForEndOfFrame();
                 beingPushed = false;
@@ -66,11 +67,11 @@ namespace ClassicFPS.Pushable
             if (beingPushed == false)
             {
                 //Reduce the velocity of the object over time
-                rigidbody.velocity = new Vector3(rigidbody.velocity.x * (1 - xAxisDrag / 100), rigidbody.velocity.y * (1 - yAxisDrag / 100), rigidbody.velocity.z * (1 - zAxisDrag / 100));
+                objectRigidbody.velocity = new Vector3(objectRigidbody.velocity.x * (1 - xAxisDrag / 100), objectRigidbody.velocity.y * (1 - yAxisDrag / 100), objectRigidbody.velocity.z * (1 - zAxisDrag / 100));
 
                 //Clamping the velocity of the object
-                rigidbody.velocity = Vector3.ClampMagnitude(rigidbody.velocity, maximumVelocity);
-                rigidbody.angularVelocity = Vector3.ClampMagnitude(rigidbody.angularVelocity, maximumVelocity);
+                objectRigidbody.velocity = Vector3.ClampMagnitude(objectRigidbody.velocity, maximumVelocity);
+                objectRigidbody.angularVelocity = Vector3.ClampMagnitude(objectRigidbody.angularVelocity, maximumVelocity);
             }
         }
 
@@ -79,8 +80,8 @@ namespace ClassicFPS.Pushable
         {
             beingPushed = true;
 
-            if (rigidbody == null)
-                rigidbody = GetComponent<Rigidbody>();
+            if (objectRigidbody == null)
+                objectRigidbody = GetComponent<Rigidbody>();
 
             if (!inPushLoop)
                 StartCoroutine("PushLoop");
@@ -97,11 +98,11 @@ namespace ClassicFPS.Pushable
 
         private void OnCollisionEnter(Collision col)
         {
-            if (rigidbody == null)
-                rigidbody = GetComponent<Rigidbody>();
+            if (objectRigidbody == null)
+                objectRigidbody = GetComponent<Rigidbody>();
 
 
-            if (rigidbody.velocity.magnitude >= 0f && canBePickedUp && !waitingSFX)
+            if (objectRigidbody.velocity.magnitude >= minimumVelocityBeforeAudio && canBePickedUp && !waitingSFX)
             {
                 SFXManager.PlayClipAt(impactSound, transform.position);
                 WaitForSFX(waitBeforePlayingSFXAgain);

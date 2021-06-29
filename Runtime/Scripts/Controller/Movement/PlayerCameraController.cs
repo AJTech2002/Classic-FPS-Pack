@@ -43,8 +43,7 @@ namespace ClassicFPS.Controller.Movement
         private float pitch;
 
         private float defaultFov;
-        private float defaultTilt = 0f;
-
+        
         private PlayerInputManager inputManager;
         private PlayerController playerController;
 
