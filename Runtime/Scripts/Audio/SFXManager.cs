@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace ClassicFPS.Audio
 {
-    //Helper for managing & playing all the sounds in the game
+    // Helper for managing & playing all the sounds in the game
     public class SFXManager : MonoBehaviour
     {
         [Header("Sound Manager Scriptable Object")]
@@ -15,6 +15,7 @@ namespace ClassicFPS.Audio
 
         public static SFXManager instance;
 
+        // List of all the sound groups inside the SoundManager
         private List<SoundGroup> soundGroups
         {
             get
@@ -23,6 +24,7 @@ namespace ClassicFPS.Audio
             }
         }
 
+        // List of all the gorund sounds in the SoundManager
         private List<GroundSound> groundSounds
         {
             get
@@ -31,10 +33,15 @@ namespace ClassicFPS.Audio
             }
         }
 
-
+        // Mapping the sounds to strings so that they can be called based on tags
         private Dictionary<string, GroundSound> mappedTerrainSounds = new Dictionary<string, GroundSound>();
         private Dictionary<string, GroundSound> mappedGroundSounds = new Dictionary<string, GroundSound>();
 
+        //List of all Sound Groups
+        public List<SoundGroup> _SoundGroups()
+        {
+            return soundGroups;
+        }
 
         private void Awake()
         {
@@ -42,19 +49,23 @@ namespace ClassicFPS.Audio
             {
                 instance = this;
             }
-
+            
+            // Clear all the sounds
             soundGroupings.Clear();
             mappedGroundSounds.Clear();
             mappedTerrainSounds.Clear();
 
+            // Maps the sound groups from the manager's sound groups to local sound groups
             for (int i = 0; i < soundGroups.Count; i++)
             {
                 soundGroupings.Add(soundGroups[i].group, soundGroups[i]);
                 soundGroups[i].Init();
             }
 
+            // Repeat the mapping for ground sounds
             for (int i = 0; i < groundSounds.Count; i++)
             {
+                // Depending on whether or not it is a terrain layer put into the correct dictionary
                 if (groundSounds[i].TerrainLayerNameOrTag != "" && groundSounds[i].isTerrainLayer)
                     mappedTerrainSounds.Add(groundSounds[i].TerrainLayerNameOrTag, groundSounds[i]);
                 else if (groundSounds[i].TerrainLayerNameOrTag != "" && !groundSounds[i].isTerrainLayer)
@@ -63,6 +74,7 @@ namespace ClassicFPS.Audio
 
         }
 
+        // Based on the current 'Terrain Layer' return the SFX - https://docs.unity3d.com/Manual/class-TerrainLayer.html
         public static List<AudioClip> GetSoundFromTerrainLayer(string terrainLayer)
         {
             if (instance.mappedTerrainSounds.ContainsKey(terrainLayer))
@@ -73,6 +85,7 @@ namespace ClassicFPS.Audio
             return null;
         }
 
+        // Based on the tag of the current ground object return the SFX
         public static List<AudioClip> GetSoundFromGroundLayer(string tag)
         {
             if (instance.mappedGroundSounds.ContainsKey(tag))
@@ -83,6 +96,7 @@ namespace ClassicFPS.Audio
             return null;
         }
 
+        // Get the sound group from the name of the group
         public static SoundGroup SoundGroup(string group)
         {
             if (instance.soundGroupings.ContainsKey(group))
@@ -95,6 +109,7 @@ namespace ClassicFPS.Audio
             }
         }
 
+        // Get Clip from the Sound asset
         public static AudioClip GetClip(Sound sound)
         {
             if (sound.group != "" && sound.clipName != "")
@@ -110,10 +125,7 @@ namespace ClassicFPS.Audio
             }
         }
 
-        public List<SoundGroup> _SoundGroups()
-        {
-            return soundGroups;
-        }
+        
 
         public SoundGroup _SoundGroup(string group)
         {
@@ -130,6 +142,7 @@ namespace ClassicFPS.Audio
             return instance.soundGroups;
         }
 
+        // Wait and then play clip at point
         public IEnumerator Wait(float delay, Sound sound, Vector3 point, float volume)
         {
             yield return new WaitForSeconds(delay);
@@ -139,6 +152,7 @@ namespace ClassicFPS.Audio
                 AudioSource.PlayClipAtPoint(clip, point, volume);
         }
 
+        // Wait then play clip at source
         public IEnumerator WaitSource(float delay, Sound sound, AudioSource source)
         {
             yield return new WaitForSeconds(delay);
@@ -150,11 +164,12 @@ namespace ClassicFPS.Audio
             }
         }
 
-
+        // Play a certain sound at a point, with volume and delay
         public static void PlayClipAt(Sound sound, Vector3 point, float volume = 1f, float delay = 0f)
         {
             if (sound.group != "" && sound.clipName != "")
-            {
+            {   
+                //If there is no delay play immediately 
                 if (delay == 0f)
                 {
                     var clip = GetClip(sound);
@@ -166,6 +181,7 @@ namespace ClassicFPS.Audio
             }
         }
 
+        // Find the Audio Source within a Transform 
         public AudioSource FindAudioSource(Transform t)
         {
             if (t.GetComponent<AudioSource>() != null) return t.GetComponent<AudioSource>();
@@ -174,11 +190,13 @@ namespace ClassicFPS.Audio
             return null;
         }
 
+        // Stop Clip that is playing at a source
         public static void StopClip(AudioSource source)
         {
             source.Stop();
         }
 
+        //  Play Clip from Source at a Delay
         public static void PlayClipFromSource(Sound sound, AudioSource source, float delay = 0f)
         {
             if (sound.group != "" && sound.clipName != "")
@@ -188,6 +206,7 @@ namespace ClassicFPS.Audio
                     AudioClip clip = GetClip(sound);
                     if (source != null)
                     {
+                        // Play One Shot so that multiple clips can be overlayed ontop of each other
                         source.PlayOneShot(clip);
                     }
                 }
@@ -201,11 +220,14 @@ namespace ClassicFPS.Audio
 
     }
 
+    // An asset that can be used within a List, ex. List<ListSound> 
     [System.Serializable]
     public class ListSound {
         public Sound sound;
     }
 
+
+    // An asset that can be used to store a reference to a certain clip in the SoundManager
     [System.Serializable]
     public class Sound
     {
@@ -221,19 +243,21 @@ namespace ClassicFPS.Audio
         }
     }
 
+    //An Asset to Store the Ground Sounds (Footsteps)
     [System.Serializable]
     public class GroundSound
     {
 
         [Header("Options (Terrain / Non-Terrain)")]
-        public string TerrainLayerNameOrTag; //Name of the Terrain Layer you are standing on
-        public bool isTerrainLayer;
+        public string TerrainLayerNameOrTag; //Name of the Terrain Layer / Tag you are standing on
+        public bool isTerrainLayer; //Whether or not these sound effects are for terrain or not
 
         [Header("Randomly Pick from Sounds")]
-        public List<AudioClip> footsteps; //The sound to play during this time
+        public List<AudioClip> footsteps; //The sounds to play during this time
 
     }
 
+    //The different groups of sounds (allows you to organize different clips into different sections)
     [System.Serializable]
     public class SoundGroup
     {

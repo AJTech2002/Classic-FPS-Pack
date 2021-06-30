@@ -154,16 +154,20 @@ namespace ClassicFPS.Controller.PlayerState
 
         }
 
+        //Update the Health and Coin UI
         public void UpdateUI()
         {
             healthText.text = Mathf.RoundToInt(playerOptions.health).ToString();
             coinText.text = playerOptions.coins.ToString();
         }
 
+        //This is where the Enemy calls the damage function of the Player 
         public void TakeDamage(float damage)
-        {
+        {   
+            //Remove health
             playerOptions.health -= damage;
 
+            //Play the damage audio
             SFXManager.PlayClipFromSource(onTakeDamage, damageAudioSource, 0f);
 
             playerOptions.health = Mathf.Clamp(playerOptions.health, 0, 1000);
@@ -180,6 +184,7 @@ namespace ClassicFPS.Controller.PlayerState
 
         }
 
+        //Kill the Player, this should be handled how you see fit
         public void Death()
         {
             print("The Player Died, Reloading Scene from last Save Point!");
@@ -191,7 +196,7 @@ namespace ClassicFPS.Controller.PlayerState
                 print("This scene doesn't have a Save file to return to, implement some other logic here.");
         }
 
-
+        // Disable all the weapon pickups that have already been picked up (duplicate weapons can't be picked up)
         IEnumerator WeaponPickupsDisable()
         {
             yield return new WaitForEndOfFrame();

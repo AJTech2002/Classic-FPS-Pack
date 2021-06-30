@@ -11,18 +11,18 @@ namespace ClassicFPS.Dialogue
     public class Dialogue : ScriptableObject
     {
         [Header("Properties")]
-        public string interactionName;
+        public string interactionName; //Name of the interaction
 
         [HideInInspector]
         public string InputText;
 
         [Header("UI Options")]
-        public string PlayerName = "Player";
-        public string NPCName = "NPC";
+        public string PlayerName = "Player"; //Name of the Player
+        public string NPCName = "NPC"; //Name of the NPC that you are talking to
 
         [HideInInspector]
         [SerializeField]
-        public List<DialogueInteraction> interactions = new List<DialogueInteraction>();
+        public List<DialogueInteraction> interactions = new List<DialogueInteraction>(); //List of the interactions that you can have with this NPC
 
         [HideInInspector]
         public int currentIndex = -1;
@@ -70,6 +70,7 @@ namespace ClassicFPS.Dialogue
 
     }
 
+    /* Dialogue Utils allow you to serialize and deserialize a text file, allowing you to write dialogue in a text file */
     public class DialogueUtils
     {
 
@@ -86,6 +87,8 @@ namespace ClassicFPS.Dialogue
             }
 
             string commandString = "";
+
+            //The format supports the ability to have commands
 
             if (interactions[index].Commands.Count > 0)
             {
@@ -137,6 +140,7 @@ namespace ClassicFPS.Dialogue
             return "L" + (level.ToString()) + "D" + (depth.ToString());
         }
 
+        //You can pass in a text file string and get out a list of DialogueInteractions
         public static List<DialogueInteraction> Deserialize(string s)
         {
             s = s.Replace('\t', ' ');
@@ -241,20 +245,21 @@ namespace ClassicFPS.Dialogue
 
     }
 
+    //The building block of all dialogue interactions
     [System.Serializable]
     public class DialogueInteraction
     {
 
         [SerializeField]
-        public bool isGhost = false;
-        public bool isPlayer;
-        public float waitTime = 1;
-        public string Line;
-        public List<string> Commands = new List<string>();
-        public AudioClip sfx;
+        public bool isGhost = false; //Whether or not it can be seen in the inspector (not relevant)
+        public bool isPlayer; //Whether or not this node is owned by a Player
+        public float waitTime = 1; //Wait time in UI before moving on 
+        public string Line; //The actual line to be delivered
+        public List<string> Commands = new List<string>(); //The commands that have been parsed (can be used to execute functions based on dialogue)
+        public AudioClip sfx; //What SFX to play (if any) during this interaction
 
-        public int depth = 0;
-        public int level = 0;
+        public int depth = 0; // Depth and Level handled by Manager
+        public int level = 0; // Depth and Level handled by Manager 
 
         public int index;
         public int childAIndex = -1;

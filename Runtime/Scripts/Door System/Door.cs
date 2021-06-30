@@ -11,24 +11,26 @@ using UnityEngine.InputSystem;
 namespace ClassicFPS.Door_System
 {
     public class Door : State
-    {
+    {   
+        //What key can open this door
         [Header("Door Options")]
         public KeyReference keyReference;
 
+        //The sound effect options for the door
         [Header("SFX")]
         public Sound doorOpen;
         [Range(0f, 10f)]
         public float volume = 0.5f;
 
         [Header("Animation")]
-        public Animation doorAnimation;
-        public string doorAnimationName = "Door_Open";
+        public Animation doorAnimation; 
+        public string doorAnimationName = "Door_Open"; //Run an animation to open the door
 
         [Header("Dialogue")]
-        public DialogueRunner dialogueRunner;
+        public DialogueRunner dialogueRunner; //You can attach a dialogue to this, when the door is opened
 
         [Header("Input")]
-        public InputAction openDoor;
+        public InputAction openDoor; // The key to open doors when you are in the trigger
 
         private bool inTrigger = false;
 
@@ -71,6 +73,7 @@ namespace ClassicFPS.Door_System
             openDoor.performed += OnOpenDoorAttempt;
         }
 
+        //Make sure the door is opened only when you have a key that fits the door
         private void OnOpenDoorAttempt(InputAction.CallbackContext callback)
         {
             if (inTrigger)
@@ -88,11 +91,13 @@ namespace ClassicFPS.Door_System
                 }
                 else if (!hasBeenOpened)
                 {
-                    dialogueRunner.ExecuteDialogue(0);
+                    if (dialogueRunner != null)
+                        dialogueRunner.ExecuteDialogue(0);
                 }
             }
         }
 
+        //Open the Door
         private void Open()
         {
             if (!hasBeenOpened)
@@ -103,6 +108,7 @@ namespace ClassicFPS.Door_System
             }
         }
 
+        //Use the trigger in the object to detect when a Player enters  
         private void OnTriggerEnter(Collider col)
         {
             if (col.CompareTag("Player"))

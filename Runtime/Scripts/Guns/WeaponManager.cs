@@ -4,9 +4,7 @@ using UnityEngine;
 using UnityEditor;
 using ClassicFPS.Controller.Interaction;
 
-/*
- * This is a base class only, all Weapon ScriptableObjects are to be created from this class
-*/
+/* The Weapon Manager is where all the Weapons and their options are set */
 
 namespace ClassicFPS.Guns
 {
@@ -136,6 +134,7 @@ namespace ClassicFPS.Guns
 
     }
 
+    //Core properties of a weapon
     [System.Serializable]
     public class WeaponReference
     {
@@ -193,6 +192,7 @@ namespace ClassicFPS.Guns
         }
     }
 
+    //Some Editor Script to make it easier to select a weapon 
     [CustomPropertyDrawer(typeof(WeaponIDAttribute))]
     public class WeaponDrawer : PropertyDrawer
     {

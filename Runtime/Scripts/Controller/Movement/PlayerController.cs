@@ -256,8 +256,8 @@ namespace ClassicFPS.Controller.Movement
             //Only play ground hit sound if you were in the air for longer than 0.5f seconds
             if (wasGrounded == false && isApproximatelyGrounded() && airTime > 0.5f)
             {
-                if (playerSFX.jumpLandAudioSource.isPlaying == false)
-                    SFXManager.PlayClipFromSource(playerSFX.landSound, playerSFX.jumpLandAudioSource);
+                if (playerSFX.movementAudioSource.isPlaying == false)
+                    SFXManager.PlayClipFromSource(playerSFX.landSound, playerSFX.movementAudioSource);
             }
 
             wasGrounded = isApproximatelyGrounded();
@@ -288,7 +288,7 @@ namespace ClassicFPS.Controller.Movement
             var (hit, didHit) = physics.SphereCast(new Ray(transform.position, Vector3.up), physics.baseRadius);
 
             if (!hasJumped) if (playerSFX != null)
-                    SFXManager.PlayClipFromSource(playerSFX.jumpSound, playerSFX.jumpLandAudioSource);
+                    SFXManager.PlayClipFromSource(playerSFX.jumpSound, playerSFX.movementAudioSource);
 
             /* Only allow the jump if the distance to the roof above the player is 
             greater than the height of the player * 1.5, or if there is no roof */

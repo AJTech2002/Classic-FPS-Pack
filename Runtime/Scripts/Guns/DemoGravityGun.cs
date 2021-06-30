@@ -9,31 +9,32 @@ using UnityEngine.InputSystem;
 
 namespace ClassicFPS.Guns
 {
+    /* A Gravity Gun example on how to use the Weapon base class */
     public class DemoGravityGun : Weapon
     {
 
         [Header("Physics")]
-        public LayerMask discludePlayer;
+        public LayerMask discludePlayer; //All the layers except the Player
 
         [Header("Input")]
-        public InputAction pickupAction;
-        public InputAction throwAction;
+        public InputAction pickupAction; //The key binds used to pickup the objects
+        public InputAction throwAction; //The key bind to throw the object
 
         [Header("Gravity Gun Options")]
-        public float pickupSpeed;
-        public float throwSpeed;
-        public float distanceFromCamera = 1.2f;
-        public float maximumDamage;
+        public float pickupSpeed; //Speed of pickup and drop
+        public float throwSpeed; //Speed of throw
+        public float distanceFromCamera = 1.2f; //How far the object should be held from camera
+        public float maximumDamage; //The amount of damage you can do by throwing the item
 
         [Header("SFX")]
-        public Sound releaseSound;
+        public Sound releaseSound; //Sound when releasing the object
 
         [Header("UI Options")]
-        public Color gravityGunCrosshairColor;
+        public Color gravityGunCrosshairColor; //The color of the crosshair when selected
 
         private float lastShotDelay = 0f;
 
-        private Transform currentlyPickedObject;
+        private Transform currentlyPickedObject; 
         private PushableObject currentlyPickedObjectComponent;
         private PlayerPhysics physics;
         private PlayerController controller;
@@ -50,6 +51,7 @@ namespace ClassicFPS.Guns
         private int originalLayer = 0; //The original layer of the Object
         private Transform originalParent; //The original parent of the Object 
 
+        //When equipped get some references and enable the inputs
         public override void OnGunEquipped()
         {
             physics = GameObject.FindObjectOfType<PlayerPhysics>();
@@ -57,29 +59,27 @@ namespace ClassicFPS.Guns
 
             pickupAction.performed += PickupActionPerformed;
 
-
-
             throwAction.performed += ThrowActionPerformed;
 
             pickupAction.Enable();
             throwAction.Enable();
         }
-
+        
+        //Make sure to remove the inputs when finished so it doesn't continue to play
         public override void OnGunUnequipped()
         {
             pickupAction.performed -= PickupActionPerformed;
-
 
             throwAction.performed -= ThrowActionPerformed;
 
             pickupAction.Disable();
             throwAction.Disable();
 
-
             ResetObject();
 
         }
 
+        //During the update function you have to center the object that is being picked and ensure that it doesn't collide with objects
         private void Update()
         {
             lastShotDelay += Time.deltaTime;
@@ -171,8 +171,10 @@ namespace ClassicFPS.Guns
             HandlePlayerAnimate();
         }
 
+        //Relaign the Object with the Camera when you pick it up
         IEnumerator WaitAndRealign ()
         {
+            yield return new WaitForFixedUpdate();
             yield return new WaitForFixedUpdate();
             if (currentlyPickedObjectComponent.precalculateBounds)
             {
@@ -233,6 +235,7 @@ namespace ClassicFPS.Guns
 
                 if (returnedBody != null)
                 {
+                    //Set 'thrown' to true when let go, so it has more tendency to break
                     if (returnedBody.GetComponent<BreakableObject>() != null)
                     {
                         returnedBody.GetComponent<BreakableObject>().thrown = true;
@@ -246,12 +249,14 @@ namespace ClassicFPS.Guns
             }
             else
             {
+                //Reset the object
                 ResetObject();
             }
 
 
         }
 
+        //Will reset the currently picked up object back to its original state
         private Rigidbody ResetObject()
         {
             //Can only be done if Player has an Object
@@ -293,8 +298,6 @@ namespace ClassicFPS.Guns
                 lastShotDelay = 0f;
 
                 return temp;
-
-
 
             }
 

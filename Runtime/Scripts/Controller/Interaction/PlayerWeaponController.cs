@@ -25,32 +25,21 @@ namespace ClassicFPS.Controller.Interaction
         [Header("Default Weapons")]
         public List<string> defaultWeapons = new List<string>();
 
-        //[HideInInspector]
-        //What is the player currently holding
+        [HideInInspector]
         public int currentlyHoldingGunIndex = -1;
 
-        //[HideInInspector]
-        //Names of the collected weapons from the 'List of All Weapons'
+        [HideInInspector]
         public List<string> collectedWeapons = new List<string>();
 
         [Header("References")]
-        //Location where the gun should be mounted
-        public Transform weaponMount;
-        //Reference to the Camera
-        public Camera _camera;
+        public Transform weaponMount; //Location where the gun should be mounted
+        public Camera _camera;  //Reference to the Camera
 
         [Header("UI Elements")]
-        //Reference to the CrosshairUI
-        public Image crosshairUI;
-
-        //Reference to the image of the default crosshair
-        public Sprite defaultCrosshair;
-
-        //Reference to Ammo Counter
-        public Text ammoCount;
-
-        //Image of the Gun
-        public Image gunImage;
+        public Image crosshairUI; //Reference to the CrosshairUI
+        public Sprite defaultCrosshair; //Reference to the image of the default crosshair
+        public Text ammoCount; //Reference to Ammo Counter
+        public Image gunImage; //Image of the Gun
 
         [Header("Input Options")]
         public InputAction numberKeys;
@@ -58,16 +47,22 @@ namespace ClassicFPS.Controller.Interaction
 
         private void Start()
         {
+            //Setup the WeaponManager 
             weaponManager.Setup();
 
+            //Ensure the NumberKeys Inputs are setup
             numberKeys.Enable();
 
+            //Map it to a Function
             numberKeys.performed += PerformedNumberPress;
-
+            
+            //Enable the ScrollWheel
             scrollWheel.Enable();
 
+            //Map it to a function
             scrollWheel.performed += PerformedScrollWheel;
 
+            //Make sure the user has all of the Default Weapons
             foreach (string s in defaultWeapons)
             {
                 if (!collectedWeapons.Contains(s))
@@ -88,32 +83,35 @@ namespace ClassicFPS.Controller.Interaction
 
         }
 
+        //When the user presses a number acll this function
         private void PerformedNumberPress(InputAction.CallbackContext callback)
         {
             int val = (int)(callback.ReadValue<float>());
             int selected = val;
 
+            //Find the Weapon in the WeaponManager linked to this keyBindIndex
             if (weaponManager.keybindIndex.ContainsKey(selected))
             {
                 if (collectedWeapons.Contains(weaponManager.keybindIndex[selected]))
                 {
+                    //Call ChangeWeapon
                     ChangeWeapon(collectedWeapons.IndexOf(weaponManager.keybindIndex[selected]));
                 }
             }
-
-
         }
 
-        float scrollAccumulator = 0f;
-
+        private float scrollAccumulator = 0f;
         private void PerformedScrollWheel(InputAction.CallbackContext callback)
         {
             float val = (callback.ReadValue<float>()) / 120;
 
             scrollAccumulator += val;
 
+
+            // Scroll between the weapons when the threshold exceeds a certain value
             if (scrollAccumulator > 0.5f)
             {
+                // Change the Weapon to the nextAvailableIndex
                 ChangeWeapon(nextAvailableIndex(currentlyHoldingGunIndex));
                 scrollAccumulator = 0;
             }
@@ -125,6 +123,7 @@ namespace ClassicFPS.Controller.Interaction
 
         }
 
+        // Find the next available index in the slots with a weapon
         int nextAvailableIndex(int from)
         {
             for (int i = from + 1; i < collectedWeapons.Count; i++)
@@ -136,6 +135,7 @@ namespace ClassicFPS.Controller.Interaction
             return -1;
         }
 
+        // Find the last index without a weapon 
         int previousAvailableIndex(int from)
         {
             for (int i = from - 1; i > -1; i--)
@@ -147,6 +147,7 @@ namespace ClassicFPS.Controller.Interaction
             return -1;
         }
 
+        //Switch the weapon over from the last weapon
         public void ChangeWeapon(int selected)
         {
             if (selected >= 0 && selected <= collectedWeapons.Count - 1 && selected != currentlyHoldingGunIndex)
@@ -154,13 +155,16 @@ namespace ClassicFPS.Controller.Interaction
                 if (objectInteractionHandler != null && objectInteractionHandler.hasObject())
                     return;
 
+                //Unequp the Current Weapon
                 UnequipWeapon();
                 currentlyHoldingGunIndex = selected;
+
+                //Equip the new weapon
                 DirectEquip();
             }
         }
 
-
+        //Update the Weapons UI (Ammo and Gun Image)
         public void UpdateUI()
         {
             if (ammoCount != null && GetCurrentWeapon() != null && GetActiveWeapon() != null && GetActiveWeapon().requiresAmmo)
@@ -176,7 +180,7 @@ namespace ClassicFPS.Controller.Interaction
             }
         }
 
-        //Collect Weapon
+        //Collect Weapon from ID
         public bool CollectWeapon(string ID)
         {
             if (collectedWeapons.Contains(ID))
@@ -187,10 +191,7 @@ namespace ClassicFPS.Controller.Interaction
             //Unequip the Current Weapon
             UnequipWeapon();
 
-            // collectedWeapons.Add(ID);
-
-            // int index = weaponManager.GetWeaponReference(ID).index;
-
+            //Add to the list of collected weapons
             collectedWeapons.Add(ID);
 
             //Disable All Pickups
@@ -209,14 +210,17 @@ namespace ClassicFPS.Controller.Interaction
 
             //Equip the current gun
             DirectEquip();
-
+            
+            //Reset the state of the Gun (Ammo) - The Default is set in the WeaponManager
             GetCurrentWeapon().State = GetCurrentWeapon().Default;
 
+            //Make sure to update UI
             UpdateUI();
 
             return true;
         }
-
+        
+        //Get the ID of the current weapon
         public string CurrentHoldingID()
         {
             if (currentlyHoldingGunIndex >= 0 && currentlyHoldingGunIndex < collectedWeapons.Count)
@@ -229,11 +233,12 @@ namespace ClassicFPS.Controller.Interaction
             }
         }
 
+        //The WeaponReference of the current weapon (WeaopnReference holds ammo and name)
         private WeaponReference CurrentWeapon;
         private int lastCurrentIndex;
         private int lastCount = 0;
 
-        //Return the currently holding gun
+        //Return the currently holding gun as a WeaponReference
         public WeaponReference GetCurrentWeapon()
         {
             if (currentlyHoldingGunIndex == lastCurrentIndex && CurrentWeapon != null && lastCount == collectedWeapons.Count) return CurrentWeapon;
@@ -252,6 +257,7 @@ namespace ClassicFPS.Controller.Interaction
             return null;
         }
 
+        /* A Few Helper Functions to Equip, Get Information, Unequip, Changing Crosshair */
         public WeaponReference GetWeaponReference(string UID)
         {
             return weaponManager.GetWeaponReference(UID);

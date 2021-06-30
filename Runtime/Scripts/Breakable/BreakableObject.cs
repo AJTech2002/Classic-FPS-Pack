@@ -18,7 +18,6 @@ namespace ClassicFPS.Breakable
 
         private Rigidbody rBody;
 
-
         //If a BreakableObject is thrown with force it will collide and break (or at least take damage)
         private void OnCollisionEnter(Collision col)
         {
@@ -31,6 +30,7 @@ namespace ClassicFPS.Breakable
                     TakeDamage(rBody.velocity.magnitude * damageVelocityMultiplier, 0f);
                 }
 
+                //If the object is thrown then you know the player is intending on breaking it
                 if (thrown)
                 {
                     TakeDamage(10 * damageVelocityMultiplier, 0f);

@@ -184,6 +184,7 @@ namespace ClassicFPS.Guns
             SFXManager.PlayClipFromSource(shootSounds[Random.Range(0,shootSounds.Count)].sound, this.weaponSoundsSource);
         }
 
+        //Handle no ammo
         public virtual void RunNoAmmoAnimation()
         {
             if (weaponAnimatorController != null)
@@ -194,6 +195,7 @@ namespace ClassicFPS.Guns
 
         }
 
+        //Handle the animator 
         public virtual void HandlePlayerAnimate ()
         {
             if (weaponEnabled) {
@@ -202,25 +204,26 @@ namespace ClassicFPS.Guns
 
                 if (inputData.magnitude == 0 || controller.hasJumped || !controller.isApproximatelyGrounded())
                 {
-                weaponAnimatorController.SetBool("walking", false);
+                    weaponAnimatorController.SetBool("walking", false);
                 }
                 else
                 {
-                weaponAnimatorController.SetBool("walking", true);
+                    weaponAnimatorController.SetBool("walking", true);
                 }
 
                 if (inputManager.sprinting)
                 {
-                weaponAnimatorController.SetFloat("walkSpeed", 1.5f);
+                    weaponAnimatorController.SetFloat("walkSpeed", 1.5f);
                 }
                 else
                 {
-                weaponAnimatorController.SetFloat("walkSpeed", 1);
+                    weaponAnimatorController.SetFloat("walkSpeed", 1);
                 }
 
             }
         }
-
+        
+        //Handle an object pickup animation
         public virtual void HandlePlayerPickup ()
         {
             if (weaponAnimatorController != null)

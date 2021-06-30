@@ -9,6 +9,7 @@ using UnityEngine.InputSystem;
 
 namespace ClassicFPS.Door_System
 {
+    /* A good example of how to use the Dialogue System in a specialised way, running Dialogue under circumstances and with commands */
     public class KeyDialogue : State
     {
         [Header("Options")]
@@ -43,6 +44,7 @@ namespace ClassicFPS.Door_System
             dialogue.dialogueRunInput.performed += RunDialogue;
         }
 
+        //Run the 0th dialogue if the key isn't already gifted, 1st if it has been
         private void RunDialogue(InputAction.CallbackContext callbackContext)
         {
             if (savedState.enabled == false || !onlyGiftOnce)

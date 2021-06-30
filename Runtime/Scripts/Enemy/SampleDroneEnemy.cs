@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace ClassicFPS.Enemy
 {
+    /* Slight variation on the normal enemy, it is lifted into the air and following the player like a drone */
     public class SampleDroneEnemy : Enemy
     {
         [Header("Aiming")]
@@ -53,10 +54,12 @@ namespace ClassicFPS.Enemy
 
                     if (injuryTimeout >= injuryDelay)
                     {
-                        Debug.DrawRay(projectileSpawnPoint.position, projectileSpawnPoint.forward * 10, Color.red, 0.1f);
+                        //Debug.DrawRay(projectileSpawnPoint.position, projectileSpawnPoint.forward * 10, Color.red, 0.1f);
 
                         Ray ray = new Ray(projectileSpawnPoint.position, projectileSpawnPoint.forward);
                         RaycastHit hit;
+
+                        //Shoot projectiles towards the Player
 
                         if (Physics.Raycast(ray, out hit))
                         {
@@ -78,6 +81,7 @@ namespace ClassicFPS.Enemy
             }
         }
 
+        //The Projectile has a script that handles its movement
         private void CreateProjectile(Vector3 directionMove, Vector3 end)
         {
             Transform t = Instantiate(projectilePrefab, projectileSpawnPoint.position, Quaternion.identity);

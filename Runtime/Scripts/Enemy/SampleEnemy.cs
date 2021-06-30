@@ -26,6 +26,7 @@ namespace ClassicFPS.Enemy
         public Transform projectileSpawnPoint;
         public float projectileSpeed;
 
+        //Handle the different actions the NPC takes during its different states
         private void Update()
         {
 

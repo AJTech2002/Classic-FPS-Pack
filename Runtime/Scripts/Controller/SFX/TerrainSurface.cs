@@ -1,8 +1,11 @@
 using UnityEngine;
 using System.Collections;
 
+
 namespace ClassicFPS.Controller.SFX
 {
+    //Helper function to get the texture of the Player to change the footstep sounds
+    
     public class TerrainSurface
     {
 

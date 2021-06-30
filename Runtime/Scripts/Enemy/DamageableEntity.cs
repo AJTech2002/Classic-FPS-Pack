@@ -64,7 +64,7 @@ namespace ClassicFPS.Enemy
 
         }
 
-
+        // A core function that allows you to inflict damage on an enemy
         public virtual void TakeDamage(float damage, float delay = 0.2f)
         {
             health -= damage;
@@ -79,13 +79,15 @@ namespace ClassicFPS.Enemy
             }
         }
 
+        //What happens when this Damageable Entity is killed
         public virtual void Die()
         {
             SpawnDrops();
             Debug.Log("Dropped prefab");
             gameObject.SetActive(false);
         }
-
+        
+        //Allow the dropping of items when the object is destroyed (it can be random or not)
         protected void SpawnDrops()
         {
             if (droppablePrefabs.Count > 0 && !dropAllItems)

@@ -6,23 +6,25 @@ using UnityEngine.InputSystem;
 using ClassicFPS.Controller.Movement;
 using ClassicFPS.Pushable;
 
+// This script is used mainly used to handle the picking up of objects
+
 namespace ClassicFPS.Controller.Interaction
 {
     public class PlayerObjectInteractionHandler : MonoBehaviour
     {
         [Header("References")]
-        public Camera playerCamera; //Reference to the Player Camera
+        [SerializeField] private Camera playerCamera; //Reference to the Player Camera
         private PlayerPhysics physics;
         private PlayerController controller;
         private PlayerWeaponController weaponController;
 
         [Header("Selection Options")]
-        public float selectionRadius; //The radius from the player for which an Object can be selected
-        public float selectionMoveSpeed = 10; //The movement of the selected object when it is intersecting with an object (how quickly it comes out)
-        public float distanceFromCamera;
+        [SerializeField] private float selectionRadius; //The radius from the player for which an Object can be selected
+        [SerializeField] private float selectionMoveSpeed = 10; //The movement of the selected object when it is intersecting with an object (how quickly it comes out)
+        [SerializeField] private float distanceFromCamera;
 
         [Header("Throwing Options")]
-        public float throwSpeed; //Speed of the throw
+        [SerializeField] private float throwSpeed; //Speed of the throw
 
         //Store the current state
         private Transform currentlyPickedObject; //Transform of the current object
@@ -45,24 +47,27 @@ namespace ClassicFPS.Controller.Interaction
         public bool hasObject()
         {
             return (currentlyPickedObject != null);
-        }//
+        }
 
+        //Realign the object after waiting for 2 fixed updates to ensure that the rigidbody is first deactivated
         IEnumerator WaitAndRealign ()
         {
             yield return new WaitForFixedUpdate();
+            yield return new WaitForFixedUpdate();
+
             if (currentlyPickedObjectComponent.precalculateBounds)
             {
                 currentlyPickedObjectComponent.objectHoldingOffset.y = -currentlyPickedObject.InverseTransformPoint(currentlyPickedObject.GetComponent<Collider>().bounds.center).y * currentlyPickedObject.transform.localScale.y;
                 currentlyPickedObjectComponent.objectHoldingOffset.x = 0;
                 currentlyPickedObjectComponent.objectHoldingOffset.z = Mathf.Clamp(currentlyPickedObject.GetComponent<Collider>().bounds.extents.magnitude * currentlyPickedObject.localScale.magnitude * distanceFromCamera, 3, 30);
                 currentlyPickedObject.transform.forward = playerCamera.transform.forward;
-                //   currentlyPickedObjectComponent.objectHoldingOffset.z = currentlyPickedObject.lossyScale.magnitude * distanceFromCamera;
             }
         }
 
         //On Pickup Button Pressed
         public void GetPickupRequest(InputAction.CallbackContext callback)
         {
+            //Ensure that the Player doesn't have an object
             if (!hasObject() && weaponController.GetActiveWeapon() != null && !weaponController.GetActiveWeapon().overridePicking)
             {
                 //Convert the center of the screen to a Ray

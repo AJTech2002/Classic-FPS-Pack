@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//This is a reference that can be added wherever you need to call the foosteps functions
+
 namespace ClassicFPS.Controller.SFX {
     public class PlayerSFXReference : MonoBehaviour
     {

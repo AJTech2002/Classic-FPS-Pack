@@ -10,18 +10,20 @@ using UnityEngine.InputSystem;
 
 namespace ClassicFPS.Guns
 {
+    /* An example projectile script that can be used to follow the player, or even explode halfway */
+
     public class Projectile : MonoBehaviour
     {
         [Header("Ammunition Properties")]
-        public bool canHarmPlayer = false;
-        public bool canHarmEnemies = true;
+        public bool canHarmPlayer = false; //Can it harm the player
+        public bool canHarmEnemies = true; //can it harm the enemy
 
         [Header("Impact Properties")]
-        public bool doesExplode = true;
-        public float explosionForce;
-        public float upwardsForce;
-        public float explosionRadius;
-        public ParticleSystem explosionParticles;
+        public bool doesExplode = true; //Should it explode
+        public float explosionForce; //The force of the explosion
+        public float upwardsForce; //how far up do you want the force to be
+        public float explosionRadius; //radius of objects affected
+        public ParticleSystem explosionParticles; //Particles to run during this 
 
         [Header("Physics")]
         public float minimumImpactVelocity = 15;
@@ -30,16 +32,16 @@ namespace ClassicFPS.Guns
         public float damage;
 
         [Header("Delay")]
-        public bool stickToImpact;
+        public bool stickToImpact; 
         public float timeToImpact;
 
         [Header("Homing")]
-        public bool isHomingMissile = false;
-        public float destroyAfter = 10;
-        public float moveSpeed;
+        public bool isHomingMissile = false; //Whether or not we want it to follow the Player
+        public float destroyAfter = 10; //Destroy the Projectile after a max time
+        public float moveSpeed; //Move speed of the Projectile
 
         [Header("Sounds")]
-        public Sound explosionSound;
+        public Sound explosionSound; //Sound of the explosion
 
         private float timer = 0f;
 
@@ -56,7 +58,8 @@ namespace ClassicFPS.Guns
             {
                 GameObject.Destroy(this.gameObject, destroyAfter);
             }
-
+            
+            //Ensuring all the Colliders are enabled
             if (GetComponentInChildren<Collider>() != null)
                 if (stickToImpact && GetComponentInChildren<Collider>().isTrigger == false)
                 {
@@ -74,6 +77,7 @@ namespace ClassicFPS.Guns
         {
             if (isHomingMissile)
             {
+                //Follow the player
                 rBody.velocity = (controller.transform.position - transform.position).normalized * moveSpeed;
                 transform.LookAt(controller.transform.position);
                 timer += Time.deltaTime;
@@ -92,9 +96,12 @@ namespace ClassicFPS.Guns
             }
         }
 
+        //What to do when the Projectile hits something or the ground
         private void Impact()
         {
             Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
+            
+            //Get all nearby objects and handle based on type
             foreach (Collider hit in colliders)
             {
                 Rigidbody rb = hit.GetComponent<Rigidbody>();
@@ -103,20 +110,19 @@ namespace ClassicFPS.Guns
                 //if (doesExplode) SFXManager.PlayClipAt(explosionSound, transform.position, 0.2f);
                 if (doesExplode) {
                     SFXManager.PlayClipAt(explosionSound, GameObject.Find("Controller").transform.position, 0.2f);
-                    explosionParticles.gameObject.SetActive(true);
-                    explosionParticles.transform.parent = null;
-                    Destroy(explosionParticles.gameObject, 5f);
+                    if (explosionParticles != null) {
+                        explosionParticles.gameObject.SetActive(true);
+                        explosionParticles.transform.parent = null;
+                        Destroy(explosionParticles.gameObject, 5f);
+                    }
                 }
-
 
                 if (rb != null)
                 {
-
                     rb.velocity += (rb.transform.position - transform.position).normalized * minimumImpactVelocity;
                 }
 
                 float r = 1 - (Vector3.Distance(hit.transform.position, transform.position) / explosionRadius);
-
 
                 if (de != null && canHarmEnemies)
                 {
@@ -130,17 +136,20 @@ namespace ClassicFPS.Guns
             GameObject.Destroy(this.gameObject, 0.0f);
         }
 
+        //An impact function where player = whether or not Player gets hurt, and same for enemy
         public void Impact(bool player, bool enemy)
         {
             Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
             foreach (Collider hit in colliders)
             {
+                //Get the properties of the colliders nearby
                 Rigidbody rb = hit.GetComponent<Rigidbody>();
                 DamageableEntity de = hit.GetComponent<DamageableEntity>();
                 PlayerStatistics stat = hit.GetComponent<PlayerStatistics>();
 
                 if (doesExplode) SFXManager.PlayClipAt(explosionSound, transform.position, 0.2f);
 
+                //Rigidbody Handle
                 if (rb != null)
                 {
                     if (doesExplode)
@@ -153,7 +162,7 @@ namespace ClassicFPS.Guns
 
                 float r = Mathf.Clamp01(1 - (Vector3.Distance(hit.transform.position, transform.position) / explosionRadius));
 
-
+                //DamageableEntity handle
                 if (de != null && enemy)
                 {
 
@@ -161,6 +170,7 @@ namespace ClassicFPS.Guns
 
                 }
 
+                //Player handle
                 if (stat != null && player)
                 {
                     stat.TakeDamage(r * damage);

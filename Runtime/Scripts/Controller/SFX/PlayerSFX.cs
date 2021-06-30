@@ -4,13 +4,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/* Script used to handle the basic sound effects of the Player */
+
 namespace ClassicFPS.Controller.SFX
 {
     public class PlayerSFX : MonoBehaviour
     {
         [Header("References")]
         public AudioSource movementAudioSource;
-        public AudioSource jumpLandAudioSource;
         public PlayerController controller;
 
         [Header("Sounds")]
@@ -35,8 +36,7 @@ namespace ClassicFPS.Controller.SFX
             defaultPitch = movementAudioSource.pitch;
         }
 
-        //State Switchers
-
+        //Play Footstep Sound should be called from the Animation through AnimationEvents
         public void PlayFootstepSound()
         {
             if (controller.isApproximatelyGrounded())

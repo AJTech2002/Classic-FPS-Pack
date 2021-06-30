@@ -8,47 +8,49 @@ using UnityEngine.InputSystem;
 
 namespace ClassicFPS.Guns
 {
+     /* A Demo Weapon class which can be repurposed into a Shotgun, Rifle, Pistol, Knife etc. */
     public class DemoWeapon : Weapon
     {
         [Header("Projectile Options")]
-        public bool shootsProjectiles;
-        public Transform projectilePrefab;
+        public bool shootsProjectiles; //Whether or not this is based on rays or projectiles
+        public Transform projectilePrefab; //What projectile to use if it is projectile based 
         [Tooltip("Have a Transform that marks where the Projectile starts")]
-        public Transform projectileStartPosition;
-        public float projectileSpeed;
+        public Transform projectileStartPosition; //Where to shoot projectiles from
+        public float projectileSpeed; //Speed to shoot projectile
 
         [Header("Input Actions")]
         //The input used to trigger the shooting
         public InputAction shootAction;
 
         [Header("Shooting Options")]
-        public bool useSphereCast;
-        public float sphereCastRadius;
-        public LayerMask hitMask;
-        public bool hasLimitedRange = false;
-        public float shootDelay = 0.3f;
-        public bool holdShoot = false;
+        public bool useSphereCast; //Whether or not a sphere cast should be used
+        public float sphereCastRadius; //Radius of sphere case
+        public LayerMask hitMask; //The layermask of what can be hit with this
+        public bool hasLimitedRange = false; //Whether or not there is a range to this weapon
+        public float maxShootDistance; //How far can you shoot 
+        public float shootDelay = 0.3f; //The delay between each bullet/attack
+        public bool holdShoot = false; //Can you hold while shooting this weapon or do you have to release each time
         private float lastShotDelay = 0f;
-        public float maxShootDistance;
+        
 
         [Header("Scatter")]
-        public bool scatter;
-        public int scatterBulletsInEachDirection = 3;
+        public bool scatter; //Is there a scatter effect of bullets (random like shotgun)
+        public int scatterBulletsInEachDirection = 3; //How many scatter bullets
 
         [Range(0f, 1f)]
-        public float scatterRadius;
+        public float scatterRadius; //How far apart the scatter should be
 
 
         [Header("Ray Impact Options")]
-        public float forwardForce;
-        public float maximumDamage;
-        public float minimumDamage;
+        public float forwardForce; //The physics effect of the bullets on rigidbodies
+        public float maximumDamage; //Maximum damage when the distance is close
+        public float minimumDamage; //Minimum damage when the distance is far
 
         [Header("Custom SFX")]
-        public Sound onHitObjectSFX;
+        public Sound onHitObjectSFX; //What to play when the bullet hits an object
 
 
-        private bool holding = false;
+        private bool holding = false; 
 
         private List<Transform> itemsHit = new List<Transform>();
 

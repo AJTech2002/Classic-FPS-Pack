@@ -44,6 +44,7 @@ namespace ClassicFPS.Managers
         //Setup References
         private void Awake()
         {
+            //Setup the Keys
             if (keyManager != null)
             {
                 keySettings.Clear();
@@ -71,6 +72,7 @@ namespace ClassicFPS.Managers
             //When the scene is loaded call SceneManager_sceneLoaded
             SceneManager.sceneLoaded += SceneManager_sceneLoaded;
 
+            //Setup some References to be accessed from anywhere
             WeaponController = GameObject.FindObjectOfType<PlayerWeaponController>();
             PlayerController = GameObject.FindObjectOfType<PlayerController>();
             PlayerStatistics = GameObject.FindObjectOfType<PlayerStatistics>();
@@ -91,6 +93,7 @@ namespace ClassicFPS.Managers
 
         private void SceneManager_sceneLoaded(Scene scene, LoadSceneMode sceneMode)
         {
+            //If the GameManager was expecting a new scene to be loaded, then detect any saves
             if (awaitingSceneLoad && requiresLoading)
             {
                 //Only run this code if manually called a new Scene
@@ -133,12 +136,13 @@ namespace ClassicFPS.Managers
             }
         }
 
-
+        //Check if there are any saves
         public bool HasSaveFile()
         {
             return SaveManager.HasSaveFiles();
         }
 
+        //Delete any progress
         public void DeleteSavedProgress()
         {
             SaveManager.ClearAllSaves();

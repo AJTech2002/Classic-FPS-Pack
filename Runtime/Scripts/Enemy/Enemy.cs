@@ -8,6 +8,8 @@ using UnityEngine.AI;
 /* This class can be extended */
 namespace ClassicFPS.Enemy
 {
+    /* Another base class that takes into account the DamagebleEntity as well as path-finding, the Player's position etc. */
+
     [RequireComponent(typeof(SphereCollider))]
     public class Enemy : DamageableEntity
     {
@@ -15,10 +17,10 @@ namespace ClassicFPS.Enemy
         public SphereCollider trigger;
 
         [Header("Physics Damage")]
-        public float damageByThrownObjectsMultiplier = 1;
+        public float damageByThrownObjectsMultiplier = 1; //How much should an object thrown by a player affect this enemy
 
         [Header("Navigation")]
-        public NavMeshAgent agent;
+        public NavMeshAgent agent; //Make sure NavMesh is baked for this to work
 
         [Header("Animations")]
         public Animator animator;
@@ -29,7 +31,7 @@ namespace ClassicFPS.Enemy
 
 
         [Space(10)]
-        public AIState currentState;
+        public AIState currentState; //The state of the AI
 
         protected PlayerController controller;
 
@@ -90,6 +92,7 @@ namespace ClassicFPS.Enemy
             SpawnDrops();
         }
 
+        //Very simple way for the AI to go from idling to following the player
         private void OnTriggerEnter(Collider col)
         {
             if (col.transform.CompareTag("Player"))
@@ -119,6 +122,7 @@ namespace ClassicFPS.Enemy
             }
         }
 
+        //No patrolling logic was written as part of this NPC
         public enum AIState
         {
             Idle,
