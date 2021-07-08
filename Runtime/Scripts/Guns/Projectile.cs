@@ -40,6 +40,7 @@ namespace ClassicFPS.Guns
         public bool isHomingMissile = false;
         public float destroyAfter = 10;
         public float moveSpeed;
+        [SerializeField] Vector3 targetOffset;
 
         [Header("Sounds")]
         public Sound explosionSound;
@@ -85,8 +86,9 @@ namespace ClassicFPS.Guns
         {
             if (isHomingMissile)
             {
-                rBody.velocity = (controller.transform.position - transform.position).normalized * moveSpeed;
-                transform.LookAt(controller.transform.position);
+                Vector3 targetPosition = new Vector3(controller.transform.position.x, controller.transform.position.y + targetOffset.y, controller.transform.position.z);
+                rBody.velocity = (targetPosition - transform.position).normalized * moveSpeed;
+                transform.LookAt(targetPosition);
                 timer += Time.deltaTime;
 
                 if (timer > destroyAfter - 0.1f)
@@ -217,10 +219,12 @@ namespace ClassicFPS.Guns
                 if (canHarmPlayer && col.transform.CompareTag("Player") == true)
                 {
                     ImpactPlayer();
+
                 }
             }
             else
             {
+                Debug.Log("Collider with player");
                 if (!stickToImpact && col.transform.CompareTag("Enemy") == true && timer >= 1)
                 {
                     Impact(false, true);
@@ -228,6 +232,7 @@ namespace ClassicFPS.Guns
                 else if (canHarmPlayer && col.transform.CompareTag("Player") == true)
                 {
                     Impact(true, false);
+                    Debug.Log("Hit the palyer!");
                 }
                 else
                 {

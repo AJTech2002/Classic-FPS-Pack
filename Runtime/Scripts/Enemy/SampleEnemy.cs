@@ -51,7 +51,6 @@ namespace ClassicFPS.Enemy
             }
 
            
-
             if ((currentState == AIState.Following || currentState == AIState.Patrolling) && controller != null)
             {
                 float dist = Vector3.Distance(transform.position, controller.transform.position);
@@ -69,7 +68,7 @@ namespace ClassicFPS.Enemy
 
                 //transform.LookAt(Vector3.Lerp(transform.forward, lookAt, aimSpeed));
 
-                Vector3 dir = targetTransform.position - transform.position;
+                Vector3 dir = targetTransform.position - transform.position + transform.forward;
                 dir.y = 0;//This allows the object to only rotate on its y axis
                 Quaternion rot = Quaternion.LookRotation(dir);
                 transform.rotation = Quaternion.Lerp(transform.rotation, rot, aimSpeed * Time.deltaTime);

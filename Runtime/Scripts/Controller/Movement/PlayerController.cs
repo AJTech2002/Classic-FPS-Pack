@@ -51,6 +51,9 @@ namespace ClassicFPS.Controller.Movement
         [Range(0f, 1f)]
         public float smoothingAmount = 1f;
 
+        [Header("Other")]
+        public int enemiesFollowing = 0;
+
         [HideInInspector]
         public float characterSpeed; // The current character speed (can toggle between walkSpeed and spritnSpeed)
         [HideInInspector]
@@ -404,6 +407,14 @@ namespace ClassicFPS.Controller.Movement
         }
 
         float timeOnSlope = 0f;
+
+        public void AddEnemiesFollowing(int amount)
+        {
+            if (amount >= 0 || (amount < 0 && enemiesFollowing > 0))
+            {
+                enemiesFollowing += amount;
+            }
+        }
 
         private void SlopeSlip(ref Vector3 input)
         {

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using ClassicFPS.Managers;
 using UnityEngine;
 
 namespace ClassicFPS.Enemy
@@ -31,54 +32,57 @@ namespace ClassicFPS.Enemy
 
         Vector3 lastPlayerPos;
 
+        [Header("Hearing")]
+        [SerializeField] float hearingPower = 5;
+        Vector3 boxColliderCenterOrig;
+        Vector3 boxColliderSizeOrig;
+        [SerializeField] BoxCollider boxCollider;
+
+        private void Awake()
+        {
+            boxCollider = GetComponent<BoxCollider>();
+            boxColliderSizeOrig = boxCollider.size;
+            boxColliderCenterOrig = boxCollider.center;
+        }
+
         private void Update()
         {
-            if (currentState == AIState.Following && controller != null)
+            if (GameManager.PlayerController.isShooting)
             {
+                boxCollider.size = boxColliderSizeOrig * hearingPower;
+                boxCollider.center = Vector3.zero;
+            }
+            else
+            {
+                boxCollider.size = boxColliderSizeOrig;
+                boxCollider.center = boxColliderCenterOrig;
+            }
+
+            if ((currentState == AIState.Following || currentState == AIState.Patrolling) && controller != null) {
                 float dist = Vector3.Distance(transform.position, controller.transform.position);
-                Vector3 lookAt = controller.transform.position + Vector3.up * 0.4f;
+                animator.SetBool("walking", true);
+                agent.baseOffset = flyOffset.y;
 
-                geometry.forward = Vector3.Lerp(geometry.forward, lookAt - transform.position, aimSpeed * Time.deltaTime);
+                //Vector3 lookAt = new Vector3(targetTransform.position.x, transform.position.y, targetTransform.transform.position.z);
 
-               
+                //transform.LookAt(Vector3.Lerp(transform.forward, lookAt, aimSpeed));
 
-                hitCollider.center = transform.InverseTransformPoint(geometry.position);
-                geometry.transform.position = Vector3.Lerp(geometry.transform.position, new Vector3(geometry.transform.position.x, controller.transform.position.y + flyOffset.y, geometry.transform.position.z), followSpeed * Time.deltaTime);
+                Vector3 dir = targetTransform.position - transform.position + transform.forward;
+                dir.y = 0;//This allows the object to only rotate on its y axis
+                Quaternion rot = Quaternion.LookRotation(dir);
+                transform.rotation = Quaternion.Lerp(transform.rotation, rot, aimSpeed * Time.deltaTime);
 
-                if (dist <= stoppingRadius)
+                agent.destination = targetTransform.position;
+
+                //Patrolling
+                if (currentState == AIState.Patrolling)
                 {
-                    agent.isStopped = true;
-
-                }
-                else
+                    Patrol();
+                } else if (currentState == AIState.Following)
                 {
-                    agent.isStopped = false;
-                    agent.destination = controller.transform.position;
-
-                    if (injuryTimeout >= injuryDelay)
-                    {
-                        Debug.DrawRay(projectileSpawnPoint.position, projectileSpawnPoint.forward * 10, Color.red, 0.1f);
-
-                        Ray ray = new Ray(projectileSpawnPoint.position, projectileSpawnPoint.forward);
-                        RaycastHit hit;
-
-                        if (Physics.Raycast(ray, out hit))
-                        {
-                            CreateProjectile(hit.point - projectileSpawnPoint.position, hit.point);
-                        }
-                        else
-                        {
-                            CreateProjectile(ray.GetPoint(100) - projectileSpawnPoint.position, ray.GetPoint(100));
-                        }
-
-                        injuryTimeout = 0f;
-                    }
-
-                    injuryTimeout += Time.deltaTime;
-
-
+                    targetTransform = controller.transform;
+                    Shoot();
                 }
-
             }
         }
 
@@ -97,7 +101,7 @@ namespace ClassicFPS.Enemy
             }
 
             agent.enabled = false;
-            trigger.enabled = false;
+            //trigger.enabled = false;
 
             foreach (MeshRenderer r in GetComponentsInChildren<MeshRenderer>())
             {
@@ -121,6 +125,28 @@ namespace ClassicFPS.Enemy
             SpawnDrops();
         }
 
+        public void Shoot()
+        {
+            if (injuryTimeout >= injuryDelay)
+            {
+                Debug.DrawRay(projectileSpawnPoint.position, projectileSpawnPoint.forward * 10, Color.red, 0.1f);
 
+                Ray ray = new Ray(projectileSpawnPoint.position, projectileSpawnPoint.forward);
+                RaycastHit hit;
+
+                if (Physics.Raycast(ray, out hit))
+                {
+                    CreateProjectile(hit.point - projectileSpawnPoint.position, hit.point);
+                }
+                else
+                {
+                    CreateProjectile(ray.GetPoint(100) - projectileSpawnPoint.position, ray.GetPoint(100));
+                }
+
+                injuryTimeout = 0f;
+            }
+
+            injuryTimeout += Time.deltaTime;
+        }
     }
 }

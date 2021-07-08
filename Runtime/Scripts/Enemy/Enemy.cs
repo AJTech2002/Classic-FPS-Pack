@@ -13,7 +13,7 @@ namespace ClassicFPS.Enemy
     public class Enemy : DamageableEntity
     {
         [Header("Trigger Collider")]
-        public SphereCollider trigger;
+        //public SphereCollider trigger;
 
         [Header("Physics Damage")]
         public float damageByThrownObjectsMultiplier = 1;
@@ -41,10 +41,12 @@ namespace ClassicFPS.Enemy
         [Header("Effects")]
         public GameObject graphics;
         [SerializeField] GameObject deathParticles;
-        [SerializeField] Sound awakenSound;
+        public AudioClip awakenSound;
+        [SerializeField] AudioSource audioSource;
         [SerializeField] GameObject preservedObjectAfterDeath;
+        [HideInInspector] public float randomPitchVariation;
 
-        [Header("Ragdoll Effecrts")]
+        [Header("Ragdoll Effects")]
         [SerializeField] bool isRagdoll;
         [SerializeField] Ragdoll ragdoll;
 
@@ -61,7 +63,7 @@ namespace ClassicFPS.Enemy
             aimSpeedOrig = aimSpeed;
             if (patrollingDestinations.Length != 0) SetUpPatrolDestinations();
             //The sphere collider should be a trigger
-            trigger.isTrigger = true;
+            //trigger.isTrigger = true;
             controller = GameManager.PlayerController;
 
             if (controller == null)
@@ -81,11 +83,12 @@ namespace ClassicFPS.Enemy
             }
             agent.enabled = false;
             animator.enabled = false;
-            trigger.enabled = false;
+            //trigger.enabled = false;
 
             if (preservedObjectAfterDeath) preservedObjectAfterDeath.transform.parent = null;
 
             SpawnDrops();
+            controller.AddEnemiesFollowing(-1);
 
             if (deathParticles)
             {
@@ -159,19 +162,22 @@ namespace ClassicFPS.Enemy
         {
             if (followPlayer)
             {
+                Debug.Log("Follow the player!");
                 if (currentState == AIState.Idle || currentState == AIState.Patrolling)
                 {
                     currentState = AIState.Following;
                     if(headLookAt) headLookAt.target = GameManager.PlayerController.transform;
                     aimSpeed = aimSpeedOrig;
+                    controller.AddEnemiesFollowing(1);
                     //Play awake SFX
-                    SFXManager.PlayClipAt(awakenSound, GameManager.PlayerController.transform.position, 1.2f, 0);
+                    if(audioSource) audioSource.PlayOneShot(awakenSound, 1.2f);
                 }
             }
             else
             {
                 if (currentState == AIState.Following)
                 {
+                    controller.AddEnemiesFollowing(-1);
                     currentState = AIState.Idle;
                 }
             }
@@ -219,16 +225,6 @@ namespace ClassicFPS.Enemy
 
         void SetUpPatrolDestinations()
         {
-            /*
-            Transform patrollingDestinationsParent = patrollingDestinations[0].transform.parent.transform;
-
-            patrollingDestinationsParent.parent = null;
-            for (int i = 0; i < patrollingDestinations.Length; i++)
-            {
-                patrollingDestinationsParent.Rotate(Vector3.up, 360 / patrollingDestinations.Length);
-                patrollingDestinations[i].transform.Translate(patrollingDestinationsParent.forward * patrolLocationScatterMultiplier);
-            }
-            */
 
             Transform patrollingDestinationsParent = patrollingDestinations[0].transform.parent.transform;
             bool pathWasInvalid = false;
@@ -254,7 +250,6 @@ namespace ClassicFPS.Enemy
                     NavMesh.SamplePosition(randomDirection, out hit, walkRadius, 1);
                     patrollingDestinations[i].position = hit.position;
 
-                    //patrollingDestinations[i].position += Vector3.down * 4;
                     agent.CalculatePath(patrollingDestinations[i].position, path);
                     Debug.Log(path.status);
 
