@@ -38,6 +38,11 @@ namespace ClassicFPS.Enemy
         public float aimSpeed = 5;
         float aimSpeedOrig = 0;
 
+        [Header("Shooting")]
+        public float shootTimer;
+        public float shootDelay = 7;
+        public float projectileSpeed;
+
         [Header("Effects")]
         public GameObject graphics;
         [SerializeField] GameObject deathParticles;

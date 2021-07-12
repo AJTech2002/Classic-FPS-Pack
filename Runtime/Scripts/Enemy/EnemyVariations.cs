@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using ClassicFPS.Enemy;
 
-public class WalkerVariation : MonoBehaviour
+public class EnemyVariations : MonoBehaviour
 {
     /*
     Enemy 0 (Male Jeans) = Enemy1Map_Male Jeans_PSD, Enemy1 (Cube), Speed 1, Health 100
@@ -17,17 +17,18 @@ public class WalkerVariation : MonoBehaviour
     Enemy 8 (Male Large Jeans & Short Hair)
      */
 
-
-
     [Header("Variations")]
     [SerializeField] private bool isActive = true;
     [SerializeField] private int variationID = -1;
     [SerializeField] Texture[] textures;
     [SerializeField] Mesh[] meshes;
     [SerializeField] float[] speedMultipliers;
-    [SerializeField] int[] maxHealths;
+    [SerializeField] int[] maxHealths; //If this is zero, it does not influece the default health
     [SerializeField] AudioClip[] awakenSounds;
     [SerializeField] float[] pitches;
+    [SerializeField] float[] scaleMultipliers;
+    [SerializeField] float[] shootDelays;
+    [SerializeField] float[] projectileSpeeds;
 
     [Header("References")]
     [SerializeField] SkinnedMeshRenderer skinnedMeshRenderer;
@@ -42,14 +43,19 @@ public class WalkerVariation : MonoBehaviour
     private void SetupVariations()
     {
         if (variationID == -1) variationID = Random.Range(0, textures.Length);
-        transform.localScale *= Random.Range(.9f, 1.1f);
-        enemy.awakenSound = awakenSounds[variationID];
+        skinnedMeshRenderer.transform.parent.transform.localScale *= Random.Range(.9f, 1.1f);
+        if (scaleMultipliers.Length > 0) skinnedMeshRenderer.transform.parent.transform.localScale *= scaleMultipliers[variationID];
+        if (awakenSounds.Length > 0) enemy.awakenSound = awakenSounds[variationID];
         audioSource.pitch = pitches[variationID];
-        enemy.health = maxHealths[variationID];
+        if (maxHealths[0] != 0) enemy.health = maxHealths[variationID];
         enemy.agent.speed *= speedMultipliers[variationID];
         enemy.agent.speed += Random.Range(-2f, 2f);
         skinnedMeshRenderer.material.mainTexture = textures[variationID];
         skinnedMeshRenderer.sharedMesh = meshes[variationID];
         enemy.animator.speed = speedMultipliers[variationID];
+        if (shootDelays.Length > 0) enemy.shootDelay = shootDelays[variationID];
+        if (projectileSpeeds.Length > 0) enemy.projectileSpeed = projectileSpeeds[variationID];
+        enemy.shootDelay *= Random.Range(.8f, 1.2f);
+        enemy.projectileSpeed *= Random.Range(.8f, 1.2f);
     }
 }

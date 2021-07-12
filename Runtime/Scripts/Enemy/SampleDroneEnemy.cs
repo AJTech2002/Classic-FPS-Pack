@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using ClassicFPS.Guns;
 using ClassicFPS.Managers;
 using UnityEngine;
 
@@ -14,12 +15,10 @@ namespace ClassicFPS.Enemy
         public float followSpeed = 2;
         public float stoppingRadius = 5;
 
-        [Header("Shooting")]
-        public float injuryDelay;
-        public float projectileSpeed;
+       
         [SerializeField] ParticleSystem shootParticles;
 
-        private float injuryTimeout;
+        
 
         [Header("References")]
         public Transform geometry;
@@ -89,45 +88,13 @@ namespace ClassicFPS.Enemy
         private void CreateProjectile(Vector3 directionMove, Vector3 end)
         {
             Transform t = Instantiate(projectilePrefab, projectileSpawnPoint.position, Quaternion.identity);
+            projectilePrefab.GetComponent<Projectile>().moveSpeed = projectileSpeed;
             shootParticles.Emit(7);
-        }
-
-        public override void Die()
-        {
-            currentState = AIState.Dead;
-            if (agent.isActiveAndEnabled && agent.isOnNavMesh && !agent.isStopped)
-            {
-                agent.isStopped = true;
-            }
-
-            agent.enabled = false;
-            //trigger.enabled = false;
-
-            foreach (MeshRenderer r in GetComponentsInChildren<MeshRenderer>())
-            {
-                r.enabled = false;
-            }
-
-            if (GetComponent<MeshRenderer>() != null)
-            {
-                GetComponent<MeshRenderer>().enabled = false;
-            }
-
-            foreach (Collider r in GetComponentsInChildren<Collider>())
-            {
-                r.enabled = false;
-            }
-
-            if (GetComponent<Collider>() != null)
-            {
-                GetComponent<Collider>().enabled = false;
-            }
-            SpawnDrops();
         }
 
         public void Shoot()
         {
-            if (injuryTimeout >= injuryDelay)
+            if (shootTimer >= shootDelay)
             {
                 Debug.DrawRay(projectileSpawnPoint.position, projectileSpawnPoint.forward * 10, Color.red, 0.1f);
 
@@ -143,10 +110,10 @@ namespace ClassicFPS.Enemy
                     CreateProjectile(ray.GetPoint(100) - projectileSpawnPoint.position, ray.GetPoint(100));
                 }
 
-                injuryTimeout = 0f;
+                shootTimer = 0f;
             }
 
-            injuryTimeout += Time.deltaTime;
+            shootTimer += Time.deltaTime;
         }
     }
 }

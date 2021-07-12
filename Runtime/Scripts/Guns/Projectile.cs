@@ -22,6 +22,7 @@ namespace ClassicFPS.Guns
         public float upwardsForce;
         public float explosionRadius;
         public ParticleSystem explosionParticles;
+        public ParticleSystem expireParticles;
 
         [Header("Physics")]
         public float minimumImpactVelocity = 15;
@@ -39,6 +40,7 @@ namespace ClassicFPS.Guns
         [Header("Homing")]
         public bool isHomingMissile = false;
         public float destroyAfter = 10;
+        public bool explodesAfterTimer = false; //Does the projectile explode after the destroyAfter timer?
         public float moveSpeed;
         [SerializeField] Vector3 targetOffset;
 
@@ -93,7 +95,17 @@ namespace ClassicFPS.Guns
 
                 if (timer > destroyAfter - 0.1f)
                 {
-                    Impact(true, false);
+                    if (explodesAfterTimer) { 
+                        Impact(true, false);
+                    }
+                    else
+                    {
+                        expireParticles.transform.parent = null;
+                        expireParticles.gameObject.SetActive(true);
+                        Destroy(expireParticles, 3f);
+                        GameObject.Destroy(this.gameObject, 0f);
+
+                    }
                 }
 
             }

@@ -30,6 +30,10 @@ namespace ClassicFPS.Enemy
         Vector3 boxColliderSizeOrig;
         [SerializeField]BoxCollider boxCollider;
 
+
+        [Header("Other")]
+        [SerializeField] bool rotationHandledByGroundfitter = false; //If this is true, rotation is not handled in this script
+
         private void Awake()
         {
             boxCollider = GetComponent<BoxCollider>();
@@ -39,6 +43,7 @@ namespace ClassicFPS.Enemy
 
         private void Update()
         {
+
             if (GameManager.PlayerController.isShooting)
             {
                 boxCollider.size = boxColliderSizeOrig * hearingPower;
@@ -68,11 +73,16 @@ namespace ClassicFPS.Enemy
 
                 //transform.LookAt(Vector3.Lerp(transform.forward, lookAt, aimSpeed));
 
-                Vector3 dir = targetTransform.position - transform.position + transform.forward;
-                dir.y = 0;//This allows the object to only rotate on its y axis
-                Quaternion rot = Quaternion.LookRotation(dir);
-                transform.rotation = Quaternion.Lerp(transform.rotation, rot, aimSpeed * Time.deltaTime);
+                if (!rotationHandledByGroundfitter)
+                {
+                    Vector3 dir = targetTransform.position - transform.position + transform.forward;
+                    dir.y = 0;//This allows the object to only rotate on its y axis
+                    Quaternion rot = Quaternion.LookRotation(dir);
+                    transform.rotation = Quaternion.Lerp(transform.rotation, rot, aimSpeed * Time.deltaTime);
+                }
+                
 
+             
                 if (dist >= attackRadius - 0.5f)
                 {
 

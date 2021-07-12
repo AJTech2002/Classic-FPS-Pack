@@ -179,9 +179,10 @@ namespace ClassicFPS.Guns
                     if (hit.transform.GetComponent<DamageableEntity>() != null)
                     {
                         hit.transform.GetComponent<DamageableEntity>().TakeDamage(Mathf.Clamp(maximumDamage * percImpact, minimumDamage, maximumDamage));
-                        if (hit.transform.GetComponent<SampleEnemy>()) { 
+                        if (hit.transform.GetComponent<SampleEnemy>() || hit.transform.GetComponent<SampleDroneEnemy>()) { 
                             StartCoroutine(PlayBulletEffects(hit, hit.normal, true));
-                            hit.transform.GetComponent<SampleEnemy>().FollowPlayer(true);
+                            if(hit.transform.GetComponent<SampleEnemy>()) hit.transform.GetComponent<SampleEnemy>().FollowPlayer(true);
+                            if(hit.transform.GetComponent<SampleDroneEnemy>()) hit.transform.GetComponent<SampleDroneEnemy>().FollowPlayer(true);
                         }
                         else
                         {
