@@ -14,7 +14,7 @@ namespace ClassicFPS.Controller.Movement
         [Header("References")]
         [Tooltip("A Transform Indicating the Current Direction of the Player")]
         public Transform forwardDirection;
-        public Transform camera;
+        public new Transform camera;
 
         [HideInInspector]
         public CharacterController controller;

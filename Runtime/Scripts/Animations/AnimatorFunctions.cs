@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using ClassicFPS.Guns;
 
 /*This script can be used on pretty much any gameObject. It provides several functions that can be called with 
 animation events in the animation window.*/
@@ -13,6 +14,7 @@ public class AnimatorFunctions : MonoBehaviour
     [SerializeField] private ParticleSystem particleSystem2;
     [SerializeField] private Animator setBoolInAnimator;
     [SerializeField] AudioClip [] randomSounds;
+    [SerializeField] private DemoWeapon weapon;
 
     // If we don't specify what audio source to play sounds through, just use the one on player.
     void Start()
@@ -48,6 +50,11 @@ public class AnimatorFunctions : MonoBehaviour
     void PlayRandomSound()
     {
         audioSource.PlayOneShot(randomSounds[Random.Range(0,randomSounds.Length)]);
+    }
+
+    public void RunShoot ()
+    {
+        weapon.AnimatorShoot();
     }
 
     public void EmitParticles(int amount)

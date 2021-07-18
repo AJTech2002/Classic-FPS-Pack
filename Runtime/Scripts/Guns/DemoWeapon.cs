@@ -19,8 +19,9 @@ namespace ClassicFPS.Guns
         public float projectileSpeed; //Speed to shoot projectile
 
         [Header("Input Actions")]
-        //The input used to trigger the shooting
+        //The input used to trigger the shooting (can be nothing)
         public InputAction shootAction;
+        public bool shootingThroughAnimation;
 
         [Header("Shooting Options")]
         public bool useSphereCast; //Whether or not a sphere cast should be used
@@ -79,14 +80,17 @@ namespace ClassicFPS.Guns
 
                 Vector3 direction = Vector3.zero;
 
-                if (!scatter) SingleShot(camera, crosshairPosition, Vector3.zero);
-                else
+                if (!shootingThroughAnimation)
                 {
-                    SingleShot(camera, crosshairPosition, Vector3.zero);
-                    for (int i = 0; i < scatterBulletsInEachDirection; i++)
+                    if (!scatter) SingleShot(camera, crosshairPosition, Vector3.zero);
+                    else
                     {
-                        SingleShot(camera, crosshairPosition, ((camera.transform.right * scatterRadius) / scatterBulletsInEachDirection) * i);
-                        SingleShot(camera, crosshairPosition, ((-camera.transform.right * scatterRadius) / scatterBulletsInEachDirection) * i);
+                        SingleShot(camera, crosshairPosition, Vector3.zero);
+                        for (int i = 0; i < scatterBulletsInEachDirection; i++)
+                        {
+                            SingleShot(camera, crosshairPosition, ((camera.transform.right * scatterRadius) / scatterBulletsInEachDirection) * i);
+                            SingleShot(camera, crosshairPosition, ((-camera.transform.right * scatterRadius) / scatterBulletsInEachDirection) * i);
+                        }
                     }
                 }
 
@@ -257,9 +261,26 @@ namespace ClassicFPS.Guns
                 if (weaponSoundsSource != null)
                     SFXManager.PlayClipFromSource(emptyAmmoSound, this.weaponSoundsSource);
             }
-
+            
+            
             Attack(weaponController._camera, new Vector2(0.5f, 0.5f));
             holding = true;
+        }
+
+        public void AnimatorShoot ()
+        {
+            Camera camera = weaponController._camera;
+            Vector2 crosshairPosition = new Vector2(0.5f, 0.5f);
+            if (!scatter) SingleShot(camera, crosshairPosition, Vector3.zero);
+            else
+            {
+                SingleShot(camera, crosshairPosition, Vector3.zero);
+                for (int i = 0; i < scatterBulletsInEachDirection; i++)
+                {
+                    SingleShot(camera, crosshairPosition, ((camera.transform.right * scatterRadius) / scatterBulletsInEachDirection) * i);
+                    SingleShot(camera, crosshairPosition, ((-camera.transform.right * scatterRadius) / scatterBulletsInEachDirection) * i);
+                }
+            }
         }
 
         public override void OnGunUnequipped()
