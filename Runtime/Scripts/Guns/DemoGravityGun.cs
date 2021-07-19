@@ -23,7 +23,7 @@ namespace ClassicFPS.Guns
         
         [Header("SFX")]
         public Sound releaseSound; //Sound when releasing the object
-        public Sound cantPickupSound;
+        public Sound cantPickupOrThrowSound;
 
         private Camera playerCamera
         {
@@ -94,12 +94,12 @@ namespace ClassicFPS.Guns
                     }
                     else {
                         //Can't Pickup
-                        SFXManager.PlayClipFromSource(cantPickupSound, weaponController.weaponSoundSource);
+                        SFXManager.PlayClipFromSource(cantPickupOrThrowSound, weaponController.weaponSoundSource);
                     }
 
                 }
             }
-            else if (gravityGun.currentlyPickedObject != null && Vector3.Distance(gravityGun.currentlyPickedObject.transform.position, gravityGun.predictedPosition) <= 0.3f)
+            else if (gravityGun.currentlyPickedObject != null && Vector3.Distance(gravityGun.currentlyPickedObject.transform.position, gravityGun.predictedPosition) <= gravityGun.dropFromExpectedPositionLerp)
             {
 
                 Rigidbody returnedBody = gravityGun.ResetObject();
@@ -117,6 +117,10 @@ namespace ClassicFPS.Guns
                     //Throw the object by setting velocity
                     returnedBody.velocity = playerCamera.transform.forward * gravityGun.throwSpeed;
                 }
+                else {
+                    //Unable to throw
+                    SFXManager.PlayClipFromSource(cantPickupOrThrowSound, weaponController.weaponSoundSource);
+                }
             }
             else
             {
@@ -133,7 +137,8 @@ namespace ClassicFPS.Guns
         {
             if (gravityGun.currentlyPickedObject != null && !gravityGun.controller.hasJumped)
             {
-                gravityGun.ResetObject();
+                var a = gravityGun.ResetObject();
+                if ( a == null ) SFXManager.PlayClipFromSource(cantPickupOrThrowSound, weaponController.weaponSoundSource);
             }
         }
 

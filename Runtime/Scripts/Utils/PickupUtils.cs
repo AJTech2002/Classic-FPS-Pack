@@ -22,9 +22,11 @@ namespace ClassicFPS.Utils
 
         [Header("UI Options")]
         public Color gravityGunCrosshairColor = Color.red; //The color of the crosshair when selected
-        
-        
+
+
         [Header("Physics")]
+        public float clippingObjectThreshold = 0.2f;
+        public float dropFromExpectedPositionLerp = 0.5f;
         public LayerMask discludePlayer; //All the layers except the Player
 
 
@@ -65,18 +67,20 @@ namespace ClassicFPS.Utils
         {
             yield return new WaitForFixedUpdate();
             yield return new WaitForFixedUpdate();
-         
-            if (currentlyPickedObjectComponent.precalculateBounds)
+
+            if (currentlyPickedObjectComponent != null)
             {
-                currentlyPickedObjectComponent.objectHoldingOffset.y = -currentlyPickedObject.InverseTransformPoint(currentlyPickedObject.GetComponent<Collider>().bounds.center).y * currentlyPickedObject.transform.localScale.y;
-                currentlyPickedObjectComponent.objectHoldingOffset.x = 0;
-                currentlyPickedObjectComponent.objectHoldingOffset.z = Mathf.Clamp(currentlyPickedObject.GetComponent<Collider>().bounds.extents.magnitude * currentlyPickedObject.localScale.magnitude * distanceFromCamera, 3, 30);
-                currentlyPickedObject.transform.forward = playerCamera.transform.forward;
-                //   currentlyPickedObjectComponent.objectHoldingOffset.z = currentlyPickedObject.lossyScale.magnitude * distanceFromCamera;
+                if (currentlyPickedObjectComponent.precalculateBounds)
+                {
+                    currentlyPickedObjectComponent.objectHoldingOffset.y = -currentlyPickedObject.InverseTransformPoint(currentlyPickedObject.GetComponent<Collider>().bounds.center).y * currentlyPickedObject.transform.localScale.y;
+                    currentlyPickedObjectComponent.objectHoldingOffset.x = 0;
+                    currentlyPickedObjectComponent.objectHoldingOffset.z = Mathf.Clamp(currentlyPickedObject.GetComponent<Collider>().bounds.extents.magnitude * currentlyPickedObject.localScale.magnitude * distanceFromCamera, 3, 30);
+                    currentlyPickedObject.transform.forward = playerCamera.transform.forward;
+                    //   currentlyPickedObjectComponent.objectHoldingOffset.z = currentlyPickedObject.lossyScale.magnitude * distanceFromCamera;
+                }
+
+                colliderCenter = currentlyPickedObject.InverseTransformPoint(currentlyPickedObject.GetComponent<Collider>().bounds.center);
             }
-
-            colliderCenter =currentlyPickedObject.InverseTransformPoint( currentlyPickedObject.GetComponent<Collider>().bounds.center);
-
         }
         
         public void OnPickup (Transform transform, MonoBehaviour from)
@@ -99,8 +103,21 @@ namespace ClassicFPS.Utils
             currentlyPickedObject.GetComponent<Rigidbody>().isKinematic = true;
 
             currentlyPickedObjectComponent = currentlyPickedObject.GetComponent<PushableObject>();
+            
+            if (from != null)
+                from.StartCoroutine(WaitAndRealign());
+            else {
+                if (currentlyPickedObjectComponent.precalculateBounds)
+                {
+                    currentlyPickedObjectComponent.objectHoldingOffset.y = -currentlyPickedObject.InverseTransformPoint(currentlyPickedObject.GetComponent<Collider>().bounds.center).y * currentlyPickedObject.transform.localScale.y;
+                    currentlyPickedObjectComponent.objectHoldingOffset.x = 0;
+                    currentlyPickedObjectComponent.objectHoldingOffset.z = Mathf.Clamp(currentlyPickedObject.GetComponent<Collider>().bounds.extents.magnitude * currentlyPickedObject.localScale.magnitude * distanceFromCamera, 3, 30);
+                    currentlyPickedObject.transform.forward = playerCamera.transform.forward;
+                    //   currentlyPickedObjectComponent.objectHoldingOffset.z = currentlyPickedObject.lossyScale.magnitude * distanceFromCamera;
+                }
 
-            from.StartCoroutine(WaitAndRealign());
+                colliderCenter =currentlyPickedObject.InverseTransformPoint( currentlyPickedObject.GetComponent<Collider>().bounds.center);
+            }
         }
         
        
@@ -116,11 +133,13 @@ namespace ClassicFPS.Utils
                 Vector3 newLoc = PreventCollision(currentlyPickedObject.position, currentlyPickedObject.GetComponent<Collider>(), currentlyPickedObject);
 
                 //If the position has been modified then there was a collision
-                if (newLoc != currentlyPickedObject.position)
+                if (Vector3.Distance(newLoc, currentlyPickedObject.position) > currentlyPickedObject.GetComponent<Collider>().bounds.extents.y * clippingObjectThreshold)
                 {
                     //Don't allow the object to be dropped
                     return null;
                 }
+
+                if (newLoc.y > currentlyPickedObject.position.y) currentlyPickedObject.position = newLoc;
 
                 //Set to the new location
                 currentlyPickedObject.transform.position = newLoc;
@@ -273,7 +292,7 @@ namespace ClassicFPS.Utils
             Vector3 tempPosition = newPosition;
 
             //Find all the colliders in the sphere near the Player
-            Collider[] c = Physics.OverlapSphere(newPosition, 20);
+            Collider[] c = Physics.OverlapSphere(newPosition, 20, discludePlayer);
 
             //Run a loop through each collider nearby the Player
             foreach (Collider col in c)
