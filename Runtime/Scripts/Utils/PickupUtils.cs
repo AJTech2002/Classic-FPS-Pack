@@ -26,7 +26,7 @@ namespace ClassicFPS.Utils
 
         [Header("Physics")]
         public float clippingObjectThreshold = 0.2f;
-        public float dropFromExpectedPositionLerp = 0.5f;
+        public float dropFromExpectedPositionLerp = 3f;
         public LayerMask discludePlayer; //All the layers except the Player
 
 
@@ -74,7 +74,7 @@ namespace ClassicFPS.Utils
                 {
                     currentlyPickedObjectComponent.objectHoldingOffset.y = -currentlyPickedObject.InverseTransformPoint(currentlyPickedObject.GetComponent<Collider>().bounds.center).y * currentlyPickedObject.transform.localScale.y;
                     currentlyPickedObjectComponent.objectHoldingOffset.x = 0;
-                    currentlyPickedObjectComponent.objectHoldingOffset.z = Mathf.Clamp(currentlyPickedObject.GetComponent<Collider>().bounds.extents.magnitude * currentlyPickedObject.localScale.magnitude * distanceFromCamera, 3, 30);
+                    currentlyPickedObjectComponent.objectHoldingOffset.z = Mathf.Clamp(currentlyPickedObject.GetComponent<Collider>().bounds.extents.magnitude * currentlyPickedObject.localScale.magnitude * distanceFromCamera, 3, 15);
                     currentlyPickedObject.transform.forward = playerCamera.transform.forward;
                     //   currentlyPickedObjectComponent.objectHoldingOffset.z = currentlyPickedObject.lossyScale.magnitude * distanceFromCamera;
                 }
@@ -130,13 +130,21 @@ namespace ClassicFPS.Utils
             {
 
                 //Check where the Object would end up due to physics if Player was to let the Object go
-                Vector3 newLoc = PreventCollision(currentlyPickedObject.position, currentlyPickedObject.GetComponent<Collider>(), currentlyPickedObject);
+                (Vector3 newLoc, bool didChangePosition) = PreventCollision(currentlyPickedObject.position, currentlyPickedObject.GetComponent<Collider>(), currentlyPickedObject);
 
                 //If the position has been modified then there was a collision
-                if (Vector3.Distance(newLoc, currentlyPickedObject.position) > currentlyPickedObject.GetComponent<Collider>().bounds.extents.y * clippingObjectThreshold)
+                if (Vector3.Distance(newLoc, currentlyPickedObject.position) > currentlyPickedObject.GetComponent<Collider>().bounds.extents.y * clippingObjectThreshold && didChangePosition)
                 {
                     //Don't allow the object to be dropped
-                    return null;
+                    Ray ray = playerCamera.ViewportPointToRay(new Vector2(0.5f, 0.5f));
+                    RaycastHit hit;
+
+                    if (Physics.Raycast(ray, out hit, Mathf.Infinity, discludePlayer))
+                    {
+                        newLoc = hit.point + Vector3.up * currentlyPickedObject.GetComponent<Collider>().bounds.extents.y*2;
+                        
+                    }
+                    else return null;
                 }
 
                 if (newLoc.y > currentlyPickedObject.position.y) currentlyPickedObject.position = newLoc;
@@ -287,8 +295,13 @@ namespace ClassicFPS.Utils
                 }
         }
 
-        public Vector3 PreventCollision(Vector3 newPosition, Collider collider, Transform transform)
+        //1. Return whether or not the collision changed position
+        //2. Ensure constant sizing
+        //3. Ensure the object doesnt go through the ground
+
+        public (Vector3,bool) PreventCollision(Vector3 newPosition, Collider collider, Transform transform)
         {
+            bool didChange = false;
             Vector3 tempPosition = newPosition;
 
             //Find all the colliders in the sphere near the Player
@@ -310,12 +323,13 @@ namespace ClassicFPS.Utils
                 //If the Player is intersecting any nearby colliders (for example the Wall)
                 if (d == true)
                 {
+                    didChange = true;
                     //Push the player out of the wall
                     tempPosition += (-penDir.normalized * penDist);
                 }
             }
 
-            return tempPosition;
+            return (tempPosition, didChange);
         }
     }
 }
