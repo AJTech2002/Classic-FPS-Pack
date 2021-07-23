@@ -48,14 +48,14 @@ public class EnemyVariations : MonoBehaviour
         if (awakenSounds.Length > 0) enemy.awakenSound = awakenSounds[variationID];
         audioSource.pitch = pitches[variationID];
         if (maxHealths[0] != 0) enemy.health = maxHealths[variationID];
-        enemy.agent.speed *= speedMultipliers[variationID];
-        enemy.agent.speed += Random.Range(-2f, 2f);
+        if (enemy) enemy.agent.speed *= speedMultipliers[variationID];
+        if (enemy) enemy.agent.speed += Random.Range(-2f, 2f);
         skinnedMeshRenderer.material.mainTexture = textures[variationID];
         skinnedMeshRenderer.sharedMesh = meshes[variationID];
-        enemy.animator.speed = speedMultipliers[variationID];
+        if (enemy) enemy.animator.speed = speedMultipliers[variationID];
         if (shootDelays.Length > 0) enemy.shootDelay = shootDelays[variationID];
         if (projectileSpeeds.Length > 0) enemy.projectileSpeed = projectileSpeeds[variationID];
-        enemy.shootDelay *= Random.Range(.8f, 1.2f);
-        enemy.projectileSpeed *= Random.Range(.8f, 1.2f);
+        if (enemy) enemy.shootDelay *= Random.Range(.8f, 1.2f);
+        if (enemy) enemy.projectileSpeed *= Random.Range(.8f, 1.2f);
     }
 }

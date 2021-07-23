@@ -27,6 +27,9 @@ namespace ClassicFPS.Controller.PlayerState
         public Animator levelTitle;
         public Image recoveryCircle;
 
+        [Header("Other Graphics")]
+        public GameObject footPrint;
+        public LayerMask footPrintLayerMask;
 
         [Header("Saving Options")]
         public bool resetHealthOnLoad = true;
