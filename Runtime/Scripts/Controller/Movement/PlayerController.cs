@@ -119,6 +119,12 @@ namespace ClassicFPS.Controller.Movement
             verticalForce += force;
         }
 
+        //Whenever a vertical force has to be applied use this
+        public void SetVerticalForce(float force)
+        {
+            verticalForce = force;
+        }
+
 
         //Applies force in direction
         public void ApplyForce(Vector3 forceDirection)
