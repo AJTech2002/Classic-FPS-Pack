@@ -80,9 +80,13 @@ namespace ClassicFPS.Utils
                 }
 
                 colliderCenter = currentlyPickedObject.InverseTransformPoint(currentlyPickedObject.GetComponent<Collider>().bounds.center);
+                colliderExtents = currentlyPickedObject.GetComponent<Collider>().bounds.extents;
             }
         }
-        
+
+
+        private Vector3 colliderExtents;
+
         public void OnPickup (Transform transform, MonoBehaviour from)
         {
             currentlyPickedObject = transform;
@@ -117,6 +121,7 @@ namespace ClassicFPS.Utils
                 }
 
                 colliderCenter =currentlyPickedObject.InverseTransformPoint( currentlyPickedObject.GetComponent<Collider>().bounds.center);
+                colliderExtents = currentlyPickedObject.GetComponent<Collider>().bounds.extents;
             }
         }
         
@@ -141,7 +146,7 @@ namespace ClassicFPS.Utils
 
                     if (Physics.Raycast(ray, out hit, Mathf.Infinity, discludePlayer))
                     {
-                        newLoc = hit.point + Vector3.up * currentlyPickedObject.GetComponent<Collider>().bounds.extents.y*2;
+                        newLoc = hit.point + Vector3.up * currentlyPickedObject.GetComponent<Collider>().bounds.extents.y;
                         
                     }
                     else return null;
@@ -209,8 +214,17 @@ namespace ClassicFPS.Utils
                 {
                     currentlyPickedObjectComponent.objectHoldingOffset.y = -colliderCenter.y * currentlyPickedObject.transform.localScale.y;
                     currentlyPickedObjectComponent.objectHoldingOffset.x = 0;
-                    currentlyPickedObjectComponent.objectHoldingOffset.z = Mathf.Clamp(currentlyPickedObject.GetComponent<Collider>().bounds.extents.magnitude * currentlyPickedObject.localScale.magnitude * distanceFromCamera, 3, 30);
-                    currentlyPickedObject.transform.forward = playerCamera.transform.forward;
+                    
+                    var useExtents = colliderExtents.y;
+
+                    if (colliderExtents.x > useExtents) useExtents = colliderExtents.x;
+
+                    var expectedFrustrumHeight = 1 / distanceFromCamera * useExtents * 2;
+                    var distance = expectedFrustrumHeight * 0.5f / Mathf.Tan(playerCamera.fieldOfView * 0.5f * Mathf.Deg2Rad);
+
+                //Mathf.Clamp(currentlyPickedObject.GetComponent<Collider>().bounds.extents.magnitude * currentlyPickedObject.localScale.magnitude * distanceFromCamera, 3, 30);
+                currentlyPickedObjectComponent.objectHoldingOffset.z = Mathf.Clamp(distance, 3, 100);
+                currentlyPickedObject.transform.forward = playerCamera.transform.forward;
                     //   currentlyPickedObjectComponent.objectHoldingOffset.z = currentlyPickedObject.lossyScale.magnitude * distanceFromCamera;
                 }
             
@@ -267,6 +281,7 @@ namespace ClassicFPS.Utils
                         currentlyPickedObject.transform.position = predictedPosition;
                     }
                 }
+
         }
 
         public void ModifyCrosshair ()
