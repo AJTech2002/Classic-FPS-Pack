@@ -1,0 +1,134 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5698759000575119658
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5698759000575119660}
+  - component: {fileID: 5698759000575119659}
+  - component: {fileID: 132480139}
+  - component: {fileID: 132480140}
+  - component: {fileID: 4562773163993856085}
+  m_Layer: 0
+  m_Name: _GameManager
+  m_TagString: GameManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5698759000575119660
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5698759000575119658}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 348.0643, y: -1389.9082, z: -96.08036}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5698759000575119659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5698759000575119658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c40fb9f6bb92b34485e184f9efd869f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerIsAtSavePoint: 0
+  saveInputAction:
+    m_Name: Save Input
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 6983de2c-6f9b-4e6c-98af-3c86603cec64
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: a90be555-05a6-41c6-9e66-417c6b4947b8
+      m_Path: <Keyboard>/e
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Save Input
+      m_Flags: 0
+  loadAction:
+    m_Name: Load
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 5978c641-e5f9-4fb6-aed8-52b55a64c55e
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: f6067b81-76d3-456e-a437-7bbe7276661a
+      m_Path: <Keyboard>/h
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: 
+      m_Flags: 0
+--- !u!114 &132480139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5698759000575119658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51971630a62dc82439158f467afaefcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPrefab: {fileID: 3223624194923742980, guid: 60ab2d9a03be6bc4db3693ae63563a9a, type: 3}
+  keyManager: {fileID: 11400000, guid: 96b1fb46a89fa0142b6c3d9a618ccea2, type: 2}
+  isTestingScene: 0
+  startingSceneName: Breakable Objects
+  awaitingSceneLoad: 1
+--- !u!114 &132480140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5698759000575119658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd3a1902253940345a2967e138486684, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  savedState:
+    currentScene: 
+--- !u!114 &4562773163993856085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5698759000575119658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 222a789e29edef8448d142499b794cba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundSounds:
+  - TerrainLayerNameOrTag: Untagged
+    isTerrainLayer: 0
+    footsteps:
+    - {fileID: 8300000, guid: 1bf8ff7bb20481044a1f443502ac0f02, type: 3}
+    - {fileID: 8300000, guid: 1bf8ff7bb20481044a1f443502ac0f02, type: 3}
+    - {fileID: 8300000, guid: 68fb49350de83fb4abafe803bc5dbebf, type: 3}
+    - {fileID: 8300000, guid: f3766f2d22462274482435b80e6ef399, type: 3}
+    - {fileID: 8300000, guid: 6321303ef50b8754788a71f264bef4f0, type: 3}
+    - {fileID: 8300000, guid: a31ca56f889e24842b13b9394cd1e3f3, type: 3}

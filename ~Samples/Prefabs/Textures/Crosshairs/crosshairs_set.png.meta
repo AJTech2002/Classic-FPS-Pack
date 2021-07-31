@@ -1,0 +1,5340 @@
+fileFormatVersion: 2
+guid: b2a101b46c4c18d49946a4435c40f212
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2722310063305680407
+    second: crosshairs_set_0
+  - first:
+      213: 3882830906984562529
+    second: crosshairs_set_1
+  - first:
+      213: 4203940831299784481
+    second: crosshairs_set_2
+  - first:
+      213: -2978929014934989401
+    second: crosshairs_set_3
+  - first:
+      213: 3088761146060299720
+    second: crosshairs_set_4
+  - first:
+      213: -7775088828203107901
+    second: crosshairs_set_5
+  - first:
+      213: 7454389886631961240
+    second: crosshairs_set_6
+  - first:
+      213: 5776307277144014261
+    second: crosshairs_set_7
+  - first:
+      213: 5394953512435472991
+    second: crosshairs_set_8
+  - first:
+      213: 4590658848079615321
+    second: crosshairs_set_9
+  - first:
+      213: -487290037350667830
+    second: crosshairs_set_10
+  - first:
+      213: -7866385720633417737
+    second: crosshairs_set_11
+  - first:
+      213: -5578848482438849366
+    second: crosshairs_set_12
+  - first:
+      213: 5017457691402967333
+    second: crosshairs_set_13
+  - first:
+      213: 3074158466157242919
+    second: crosshairs_set_14
+  - first:
+      213: -6367315755759289210
+    second: crosshairs_set_15
+  - first:
+      213: 915403901162837845
+    second: crosshairs_set_16
+  - first:
+      213: 1958635291504113234
+    second: crosshairs_set_17
+  - first:
+      213: 3701980281857771513
+    second: crosshairs_set_18
+  - first:
+      213: 1994134973946090293
+    second: crosshairs_set_19
+  - first:
+      213: -535500531148070946
+    second: crosshairs_set_20
+  - first:
+      213: 2846265592787133477
+    second: crosshairs_set_21
+  - first:
+      213: -395445466070431244
+    second: crosshairs_set_22
+  - first:
+      213: -839798703638565138
+    second: crosshairs_set_23
+  - first:
+      213: 726999596053095002
+    second: crosshairs_set_24
+  - first:
+      213: -3680252770454697128
+    second: crosshairs_set_25
+  - first:
+      213: -3275925519949533306
+    second: crosshairs_set_26
+  - first:
+      213: -5167164933016986478
+    second: crosshairs_set_27
+  - first:
+      213: 2155804311321940931
+    second: crosshairs_set_28
+  - first:
+      213: 9196344110930793881
+    second: crosshairs_set_29
+  - first:
+      213: -7086414480133390257
+    second: crosshairs_set_30
+  - first:
+      213: 3186353641274100277
+    second: crosshairs_set_31
+  - first:
+      213: 2516680437398192535
+    second: crosshairs_set_32
+  - first:
+      213: 2701372736066183863
+    second: crosshairs_set_33
+  - first:
+      213: -7750060194377015590
+    second: crosshairs_set_34
+  - first:
+      213: 1261821102074718177
+    second: crosshairs_set_35
+  - first:
+      213: -8775178463799048795
+    second: crosshairs_set_36
+  - first:
+      213: 8156464073617846780
+    second: crosshairs_set_37
+  - first:
+      213: 5040914913957030176
+    second: crosshairs_set_38
+  - first:
+      213: -4394867943173187122
+    second: crosshairs_set_39
+  - first:
+      213: 1562024325665284778
+    second: crosshairs_set_40
+  - first:
+      213: -5962079956097902605
+    second: crosshairs_set_41
+  - first:
+      213: 8724184103692401710
+    second: crosshairs_set_42
+  - first:
+      213: 4632078750549158426
+    second: crosshairs_set_43
+  - first:
+      213: 3094588349783191828
+    second: crosshairs_set_44
+  - first:
+      213: 5567060300544304423
+    second: crosshairs_set_45
+  - first:
+      213: 7806516234094998372
+    second: crosshairs_set_46
+  - first:
+      213: -5418517274107185709
+    second: crosshairs_set_47
+  - first:
+      213: 2256272558099821701
+    second: crosshairs_set_48
+  - first:
+      213: -6356222202410084355
+    second: crosshairs_set_49
+  - first:
+      213: -5115697069977641309
+    second: crosshairs_set_50
+  - first:
+      213: -2972469091821834148
+    second: crosshairs_set_51
+  - first:
+      213: 5334109658207462122
+    second: crosshairs_set_52
+  - first:
+      213: -5232755271414382397
+    second: crosshairs_set_53
+  - first:
+      213: 6884175788186779553
+    second: crosshairs_set_54
+  - first:
+      213: 3317971155377635883
+    second: crosshairs_set_55
+  - first:
+      213: 5985514277850863213
+    second: crosshairs_set_56
+  - first:
+      213: -8149453238430326088
+    second: crosshairs_set_57
+  - first:
+      213: -4431281179932605105
+    second: crosshairs_set_58
+  - first:
+      213: 2867200193595356100
+    second: crosshairs_set_59
+  - first:
+      213: 8183890435887326606
+    second: crosshairs_set_60
+  - first:
+      213: -38122841816069549
+    second: crosshairs_set_61
+  - first:
+      213: -2823497544427728960
+    second: crosshairs_set_62
+  - first:
+      213: 7838391663766426111
+    second: crosshairs_set_63
+  - first:
+      213: 8546331829411306157
+    second: crosshairs_set_64
+  - first:
+      213: -3105014090307897360
+    second: crosshairs_set_65
+  - first:
+      213: 1354783865006239335
+    second: crosshairs_set_66
+  - first:
+      213: 8158932773489368656
+    second: crosshairs_set_67
+  - first:
+      213: -4880580062199772959
+    second: crosshairs_set_68
+  - first:
+      213: 3744291259430173172
+    second: crosshairs_set_69
+  - first:
+      213: 2522812201598934432
+    second: crosshairs_set_70
+  - first:
+      213: -486294130929941447
+    second: crosshairs_set_71
+  - first:
+      213: 978162151598607484
+    second: crosshairs_set_72
+  - first:
+      213: 4267123006917672656
+    second: crosshairs_set_73
+  - first:
+      213: 9140141802479315592
+    second: crosshairs_set_74
+  - first:
+      213: 631493656251518035
+    second: crosshairs_set_75
+  - first:
+      213: -825753076693135800
+    second: crosshairs_set_76
+  - first:
+      213: 3523751478624666678
+    second: crosshairs_set_77
+  - first:
+      213: -6219610649765530880
+    second: crosshairs_set_78
+  - first:
+      213: -7066787914607888228
+    second: crosshairs_set_79
+  - first:
+      213: 7646691865885364720
+    second: crosshairs_set_80
+  - first:
+      213: 5256359955900365193
+    second: crosshairs_set_81
+  - first:
+      213: 870836957812602432
+    second: crosshairs_set_82
+  - first:
+      213: -8858114393645291186
+    second: crosshairs_set_83
+  - first:
+      213: 7523536802253628781
+    second: crosshairs_set_84
+  - first:
+      213: 350154382544445450
+    second: crosshairs_set_85
+  - first:
+      213: -4642288574457321894
+    second: crosshairs_set_86
+  - first:
+      213: 4056620199166688948
+    second: crosshairs_set_87
+  - first:
+      213: 5218544968930435316
+    second: crosshairs_set_88
+  - first:
+      213: 4162018645039470431
+    second: crosshairs_set_89
+  - first:
+      213: -6506131232551172501
+    second: crosshairs_set_90
+  - first:
+      213: 6714714706186921764
+    second: crosshairs_set_91
+  - first:
+      213: -4225551803560657298
+    second: crosshairs_set_92
+  - first:
+      213: 4475330619305760092
+    second: crosshairs_set_93
+  - first:
+      213: 687014466014828760
+    second: crosshairs_set_94
+  - first:
+      213: -2427486244230064267
+    second: crosshairs_set_95
+  - first:
+      213: -4460688419200953828
+    second: crosshairs_set_96
+  - first:
+      213: 7627612152225257618
+    second: crosshairs_set_97
+  - first:
+      213: -8137247511280491423
+    second: crosshairs_set_98
+  - first:
+      213: 8767626420695649045
+    second: crosshairs_set_99
+  - first:
+      213: -8034597811497610902
+    second: crosshairs_set_100
+  - first:
+      213: 5742611523845536107
+    second: crosshairs_set_101
+  - first:
+      213: -6006218583500653128
+    second: crosshairs_set_102
+  - first:
+      213: 195088737463495985
+    second: crosshairs_set_103
+  - first:
+      213: -5346961970658388368
+    second: crosshairs_set_104
+  - first:
+      213: -1095301116450832529
+    second: crosshairs_set_105
+  - first:
+      213: -8399657750729734493
+    second: crosshairs_set_106
+  - first:
+      213: 2870689723675060313
+    second: crosshairs_set_107
+  - first:
+      213: -6360654811762777146
+    second: crosshairs_set_108
+  - first:
+      213: -6504846385758705086
+    second: crosshairs_set_109
+  - first:
+      213: 8377925658128950944
+    second: crosshairs_set_110
+  - first:
+      213: -7886119894597139475
+    second: crosshairs_set_111
+  - first:
+      213: -3923463583480601971
+    second: crosshairs_set_112
+  - first:
+      213: -7050826541042769009
+    second: crosshairs_set_113
+  - first:
+      213: 4529669390040131243
+    second: crosshairs_set_114
+  - first:
+      213: -2538681886202639723
+    second: crosshairs_set_115
+  - first:
+      213: 2535133940950960977
+    second: crosshairs_set_116
+  - first:
+      213: -5283942943453592131
+    second: crosshairs_set_117
+  - first:
+      213: 7717358009826362552
+    second: crosshairs_set_118
+  - first:
+      213: -1104006857333626453
+    second: crosshairs_set_119
+  - first:
+      213: 1417569173758970692
+    second: crosshairs_set_120
+  - first:
+      213: -2140836668679730960
+    second: crosshairs_set_121
+  - first:
+      213: -2064605766117291410
+    second: crosshairs_set_122
+  - first:
+      213: 4757750256402638589
+    second: crosshairs_set_123
+  - first:
+      213: -7198560299721370316
+    second: crosshairs_set_124
+  - first:
+      213: 1163482148649746511
+    second: crosshairs_set_125
+  - first:
+      213: -5725575922606311252
+    second: crosshairs_set_126
+  - first:
+      213: 2096097641088479649
+    second: crosshairs_set_127
+  - first:
+      213: -7960725709532304673
+    second: crosshairs_set_128
+  - first:
+      213: 5602405484074739971
+    second: crosshairs_set_129
+  - first:
+      213: 4416097364861360012
+    second: crosshairs_set_130
+  - first:
+      213: 5133065158947488099
+    second: crosshairs_set_131
+  - first:
+      213: 6428667038424946110
+    second: crosshairs_set_132
+  - first:
+      213: 8240251734251009910
+    second: crosshairs_set_133
+  - first:
+      213: 1753112342022326859
+    second: crosshairs_set_134
+  - first:
+      213: 798750726974524323
+    second: crosshairs_set_135
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 454, z: 450, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 2
+  alphaIsTransparency: 1
+  spriteTessellationDetail: 0.1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: crosshairs_set_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 463
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e9913cbb69683ad0800000000000000
+      internalID: -2722310063305680407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_1
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 477
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16ff8b5432692e530800000000000000
+      internalID: 3882830906984562529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_2
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 466
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12f4262a9e5675a30800000000000000
+      internalID: 4203940831299784481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_3
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 466
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a512bd08d7b8a6d0800000000000000
+      internalID: -2978929014934989401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_4
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 465
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cdd3fab5eb7dda20800000000000000
+      internalID: 3088761146060299720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 394
+        width: 54
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c978d9a7e5591490800000000000000
+      internalID: -7775088828203107901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_6
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 477
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89266f95b10537760800000000000000
+      internalID: 7454389886631961240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_7
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 448
+        width: 71
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bd3ca74dd0992050800000000000000
+      internalID: 5776307277144014261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_8
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 455
+        width: 62
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5a5678c2a9beda40800000000000000
+      internalID: 5394953512435472991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9551ac466eb45bf30800000000000000
+      internalID: 4590658848079615321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_10
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 392
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac96025fa4ccc39f0800000000000000
+      internalID: -487290037350667830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_11
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 388
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ff907f6ddbf4d290800000000000000
+      internalID: -7866385720633417737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_12
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 388
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aac518cfcd2f392b0800000000000000
+      internalID: -5578848482438849366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_13
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 385
+        width: 62
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52910abcf2791a540800000000000000
+      internalID: 5017457691402967333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_14
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 392
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72aef8e56da99aa20800000000000000
+      internalID: 3074158466157242919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_15
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 392
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68c383d3e00c2a7a0800000000000000
+      internalID: -6367315755759289210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_16
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 359
+        width: 8
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55751d28ffa24bc00800000000000000
+      internalID: 915403901162837845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_17
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 359
+        width: 8
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25675aa9b687e2b10800000000000000
+      internalID: 1958635291504113234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_18
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 357
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f702a1d373106330800000000000000
+      internalID: 3701980281857771513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_19
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 356
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5335d3481379cab10800000000000000
+      internalID: 1994134973946090293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_20
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 356
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edfd2e7aa158198f0800000000000000
+      internalID: -535500531148070946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_21
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 357
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5246e7af977ff7720800000000000000
+      internalID: 2846265592787133477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_22
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 331
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f945da9178138af0800000000000000
+      internalID: -395445466070431244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_23
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 320
+        width: 128
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eee2aca478f6854f0800000000000000
+      internalID: -839798703638565138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_24
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 348
+        width: 17
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a52e892e742d61a00800000000000000
+      internalID: 726999596053095002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_25
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 348
+        width: 17
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85b8665aa9d1decc0800000000000000
+      internalID: -3680252770454697128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_26
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 348
+        width: 18
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68f65c0a8139982d0800000000000000
+      internalID: -3275925519949533306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_27
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 348
+        width: 18
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29cdaa7ceda8a48b0800000000000000
+      internalID: -5167164933016986478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_28
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 331
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c399956994faed10800000000000000
+      internalID: 2155804311321940931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_29
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 331
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 995194c9e3aff9f70800000000000000
+      internalID: 9196344110930793881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_30
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 331
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f400774639ff7ad90800000000000000
+      internalID: -7086414480133390257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_31
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 349
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53a4ae431c3383c20800000000000000
+      internalID: 3186353641274100277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_32
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 331
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7914b4c168b0de220800000000000000
+      internalID: 2516680437398192535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_33
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 346
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b26623e0343d7520800000000000000
+      internalID: 2701372736066183863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_34
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 328
+        width: 8
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ade53469051427490800000000000000
+      internalID: -7750060194377015590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_35
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 328
+        width: 8
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e7614f5b93e28110800000000000000
+      internalID: 1261821102074718177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_36
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 303
+        width: 18
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a589981ead483680800000000000000
+      internalID: -8775178463799048795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_37
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 292
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf13a333cd4913170800000000000000
+      internalID: 8156464073617846780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_38
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 293
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 029a065086de4f540800000000000000
+      internalID: 5040914913957030176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_39
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 292
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec9196404ea4203c0800000000000000
+      internalID: -4394867943173187122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_40
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 293
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa26cc529dc6da510800000000000000
+      internalID: 1562024325665284778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_41
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 292
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f7de4e4edf624da0800000000000000
+      internalID: -5962079956097902605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_42
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 293
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2cf1b73837821970800000000000000
+      internalID: 8724184103692401710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_43
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 300
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1a2e12f413784040800000000000000
+      internalID: 4632078750549158426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_44
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 300
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 411b3e255bf22fa20800000000000000
+      internalID: 3094588349783191828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_45
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 300
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7256f1909db224d40800000000000000
+      internalID: 5567060300544304423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_46
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 300
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4637d8a7721565c60800000000000000
+      internalID: 7806516234094998372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_47
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 278
+        width: 10
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d5f58b6f3f8dc4b0800000000000000
+      internalID: -5418517274107185709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_48
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 278
+        width: 10
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5847006ffe3ef4f10800000000000000
+      internalID: 2256272558099821701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_49
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 274
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df755e765992ac7a0800000000000000
+      internalID: -6356222202410084355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_50
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 289
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3aed9757e946109b0800000000000000
+      internalID: -5115697069977641309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_51
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 289
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c50b12c1c1bafb6d0800000000000000
+      internalID: -2972469091821834148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_52
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 289
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae2af6a0970960a40800000000000000
+      internalID: 5334109658207462122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_53
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 289
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c00bc21ec48167b0800000000000000
+      internalID: -5232755271414382397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_54
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 293
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1afb73ac761898f50800000000000000
+      internalID: 6884175788186779553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_55
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 286
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b22c64bbf2dcb0e20800000000000000
+      internalID: 3317971155377635883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_56
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 293
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d665459e581d01350800000000000000
+      internalID: 5985514277850863213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_57
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 293
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b224b1157357ee80800000000000000
+      internalID: -8149453238430326088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_58
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 293
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f454e3aae3de082c0800000000000000
+      internalID: -4431281179932605105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_59
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 293
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c3be2f82675ac720800000000000000
+      internalID: 2867200193595356100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_60
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 264
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e85e7c7cdf4039170800000000000000
+      internalID: 8183890435887326606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_61
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 263
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35a89b33a7f887ff0800000000000000
+      internalID: -38122841816069549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_62
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 264
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cf823061fbe0d8d0800000000000000
+      internalID: -2823497544427728960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_63
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 263
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff15e2940bf87cc60800000000000000
+      internalID: 7838391663766426111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_64
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 265
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daadca8b48baa9670800000000000000
+      internalID: 8546331829411306157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_65
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 274
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f77d9cc226c8e4d0800000000000000
+      internalID: -3105014090307897360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_66
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 274
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76ea02d4fb82dc210800000000000000
+      internalID: 1354783865006239335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_67
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 263
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05e502e212a5a3170800000000000000
+      internalID: 8158932773489368656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_68
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 274
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e88ab6ba42b44cb0800000000000000
+      internalID: -4880580062199772959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_69
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 274
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f97fe5ff0566f330800000000000000
+      internalID: 3744291259430173172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_70
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 266
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ad5357b454d20320800000000000000
+      internalID: 2522812201598934432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_71
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 274
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 934409d70165049f0800000000000000
+      internalID: -486294130929941447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_72
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 274
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7c44ca5b41239d00800000000000000
+      internalID: 978162151598607484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_73
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 266
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0de793044cdd73b30800000000000000
+      internalID: 4267123006917672656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_74
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 266
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88a6a75fa8e48de70800000000000000
+      internalID: 9140141802479315592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_75
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 274
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35cc8c2722483c800800000000000000
+      internalID: 631493656251518035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_76
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 274
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84e0587a3f55a84f0800000000000000
+      internalID: -825753076693135800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_77
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 266
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6344e28dc41e6e030800000000000000
+      internalID: 3523751478624666678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_78
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 274
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0033d7321118fa9a0800000000000000
+      internalID: -6219610649765530880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_79
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 274
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c98f5c645d9bded90800000000000000
+      internalID: -7066787914607888228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_80
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 263
+        width: 18
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f157f4fcb18e1a60800000000000000
+      internalID: 7646691865885364720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_81
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 236
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 989770fc78752f840800000000000000
+      internalID: 5256359955900365193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_82
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 236
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 046b3b76995d51c00800000000000000
+      internalID: 870836957812602432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_83
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 236
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e496ffa24e7a11580800000000000000
+      internalID: -8858114393645291186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_84
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 222
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d65e7e83cd8f86860800000000000000
+      internalID: 7523536802253628781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_85
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 82
+        width: 46
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a00ab144e8ffbd400800000000000000
+      internalID: 350154382544445450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_86
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 211
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a56ed9e2327439fb0800000000000000
+      internalID: -4642288574457321894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_87
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 178
+        width: 70
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4be310804920c4830800000000000000
+      internalID: 4056620199166688948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_88
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 225
+        width: 48
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f0208d000ffb6840800000000000000
+      internalID: 5218544968930435316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_89
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 145
+        width: 48
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f57512608e572c930800000000000000
+      internalID: 4162018645039470431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_90
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6686bd6d1495b5a0800000000000000
+      internalID: -6506131232551172501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_91
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 127
+        width: 64
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 427ec5ef2757f2d50800000000000000
+      internalID: 6714714706186921764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_92
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 227
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6e71c8c503db55c0800000000000000
+      internalID: -4225551803560657298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_93
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 227
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c551628ac719b1e30800000000000000
+      internalID: 4475330619305760092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_94
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 202
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d85e525404c88900800000000000000
+      internalID: 687014466014828760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_95
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 202
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 577158b4f16df4ed0800000000000000
+      internalID: -2427486244230064267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_96
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 202
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1214d734837812c0800000000000000
+      internalID: -4460688419200953828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_97
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 202
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 298d6d1f6d8bad960800000000000000
+      internalID: 7627612152225257618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_98
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 203
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 164e1b06080b21f80800000000000000
+      internalID: -8137247511280491423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_99
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 146
+        width: 37
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51bc4e8d6cddca970800000000000000
+      internalID: 8767626420695649045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_100
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 201
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a61dd8c0cdf5f7090800000000000000
+      internalID: -8034597811497610902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_101
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 178
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b69b0e951cad1bf40800000000000000
+      internalID: 5742611523845536107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_102
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 138
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bdf7174500a5aca0800000000000000
+      internalID: -6006218583500653128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_103
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 178
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13de0305c2815b200800000000000000
+      internalID: 195088737463495985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_104
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 163
+        width: 46
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0765267ca66cbc5b0800000000000000
+      internalID: -5346961970658388368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_105
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 137
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6ffbdf0075bcc0f0800000000000000
+      internalID: -1095301116450832529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_106
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 137
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a6c5ec67cb6e6b80800000000000000
+      internalID: -8399657750729734493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_107
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 137
+        width: 20
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9582408181db6d720800000000000000
+      internalID: 2870689723675060313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_108
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 146
+        width: 4
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c3200e162a6ab7a0800000000000000
+      internalID: -6360654811762777146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_109
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 137
+        width: 20
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24a6e522da42ab5a0800000000000000
+      internalID: -6504846385758705086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_110
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 145
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a628677ffe544470800000000000000
+      internalID: 8377925658128950944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_111
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 144
+        width: 42
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de385620dbfde8290800000000000000
+      internalID: -7886119894597139475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_112
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 30
+        width: 28
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d82257188ae0d89c0800000000000000
+      internalID: -3923463583480601971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_113
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 28
+        width: 28
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f83ef382e9e662e90800000000000000
+      internalID: -7050826541042769009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_114
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 71
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba66d4f9f4e9cde30800000000000000
+      internalID: 4529669390040131243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_115
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 71
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59a4c27664ac4ccd0800000000000000
+      internalID: -2538681886202639723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_116
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 104
+        width: 17
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15b0b6833ea9e2320800000000000000
+      internalID: 2535133940950960977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_117
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 104
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db5440273e9aba6b0800000000000000
+      internalID: -5283942943453592131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_118
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 81
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b4473cb830991b60800000000000000
+      internalID: 7717358009826362552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_119
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 93
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba9a80fcc97cda0f0800000000000000
+      internalID: -1104006857333626453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_120
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 81
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44b827627a73ca310800000000000000
+      internalID: 1417569173758970692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_121
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 87
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f8c63974683a42e0800000000000000
+      internalID: -2140836668679730960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_122
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 87
+        width: 58
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6a0b559efb0953e0800000000000000
+      internalID: -2064605766117291410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_123
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 1
+        width: 62
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df627ea86ace60240800000000000000
+      internalID: 4757750256402638589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_124
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 1
+        width: 62
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 435d0e80c83991c90800000000000000
+      internalID: -7198560299721370316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_125
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 54
+        width: 16
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f40c6cc89d4852010800000000000000
+      internalID: 1163482148649746511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_126
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 50
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca87586a80baa80b0800000000000000
+      internalID: -5725575922606311252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_127
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 50
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a1fc9fe2b5d61d10800000000000000
+      internalID: 2096097641088479649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_128
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 30
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdae1091522d58190800000000000000
+      internalID: -7960725709532304673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_129
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 18
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 309a9fdda1ebfbd40800000000000000
+      internalID: 5602405484074739971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_130
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 14
+        width: 11
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c879916e721294d30800000000000000
+      internalID: 4416097364861360012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_131
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 29
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 361cfffd09f4c3740800000000000000
+      internalID: 5133065158947488099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_132
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 14
+        width: 11
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb5d4946c96373950800000000000000
+      internalID: 6428667038424946110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_133
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 6
+        width: 18
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 677f3d72b414b5270800000000000000
+      internalID: 8240251734251009910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_134
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 9
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4a089df26e445810800000000000000
+      internalID: 1753112342022326859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_set_135
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 9
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3abc661ed8bb51b00800000000000000
+      internalID: 798750726974524323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline:
+    - - {x: 9, y: -191}
+      - {x: -1, y: -199}
+      - {x: -1, y: -247}
+      - {x: 3, y: -256}
+      - {x: 127, y: -256}
+      - {x: 129, y: -255}
+      - {x: 129, y: -202}
+      - {x: 112, y: -191}
+    - - {x: 25, y: -250}
+      - {x: 24, y: -249}
+      - {x: 22, y: -249}
+      - {x: 17, y: -246}
+      - {x: 10, y: -239}
+      - {x: 7, y: -234}
+      - {x: 7, y: -232}
+      - {x: 6, y: -231}
+      - {x: 6, y: -226}
+      - {x: 5, y: -223}
+      - {x: 6, y: -222}
+      - {x: 6, y: -217}
+      - {x: 7, y: -216}
+      - {x: 7, y: -214}
+      - {x: 10, y: -209}
+      - {x: 17, y: -202}
+      - {x: 22, y: -199}
+      - {x: 24, y: -199}
+      - {x: 25, y: -198}
+      - {x: 30, y: -198}
+      - {x: 33, y: -197}
+      - {x: 34, y: -198}
+      - {x: 39, y: -198}
+      - {x: 40, y: -199}
+      - {x: 42, y: -199}
+      - {x: 47, y: -202}
+      - {x: 54, y: -209}
+      - {x: 57, y: -214}
+      - {x: 57, y: -216}
+      - {x: 58, y: -217}
+      - {x: 58, y: -222}
+      - {x: 59, y: -225}
+      - {x: 58, y: -226}
+      - {x: 58, y: -231}
+      - {x: 57, y: -232}
+      - {x: 57, y: -234}
+      - {x: 54, y: -239}
+      - {x: 47, y: -246}
+      - {x: 42, y: -249}
+      - {x: 40, y: -249}
+      - {x: 39, y: -250}
+      - {x: 34, y: -250}
+      - {x: 31, y: -251}
+      - {x: 30, y: -250}
+    - - {x: 149, y: -243}
+      - {x: 149, y: -247}
+      - {x: 155, y: -252}
+      - {x: 165, y: -252}
+      - {x: 171, y: -247}
+      - {x: 171, y: -243}
+    - - {x: 202, y: -240}
+      - {x: 199, y: -241}
+      - {x: 199, y: -247}
+      - {x: 201, y: -249}
+      - {x: 206, y: -249}
+      - {x: 208, y: -248}
+      - {x: 208, y: -245}
+      - {x: 205, y: -240}
+    - - {x: 244, y: -241}
+      - {x: 240, y: -246}
+      - {x: 241, y: -249}
+      - {x: 247, y: -249}
+      - {x: 249, y: -247}
+      - {x: 249, y: -242}
+      - {x: 247, y: -240}
+    - - {x: 133, y: -213}
+      - {x: 133, y: -234}
+      - {x: 143, y: -244}
+      - {x: 148, y: -244}
+      - {x: 148, y: -206}
+      - {x: 147, y: -204}
+      - {x: 145, y: -204}
+      - {x: 134, y: -210}
+    - - {x: 172, y: -204}
+      - {x: 172, y: -244}
+      - {x: 178, y: -244}
+      - {x: 187, y: -234}
+      - {x: 187, y: -216}
+      - {x: 178, y: -204}
+    - - {x: -40, y: -208}
+      - {x: -48, y: -215}
+      - {x: -48, y: -232}
+      - {x: -41, y: -239}
+      - {x: -38, y: -240}
+      - {x: -26, y: -240}
+      - {x: -16, y: -235}
+      - {x: -16, y: -215}
+      - {x: -19, y: -208}
+    - - {x: -154, y: -219}
+      - {x: -157, y: -218}
+      - {x: -166, y: -218}
+      - {x: -166, y: -230}
+      - {x: -155, y: -230}
+      - {x: -154, y: -227}
+    - - {x: 26, y: -218}
+      - {x: 26, y: -230}
+      - {x: 38, y: -230}
+      - {x: 38, y: -219}
+      - {x: 35, y: -218}
+    - - {x: 155, y: -219}
+      - {x: 155, y: -229}
+      - {x: 165, y: -229}
+      - {x: 165, y: -219}
+    - - {x: -227, y: -220}
+      - {x: -228, y: -222}
+      - {x: -228, y: -227}
+      - {x: -226, y: -228}
+      - {x: -221, y: -228}
+      - {x: -220, y: -226}
+      - {x: -220, y: -221}
+      - {x: -222, y: -220}
+    - - {x: -100, y: -220}
+      - {x: -100, y: -227}
+      - {x: -98, y: -228}
+      - {x: -92, y: -228}
+      - {x: -92, y: -220}
+    - - {x: 96, y: -224}
+      - {x: 96, y: -224}
+    - - {x: 201, y: -199}
+      - {x: 199, y: -201}
+      - {x: 199, y: -206}
+      - {x: 201, y: -208}
+      - {x: 204, y: -207}
+      - {x: 208, y: -202}
+      - {x: 207, y: -199}
+    - - {x: 240, y: -200}
+      - {x: 240, y: -203}
+      - {x: 243, y: -208}
+      - {x: 246, y: -208}
+      - {x: 249, y: -207}
+      - {x: 249, y: -201}
+      - {x: 247, y: -199}
+      - {x: 242, y: -199}
+    - - {x: 155, y: -196}
+      - {x: 150, y: -200}
+      - {x: 150, y: -202}
+      - {x: 151, y: -204}
+      - {x: 169, y: -204}
+      - {x: 170, y: -203}
+      - {x: 170, y: -197}
+      - {x: 166, y: -196}
+    - - {x: -17, y: -133}
+      - {x: -49, y: -133}
+      - {x: -59, y: -142}
+      - {x: -59, y: -180}
+      - {x: -57, y: -187}
+      - {x: -10, y: -187}
+      - {x: -5, y: -176}
+      - {x: -5, y: -140}
+      - {x: -12, y: -134}
+    - - {x: 7, y: -133}
+      - {x: 5, y: -142}
+      - {x: 5, y: -183}
+      - {x: 7, y: -187}
+      - {x: 59, y: -187}
+      - {x: 59, y: -141}
+      - {x: 57, y: -133}
+    - - {x: -38, y: -180}
+      - {x: -41, y: -178}
+      - {x: -43, y: -178}
+      - {x: -48, y: -173}
+      - {x: -52, y: -166}
+      - {x: -52, y: -161}
+      - {x: -53, y: -160}
+      - {x: -52, y: -159}
+      - {x: -52, y: -154}
+      - {x: -50, y: -151}
+      - {x: -50, y: -149}
+      - {x: -46, y: -144}
+      - {x: -45, y: -144}
+      - {x: -41, y: -141}
+      - {x: -39, y: -141}
+      - {x: -38, y: -140}
+      - {x: -33, y: -140}
+      - {x: -32, y: -139}
+      - {x: -31, y: -140}
+      - {x: -26, y: -140}
+      - {x: -23, y: -142}
+      - {x: -21, y: -142}
+      - {x: -16, y: -147}
+      - {x: -12, y: -154}
+      - {x: -12, y: -166}
+      - {x: -14, y: -169}
+      - {x: -14, y: -171}
+      - {x: -19, y: -176}
+      - {x: -26, y: -180}
+      - {x: -31, y: -180}
+      - {x: -32, y: -181}
+      - {x: -33, y: -180}
+    - - {x: 79, y: -174}
+      - {x: 79, y: -175}
+      - {x: 81, y: -177}
+      - {x: 82, y: -177}
+      - {x: 90, y: -169}
+      - {x: 90, y: -167}
+      - {x: 87, y: -166}
+    - - {x: 102, y: -169}
+      - {x: 110, y: -177}
+      - {x: 113, y: -176}
+      - {x: 113, y: -174}
+      - {x: 105, y: -166}
+      - {x: 103, y: -166}
+    - - {x: -228, y: -144}
+      - {x: -233, y: -147}
+      - {x: -240, y: -153}
+      - {x: -240, y: -166}
+      - {x: -233, y: -176}
+      - {x: -219, y: -176}
+      - {x: -208, y: -168}
+      - {x: -208, y: -156}
+      - {x: -220, y: -144}
+    - - {x: -156, y: -144}
+      - {x: -169, y: -144}
+      - {x: -171, y: -145}
+      - {x: -176, y: -156}
+      - {x: -176, y: -165}
+      - {x: -163, y: -176}
+      - {x: -155, y: -176}
+      - {x: -144, y: -165}
+      - {x: -144, y: -152}
+      - {x: -145, y: -150}
+    - - {x: -94, y: -170}
+      - {x: -99, y: -170}
+      - {x: -100, y: -173}
+      - {x: -97, y: -176}
+      - {x: -95, y: -176}
+      - {x: -92, y: -173}
+      - {x: -92, y: -171}
+    - - {x: -30, y: -170}
+      - {x: -35, y: -170}
+      - {x: -36, y: -173}
+      - {x: -33, y: -176}
+      - {x: -31, y: -176}
+      - {x: -28, y: -173}
+      - {x: -28, y: -171}
+    - - {x: 98, y: -170}
+      - {x: 93, y: -170}
+      - {x: 92, y: -173}
+      - {x: 95, y: -176}
+      - {x: 97, y: -176}
+      - {x: 100, y: -173}
+      - {x: 100, y: -171}
+    - - {x: 148, y: -150}
+      - {x: 131, y: -150}
+      - {x: 131, y: -171}
+      - {x: 146, y: -171}
+      - {x: 155, y: -163}
+      - {x: 155, y: -159}
+      - {x: 153, y: -153}
+    - - {x: 185, y: -150}
+      - {x: 173, y: -150}
+      - {x: 165, y: -156}
+      - {x: 165, y: -161}
+      - {x: 171, y: -171}
+      - {x: 185, y: -171}
+      - {x: 189, y: -168}
+      - {x: 189, y: -154}
+    - - {x: -227, y: -166}
+      - {x: -229, y: -164}
+      - {x: -230, y: -161}
+      - {x: -231, y: -160}
+      - {x: -228, y: -155}
+      - {x: -225, y: -154}
+      - {x: -224, y: -153}
+      - {x: -219, y: -156}
+      - {x: -218, y: -159}
+      - {x: -217, y: -160}
+      - {x: -220, y: -165}
+      - {x: -223, y: -166}
+      - {x: -224, y: -167}
+      - {x: -225, y: -166}
+    - - {x: 91, y: -155}
+      - {x: 91, y: -165}
+      - {x: 100, y: -165}
+      - {x: 101, y: -162}
+      - {x: 101, y: -156}
+      - {x: 98, y: -155}
+    - - {x: -226, y: -156}
+      - {x: -228, y: -158}
+      - {x: -228, y: -162}
+      - {x: -226, y: -164}
+      - {x: -222, y: -164}
+      - {x: -220, y: -162}
+      - {x: -220, y: -158}
+      - {x: -222, y: -156}
+    - - {x: -112, y: -159}
+      - {x: -112, y: -161}
+      - {x: -109, y: -164}
+      - {x: -106, y: -162}
+      - {x: -106, y: -159}
+      - {x: -107, y: -156}
+      - {x: -109, y: -156}
+    - - {x: -85, y: -156}
+      - {x: -86, y: -158}
+      - {x: -86, y: -163}
+      - {x: -84, y: -164}
+      - {x: -83, y: -164}
+      - {x: -80, y: -161}
+      - {x: -80, y: -159}
+      - {x: -83, y: -156}
+    - - {x: -48, y: -159}
+      - {x: -48, y: -161}
+      - {x: -45, y: -164}
+      - {x: -42, y: -162}
+      - {x: -42, y: -159}
+      - {x: -43, y: -156}
+      - {x: -45, y: -156}
+    - - {x: -21, y: -156}
+      - {x: -22, y: -158}
+      - {x: -22, y: -163}
+      - {x: -20, y: -164}
+      - {x: -19, y: -164}
+      - {x: -16, y: -161}
+      - {x: -16, y: -159}
+      - {x: -19, y: -156}
+    - - {x: 80, y: -161}
+      - {x: 83, y: -164}
+      - {x: 86, y: -163}
+      - {x: 86, y: -159}
+      - {x: 85, y: -156}
+      - {x: 83, y: -156}
+      - {x: 80, y: -159}
+    - - {x: 107, y: -156}
+      - {x: 106, y: -158}
+      - {x: 106, y: -163}
+      - {x: 108, y: -164}
+      - {x: 109, y: -164}
+      - {x: 112, y: -161}
+      - {x: 112, y: -159}
+      - {x: 109, y: -156}
+    - - {x: -98, y: -157}
+      - {x: -99, y: -159}
+      - {x: -99, y: -162}
+      - {x: -97, y: -163}
+      - {x: -94, y: -163}
+      - {x: -93, y: -162}
+      - {x: -93, y: -157}
+    - - {x: -34, y: -157}
+      - {x: -35, y: -159}
+      - {x: -35, y: -162}
+      - {x: -33, y: -163}
+      - {x: -30, y: -163}
+      - {x: -29, y: -162}
+      - {x: -29, y: -157}
+    - - {x: 223, y: -157}
+      - {x: 221, y: -159}
+      - {x: 221, y: -161}
+      - {x: 223, y: -163}
+      - {x: 225, y: -163}
+      - {x: 227, y: -161}
+      - {x: 227, y: -159}
+      - {x: 225, y: -157}
+    - - {x: 79, y: -146}
+      - {x: 87, y: -154}
+      - {x: 90, y: -153}
+      - {x: 90, y: -151}
+      - {x: 82, y: -143}
+      - {x: 80, y: -143}
+    - - {x: 102, y: -151}
+      - {x: 102, y: -152}
+      - {x: 104, y: -154}
+      - {x: 105, y: -154}
+      - {x: 113, y: -146}
+      - {x: 113, y: -144}
+      - {x: 110, y: -143}
+    - - {x: -100, y: -147}
+      - {x: -100, y: -148}
+      - {x: -99, y: -150}
+      - {x: -95, y: -150}
+      - {x: -92, y: -149}
+      - {x: -92, y: -147}
+      - {x: -95, y: -144}
+      - {x: -97, y: -144}
+    - - {x: -36, y: -147}
+      - {x: -36, y: -148}
+      - {x: -35, y: -150}
+      - {x: -31, y: -150}
+      - {x: -28, y: -149}
+      - {x: -28, y: -147}
+      - {x: -31, y: -144}
+      - {x: -33, y: -144}
+    - - {x: 92, y: -147}
+      - {x: 92, y: -148}
+      - {x: 93, y: -150}
+      - {x: 97, y: -150}
+      - {x: 100, y: -149}
+      - {x: 100, y: -147}
+      - {x: 97, y: -144}
+      - {x: 95, y: -144}
+    - - {x: 126, y: -128}
+      - {x: 127, y: -131}
+      - {x: 192, y: -131}
+      - {x: 194, y: -129}
+      - {x: 193, y: -126}
+      - {x: 128, y: -126}
+    - - {x: -246, y: -112}
+      - {x: -249, y: -113}
+      - {x: -249, y: -119}
+      - {x: -247, y: -121}
+      - {x: -242, y: -121}
+      - {x: -240, y: -120}
+      - {x: -240, y: -117}
+      - {x: -243, y: -112}
+    - - {x: -204, y: -113}
+      - {x: -208, y: -118}
+      - {x: -207, y: -121}
+      - {x: -201, y: -121}
+      - {x: -199, y: -119}
+      - {x: -199, y: -114}
+      - {x: -201, y: -112}
+    - - {x: -182, y: -112}
+      - {x: -185, y: -113}
+      - {x: -185, y: -117}
+      - {x: -181, y: -121}
+      - {x: -178, y: -121}
+      - {x: -176, y: -120}
+      - {x: -176, y: -117}
+      - {x: -179, y: -112}
+    - - {x: -140, y: -113}
+      - {x: -144, y: -118}
+      - {x: -143, y: -121}
+      - {x: -139, y: -121}
+      - {x: -135, y: -117}
+      - {x: -135, y: -114}
+      - {x: -137, y: -112}
+    - - {x: -121, y: -113}
+      - {x: -121, y: -117}
+      - {x: -117, y: -121}
+      - {x: -114, y: -121}
+      - {x: -112, y: -119}
+      - {x: -113, y: -116}
+      - {x: -118, y: -112}
+    - - {x: -76, y: -113}
+      - {x: -80, y: -118}
+      - {x: -79, y: -121}
+      - {x: -75, y: -121}
+      - {x: -71, y: -117}
+      - {x: -71, y: -114}
+      - {x: -73, y: -112}
+    - - {x: -210, y: -72}
+      - {x: -240, y: -72}
+      - {x: -248, y: -84}
+      - {x: -248, y: -117}
+      - {x: -242, y: -120}
+      - {x: -206, y: -120}
+      - {x: -200, y: -110}
+      - {x: -200, y: -86}
+    - - {x: 86, y: -78}
+      - {x: 73, y: -82}
+      - {x: 73, y: -106}
+      - {x: 81, y: -114}
+      - {x: 106, y: -114}
+      - {x: 119, y: -110}
+      - {x: 119, y: -86}
+      - {x: 111, y: -78}
+    - - {x: -46, y: -79}
+      - {x: -49, y: -87}
+      - {x: -49, y: -108}
+      - {x: -44, y: -113}
+      - {x: -18, y: -113}
+      - {x: -15, y: -105}
+      - {x: -15, y: -84}
+      - {x: -20, y: -79}
+    - - {x: 24, y: -113}
+      - {x: 40, y: -113}
+      - {x: 40, y: -106}
+      - {x: 24, y: -106}
+    - - {x: -155, y: -80}
+      - {x: -166, y: -80}
+      - {x: -176, y: -91}
+      - {x: -176, y: -97}
+      - {x: -166, y: -111}
+      - {x: -165, y: -112}
+      - {x: -154, y: -112}
+      - {x: -144, y: -101}
+      - {x: -144, y: -95}
+      - {x: -154, y: -81}
+    - - {x: -94, y: -106}
+      - {x: -99, y: -106}
+      - {x: -100, y: -109}
+      - {x: -97, y: -112}
+      - {x: -95, y: -112}
+      - {x: -92, y: -109}
+      - {x: -92, y: -107}
+    - - {x: 162, y: -106}
+      - {x: 157, y: -106}
+      - {x: 156, y: -109}
+      - {x: 159, y: -112}
+      - {x: 161, y: -112}
+      - {x: 164, y: -109}
+      - {x: 164, y: -107}
+    - - {x: 226, y: -106}
+      - {x: 221, y: -106}
+      - {x: 220, y: -109}
+      - {x: 223, y: -112}
+      - {x: 225, y: -112}
+      - {x: 228, y: -109}
+      - {x: 228, y: -107}
+    - - {x: 95, y: -106}
+      - {x: 97, y: -106}
+      - {x: 97, y: -107}
+      - {x: 96, y: -108}
+      - {x: 95, y: -107}
+    - - {x: -40, y: -103}
+      - {x: -42, y: -99}
+      - {x: -41, y: -98}
+      - {x: -41, y: -95}
+      - {x: -42, y: -92}
+      - {x: -39, y: -88}
+      - {x: -35, y: -86}
+      - {x: -34, y: -87}
+      - {x: -31, y: -87}
+      - {x: -28, y: -86}
+      - {x: -24, y: -89}
+      - {x: -22, y: -93}
+      - {x: -23, y: -94}
+      - {x: -23, y: -97}
+      - {x: -22, y: -100}
+      - {x: -25, y: -104}
+      - {x: -29, y: -106}
+      - {x: -30, y: -105}
+      - {x: -33, y: -105}
+      - {x: -36, y: -106}
+      - {x: -36, y: -105}
+    - - {x: 84, y: -104}
+      - {x: 82, y: -103}
+      - {x: 85, y: -100}
+      - {x: 85, y: -92}
+      - {x: 82, y: -89}
+      - {x: 83, y: -89}
+      - {x: 87, y: -86}
+      - {x: 87, y: -88}
+      - {x: 83, y: -93}
+      - {x: 83, y: -99}
+      - {x: 87, y: -104}
+      - {x: 87, y: -106}
+      - {x: 87, y: -105}
+    - - {x: 105, y: -104}
+      - {x: 109, y: -99}
+      - {x: 109, y: -93}
+      - {x: 105, y: -88}
+      - {x: 105, y: -86}
+      - {x: 108, y: -88}
+      - {x: 110, y: -89}
+      - {x: 107, y: -92}
+      - {x: 107, y: -100}
+      - {x: 110, y: -103}
+      - {x: 108, y: -104}
+      - {x: 105, y: -106}
+    - - {x: 17, y: -88}
+      - {x: 15, y: -90}
+      - {x: 15, y: -102}
+      - {x: 17, y: -104}
+      - {x: 21, y: -104}
+      - {x: 22, y: -103}
+      - {x: 22, y: -90}
+      - {x: 21, y: -88}
+    - - {x: 43, y: -88}
+      - {x: 42, y: -89}
+      - {x: 42, y: -102}
+      - {x: 43, y: -104}
+      - {x: 47, y: -104}
+      - {x: 49, y: -102}
+      - {x: 49, y: -90}
+      - {x: 47, y: -88}
+    - - {x: -98, y: -90}
+      - {x: -102, y: -94}
+      - {x: -102, y: -98}
+      - {x: -98, y: -102}
+      - {x: -94, y: -102}
+      - {x: -90, y: -98}
+      - {x: -90, y: -94}
+      - {x: -94, y: -90}
+    - - {x: -34, y: -90}
+      - {x: -38, y: -94}
+      - {x: -38, y: -98}
+      - {x: -34, y: -102}
+      - {x: -30, y: -102}
+      - {x: -26, y: -98}
+      - {x: -26, y: -94}
+      - {x: -30, y: -90}
+    - - {x: 30, y: -90}
+      - {x: 26, y: -94}
+      - {x: 26, y: -98}
+      - {x: 30, y: -102}
+      - {x: 34, y: -102}
+      - {x: 38, y: -98}
+      - {x: 38, y: -94}
+      - {x: 34, y: -90}
+    - - {x: 158, y: -90}
+      - {x: 154, y: -94}
+      - {x: 154, y: -98}
+      - {x: 158, y: -102}
+      - {x: 162, y: -102}
+      - {x: 166, y: -98}
+      - {x: 166, y: -94}
+      - {x: 162, y: -90}
+    - - {x: 92, y: -98}
+      - {x: 91, y: -97}
+      - {x: 91, y: -95}
+      - {x: 92, y: -94}
+      - {x: 95, y: -94}
+      - {x: 96, y: -93}
+      - {x: 97, y: -94}
+      - {x: 100, y: -94}
+      - {x: 101, y: -95}
+      - {x: 101, y: -97}
+      - {x: 100, y: -98}
+      - {x: 97, y: -98}
+      - {x: 96, y: -99}
+      - {x: 95, y: -98}
+    - - {x: -112, y: -97}
+      - {x: -109, y: -100}
+      - {x: -106, y: -99}
+      - {x: -106, y: -95}
+      - {x: -107, y: -92}
+      - {x: -109, y: -92}
+      - {x: -112, y: -95}
+    - - {x: -86, y: -92}
+      - {x: -86, y: -99}
+      - {x: -84, y: -100}
+      - {x: -82, y: -100}
+      - {x: -80, y: -97}
+      - {x: -80, y: -95}
+      - {x: -83, y: -92}
+    - - {x: 144, y: -97}
+      - {x: 147, y: -100}
+      - {x: 150, y: -99}
+      - {x: 150, y: -95}
+      - {x: 149, y: -92}
+      - {x: 147, y: -92}
+      - {x: 144, y: -95}
+    - - {x: 170, y: -92}
+      - {x: 170, y: -99}
+      - {x: 172, y: -100}
+      - {x: 174, y: -100}
+      - {x: 176, y: -97}
+      - {x: 176, y: -95}
+      - {x: 173, y: -92}
+    - - {x: 208, y: -97}
+      - {x: 211, y: -100}
+      - {x: 214, y: -99}
+      - {x: 214, y: -95}
+      - {x: 213, y: -92}
+      - {x: 211, y: -92}
+      - {x: 208, y: -95}
+    - - {x: 234, y: -92}
+      - {x: 234, y: -99}
+      - {x: 236, y: -100}
+      - {x: 238, y: -100}
+      - {x: 240, y: -97}
+      - {x: 240, y: -95}
+      - {x: 237, y: -92}
+    - - {x: -161, y: -96}
+      - {x: -160, y: -95}
+      - {x: -159, y: -96}
+      - {x: -160, y: -97}
+      - {x: -160, y: -96}
+    - - {x: -97, y: -96}
+      - {x: -96, y: -95}
+      - {x: -95, y: -96}
+      - {x: -96, y: -97}
+      - {x: -96, y: -96}
+    - - {x: -33, y: -96}
+      - {x: -32, y: -95}
+      - {x: -31, y: -96}
+      - {x: -32, y: -97}
+      - {x: -32, y: -96}
+    - - {x: 31, y: -96}
+      - {x: 32, y: -95}
+      - {x: 33, y: -96}
+      - {x: 32, y: -97}
+      - {x: 32, y: -96}
+    - - {x: 159, y: -96}
+      - {x: 160, y: -95}
+      - {x: 161, y: -96}
+      - {x: 160, y: -97}
+      - {x: 160, y: -96}
+    - - {x: 95, y: -85}
+      - {x: 96, y: -84}
+      - {x: 97, y: -85}
+      - {x: 97, y: -86}
+    - - {x: -100, y: -83}
+      - {x: -100, y: -84}
+      - {x: -99, y: -86}
+      - {x: -95, y: -86}
+      - {x: -92, y: -85}
+      - {x: -92, y: -83}
+      - {x: -95, y: -80}
+      - {x: -97, y: -80}
+    - - {x: 40, y: -86}
+      - {x: 40, y: -79}
+      - {x: 24, y: -79}
+      - {x: 24, y: -86}
+    - - {x: 156, y: -84}
+      - {x: 157, y: -86}
+      - {x: 161, y: -86}
+      - {x: 164, y: -85}
+      - {x: 164, y: -83}
+      - {x: 163, y: -80}
+      - {x: 159, y: -80}
+      - {x: 156, y: -81}
+    - - {x: 220, y: -84}
+      - {x: 221, y: -86}
+      - {x: 225, y: -86}
+      - {x: 228, y: -85}
+      - {x: 228, y: -83}
+      - {x: 227, y: -80}
+      - {x: 223, y: -80}
+      - {x: 220, y: -81}
+    - - {x: -247, y: -71}
+      - {x: -249, y: -73}
+      - {x: -249, y: -78}
+      - {x: -247, y: -80}
+      - {x: -244, y: -79}
+      - {x: -240, y: -74}
+      - {x: -241, y: -71}
+    - - {x: -208, y: -73}
+      - {x: -207, y: -76}
+      - {x: -202, y: -80}
+      - {x: -199, y: -79}
+      - {x: -199, y: -73}
+      - {x: -201, y: -71}
+      - {x: -206, y: -71}
+    - - {x: -181, y: -71}
+      - {x: -185, y: -75}
+      - {x: -185, y: -78}
+      - {x: -183, y: -80}
+      - {x: -180, y: -79}
+      - {x: -176, y: -74}
+      - {x: -177, y: -71}
+    - - {x: -144, y: -72}
+      - {x: -144, y: -75}
+      - {x: -141, y: -80}
+      - {x: -138, y: -80}
+      - {x: -135, y: -79}
+      - {x: -135, y: -75}
+      - {x: -139, y: -71}
+      - {x: -142, y: -71}
+    - - {x: -117, y: -71}
+      - {x: -121, y: -75}
+      - {x: -121, y: -78}
+      - {x: -119, y: -80}
+      - {x: -116, y: -79}
+      - {x: -112, y: -74}
+      - {x: -113, y: -71}
+    - - {x: -80, y: -73}
+      - {x: -79, y: -76}
+      - {x: -74, y: -80}
+      - {x: -71, y: -79}
+      - {x: -71, y: -75}
+      - {x: -75, y: -71}
+      - {x: -78, y: -71}
+    - - {x: 64, y: -66}
+      - {x: 67, y: -65}
+      - {x: 67, y: -62}
+      - {x: 64, y: -61}
+      - {x: 62, y: -63}
+    - - {x: 74, y: -1}
+      - {x: 66, y: -15}
+      - {x: 66, y: -54}
+      - {x: 74, y: -62}
+      - {x: 110, y: -62}
+      - {x: 127, y: -50}
+      - {x: 127, y: -6}
+      - {x: 116, y: -1}
+    - - {x: -58, y: -31}
+      - {x: -58, y: -58}
+      - {x: -8, y: -58}
+      - {x: -6, y: -56}
+      - {x: -6, y: -31}
+    - - {x: 21, y: -7}
+      - {x: 6, y: -22}
+      - {x: 10, y: -25}
+      - {x: 16, y: -29}
+      - {x: 20, y: -29}
+      - {x: 14, y: -28}
+      - {x: 11, y: -28}
+      - {x: 9, y: -29}
+      - {x: 6, y: -36}
+      - {x: 6, y: -46}
+      - {x: 17, y: -57}
+      - {x: 44, y: -57}
+      - {x: 58, y: -53}
+      - {x: 58, y: -20}
+      - {x: 46, y: -7}
+    - - {x: 199, y: -36}
+      - {x: 199, y: -55}
+      - {x: 201, y: -57}
+      - {x: 219, y: -57}
+      - {x: 221, y: -55}
+      - {x: 220, y: -52}
+      - {x: 202, y: -35}
+    - - {x: 239, y: -35}
+      - {x: 227, y: -45}
+      - {x: 227, y: -54}
+      - {x: 228, y: -57}
+      - {x: 247, y: -57}
+      - {x: 249, y: -56}
+      - {x: 249, y: -35}
+    - - {x: -237, y: -43}
+      - {x: -241, y: -43}
+      - {x: -248, y: -52}
+      - {x: -248, y: -55}
+      - {x: -246, y: -56}
+      - {x: -242, y: -56}
+      - {x: -235, y: -47}
+      - {x: -235, y: -44}
+    - - {x: -213, y: -47}
+      - {x: -206, y: -56}
+      - {x: -202, y: -56}
+      - {x: -200, y: -55}
+      - {x: -200, y: -52}
+      - {x: -207, y: -43}
+      - {x: -211, y: -43}
+      - {x: -213, y: -44}
+    - - {x: -173, y: -43}
+      - {x: -177, y: -43}
+      - {x: -184, y: -52}
+      - {x: -184, y: -55}
+      - {x: -182, y: -56}
+      - {x: -178, y: -56}
+      - {x: -171, y: -47}
+      - {x: -171, y: -44}
+    - - {x: -149, y: -47}
+      - {x: -142, y: -56}
+      - {x: -138, y: -56}
+      - {x: -136, y: -55}
+      - {x: -136, y: -52}
+      - {x: -143, y: -43}
+      - {x: -147, y: -43}
+      - {x: -149, y: -44}
+    - - {x: 150, y: -37}
+      - {x: 137, y: -50}
+      - {x: 137, y: -53}
+      - {x: 138, y: -55}
+      - {x: 141, y: -55}
+      - {x: 156, y: -40}
+      - {x: 155, y: -37}
+    - - {x: 165, y: -41}
+      - {x: 177, y: -55}
+      - {x: 181, y: -55}
+      - {x: 183, y: -54}
+      - {x: 183, y: -51}
+      - {x: 168, y: -36}
+      - {x: 165, y: -37}
+    - - {x: -120, y: -17}
+      - {x: -120, y: -47}
+      - {x: -102, y: -47}
+      - {x: -102, y: -19}
+      - {x: -113, y: -17}
+    - - {x: -72, y: -47}
+      - {x: -72, y: -17}
+      - {x: -90, y: -17}
+      - {x: -90, y: -47}
+    - - {x: 156, y: -38}
+      - {x: 159, y: -37}
+      - {x: 159, y: -34}
+      - {x: 156, y: -33}
+      - {x: 154, y: -35}
+    - - {x: 163, y: -38}
+      - {x: 166, y: -37}
+      - {x: 166, y: -34}
+      - {x: 163, y: -33}
+      - {x: 161, y: -35}
+    - - {x: 220, y: -38}
+      - {x: 223, y: -37}
+      - {x: 223, y: -34}
+      - {x: 220, y: -33}
+      - {x: 218, y: -35}
+    - - {x: 227, y: -38}
+      - {x: 230, y: -37}
+      - {x: 230, y: -34}
+      - {x: 227, y: -33}
+      - {x: 225, y: -35}
+    - - {x: -163, y: -28}
+      - {x: -164, y: -30}
+      - {x: -164, y: -35}
+      - {x: -162, y: -36}
+      - {x: -157, y: -36}
+      - {x: -156, y: -34}
+      - {x: -156, y: -29}
+      - {x: -158, y: -28}
+    - - {x: -51, y: -6}
+      - {x: -58, y: -13}
+      - {x: -58, y: -33}
+      - {x: -6, y: -33}
+      - {x: -6, y: -7}
+      - {x: -12, y: -6}
+    - - {x: 154, y: -29}
+      - {x: 155, y: -31}
+      - {x: 166, y: -31}
+      - {x: 166, y: -24}
+      - {x: 163, y: -3}
+      - {x: 158, y: -3}
+      - {x: 156, y: -4}
+    - - {x: 220, y: -31}
+      - {x: 223, y: -30}
+      - {x: 223, y: -27}
+      - {x: 220, y: -26}
+      - {x: 218, y: -28}
+    - - {x: 227, y: -31}
+      - {x: 230, y: -30}
+      - {x: 230, y: -27}
+      - {x: 227, y: -26}
+      - {x: 225, y: -28}
+    - - {x: 199, y: -29}
+      - {x: 209, y: -29}
+      - {x: 221, y: -19}
+      - {x: 221, y: -10}
+      - {x: 220, y: -7}
+      - {x: 201, y: -7}
+      - {x: 199, y: -8}
+    - - {x: 227, y: -9}
+      - {x: 228, y: -12}
+      - {x: 246, y: -29}
+      - {x: 249, y: -28}
+      - {x: 249, y: -9}
+      - {x: 247, y: -7}
+      - {x: 229, y: -7}
+    - - {x: -240, y: -22}
+      - {x: -236, y: -22}
+      - {x: -234, y: -21}
+      - {x: -234, y: -17}
+      - {x: -242, y: -8}
+      - {x: -246, y: -8}
+      - {x: -248, y: -9}
+      - {x: -248, y: -12}
+    - - {x: -206, y: -8}
+      - {x: -214, y: -18}
+      - {x: -214, y: -19}
+      - {x: -213, y: -22}
+      - {x: -210, y: -22}
+      - {x: -200, y: -15}
+      - {x: -200, y: -9}
+      - {x: -202, y: -8}
+    - - {x: -184, y: -12}
+      - {x: -176, y: -22}
+      - {x: -173, y: -22}
+      - {x: -170, y: -21}
+      - {x: -170, y: -18}
+      - {x: -178, y: -8}
+      - {x: -182, y: -8}
+      - {x: -184, y: -9}
+    - - {x: -138, y: -8}
+      - {x: -142, y: -8}
+      - {x: -150, y: -18}
+      - {x: -150, y: -21}
+      - {x: -147, y: -22}
+      - {x: -144, y: -22}
+      - {x: -136, y: -12}
+      - {x: -136, y: -9}
+    - - {x: 127, y: -3}
+      - {x: 130, y: -2}
+      - {x: 130, y: 1}
+      - {x: 127, y: 2}
+      - {x: 125, y: 0}
+    - - {x: -235, y: 19}
+      - {x: -235, y: 7}
+      - {x: -233, y: 5}
+      - {x: -215, y: 5}
+      - {x: -213, y: 7}
+      - {x: -213, y: 19}
+    - - {x: -144, y: 29}
+      - {x: -146, y: 28}
+      - {x: -158, y: 17}
+      - {x: -158, y: 13}
+      - {x: -152, y: 5}
+      - {x: -146, y: 5}
+      - {x: -135, y: 14}
+      - {x: -135, y: 23}
+      - {x: -139, y: 29}
+    - - {x: -108, y: 59}
+      - {x: -123, y: 48}
+      - {x: -123, y: 42}
+      - {x: -122, y: 20}
+      - {x: -112, y: 5}
+      - {x: -75, y: 5}
+      - {x: -70, y: 18}
+      - {x: -70, y: 51}
+      - {x: -80, y: 59}
+    - - {x: -56, y: 59}
+      - {x: -59, y: 55}
+      - {x: -59, y: 16}
+      - {x: -53, y: 5}
+      - {x: -18, y: 5}
+      - {x: -7, y: 18}
+      - {x: -7, y: 56}
+      - {x: -14, y: 59}
+    - - {x: -179, y: 30}
+      - {x: -186, y: 23}
+      - {x: -186, y: 20}
+      - {x: -174, y: 6}
+      - {x: -170, y: 6}
+      - {x: -163, y: 9}
+      - {x: -163, y: 22}
+      - {x: -173, y: 30}
+    - - {x: 81, y: 21}
+      - {x: 72, y: 12}
+      - {x: 72, y: 10}
+      - {x: 74, y: 8}
+      - {x: 76, y: 8}
+      - {x: 85, y: 17}
+      - {x: 85, y: 19}
+      - {x: 83, y: 21}
+    - - {x: 109, y: 21}
+      - {x: 107, y: 19}
+      - {x: 107, y: 17}
+      - {x: 116, y: 8}
+      - {x: 118, y: 8}
+      - {x: 120, y: 10}
+      - {x: 120, y: 12}
+      - {x: 111, y: 21}
+    - - {x: 145, y: 21}
+      - {x: 136, y: 12}
+      - {x: 136, y: 10}
+      - {x: 138, y: 8}
+      - {x: 140, y: 8}
+      - {x: 149, y: 17}
+      - {x: 149, y: 19}
+      - {x: 147, y: 21}
+    - - {x: 173, y: 21}
+      - {x: 171, y: 19}
+      - {x: 171, y: 17}
+      - {x: 180, y: 8}
+      - {x: 182, y: 8}
+      - {x: 184, y: 10}
+      - {x: 184, y: 12}
+      - {x: 175, y: 21}
+    - - {x: -112, y: 20}
+      - {x: -111, y: 23}
+      - {x: -105, y: 17}
+      - {x: -107, y: 15}
+      - {x: -107, y: 16}
+    - - {x: -89, y: 18}
+      - {x: -90, y: 17}
+      - {x: -88, y: 16}
+      - {x: -82, y: 22}
+      - {x: -80, y: 20}
+      - {x: -85, y: 15}
+      - {x: -86, y: 16}
+    - - {x: -48, y: 20}
+      - {x: -47, y: 23}
+      - {x: -41, y: 17}
+      - {x: -43, y: 15}
+      - {x: -43, y: 16}
+    - - {x: -24, y: 17}
+      - {x: -24, y: 16}
+      - {x: -18, y: 22}
+      - {x: -16, y: 20}
+      - {x: -21, y: 15}
+      - {x: -22, y: 16}
+    - - {x: 22, y: 48}
+      - {x: 16, y: 40}
+      - {x: 16, y: 24}
+      - {x: 24, y: 16}
+      - {x: 40, y: 16}
+      - {x: 48, y: 22}
+      - {x: 48, y: 42}
+      - {x: 42, y: 48}
+    - - {x: 80, y: 29}
+      - {x: 80, y: 23}
+      - {x: 89, y: 16}
+      - {x: 91, y: 16}
+      - {x: 93, y: 17}
+      - {x: 93, y: 21}
+      - {x: 92, y: 25}
+      - {x: 85, y: 29}
+    - - {x: 103, y: 29}
+      - {x: 99, y: 22}
+      - {x: 99, y: 16}
+      - {x: 103, y: 16}
+      - {x: 112, y: 22}
+      - {x: 112, y: 27}
+      - {x: 110, y: 29}
+    - - {x: 144, y: 29}
+      - {x: 144, y: 23}
+      - {x: 153, y: 16}
+      - {x: 155, y: 16}
+      - {x: 157, y: 17}
+      - {x: 157, y: 21}
+      - {x: 156, y: 25}
+      - {x: 149, y: 29}
+    - - {x: 167, y: 29}
+      - {x: 163, y: 22}
+      - {x: 163, y: 16}
+      - {x: 167, y: 16}
+      - {x: 176, y: 22}
+      - {x: 176, y: 27}
+      - {x: 174, y: 29}
+    - - {x: 208, y: 29}
+      - {x: 208, y: 23}
+      - {x: 217, y: 16}
+      - {x: 219, y: 16}
+      - {x: 221, y: 17}
+      - {x: 221, y: 21}
+      - {x: 220, y: 25}
+      - {x: 213, y: 29}
+    - - {x: 231, y: 29}
+      - {x: 227, y: 22}
+      - {x: 227, y: 16}
+      - {x: 231, y: 16}
+      - {x: 240, y: 22}
+      - {x: 240, y: 27}
+      - {x: 238, y: 29}
+    - - {x: -251, y: 42}
+      - {x: -251, y: 21}
+      - {x: -249, y: 20}
+      - {x: -237, y: 20}
+      - {x: -237, y: 42}
+    - - {x: -211, y: 42}
+      - {x: -211, y: 20}
+      - {x: -197, y: 20}
+      - {x: -197, y: 40}
+      - {x: -199, y: 42}
+    - - {x: -100, y: 23}
+      - {x: -105, y: 28}
+      - {x: -105, y: 31}
+      - {x: -106, y: 32}
+      - {x: -105, y: 33}
+      - {x: -105, y: 36}
+      - {x: -100, y: 41}
+      - {x: -97, y: 41}
+      - {x: -96, y: 42}
+      - {x: -95, y: 41}
+      - {x: -92, y: 41}
+      - {x: -87, y: 36}
+      - {x: -87, y: 33}
+      - {x: -86, y: 32}
+      - {x: -87, y: 31}
+      - {x: -87, y: 28}
+      - {x: -92, y: 23}
+      - {x: -95, y: 23}
+      - {x: -96, y: 22}
+      - {x: -97, y: 23}
+    - - {x: -36, y: 23}
+      - {x: -41, y: 28}
+      - {x: -41, y: 31}
+      - {x: -42, y: 32}
+      - {x: -41, y: 33}
+      - {x: -41, y: 36}
+      - {x: -36, y: 41}
+      - {x: -33, y: 41}
+      - {x: -32, y: 42}
+      - {x: -31, y: 41}
+      - {x: -28, y: 41}
+      - {x: -23, y: 36}
+      - {x: -23, y: 33}
+      - {x: -22, y: 32}
+      - {x: -23, y: 31}
+      - {x: -23, y: 28}
+      - {x: -28, y: 23}
+      - {x: -31, y: 23}
+      - {x: -32, y: 22}
+      - {x: -33, y: 23}
+    - - {x: 28, y: 23}
+      - {x: 23, y: 28}
+      - {x: 23, y: 31}
+      - {x: 22, y: 32}
+      - {x: 23, y: 33}
+      - {x: 23, y: 36}
+      - {x: 28, y: 41}
+      - {x: 31, y: 41}
+      - {x: 32, y: 42}
+      - {x: 33, y: 41}
+      - {x: 36, y: 41}
+      - {x: 41, y: 36}
+      - {x: 41, y: 33}
+      - {x: 42, y: 32}
+      - {x: 41, y: 31}
+      - {x: 41, y: 28}
+      - {x: 36, y: 23}
+      - {x: 33, y: 23}
+      - {x: 32, y: 22}
+      - {x: 31, y: 23}
+    - - {x: -100, y: 36}
+      - {x: -100, y: 29}
+      - {x: -98, y: 28}
+      - {x: -92, y: 28}
+      - {x: -92, y: 36}
+    - - {x: -36, y: 29}
+      - {x: -35, y: 28}
+      - {x: -31, y: 28}
+      - {x: -28, y: 29}
+      - {x: -28, y: 34}
+      - {x: -29, y: 36}
+      - {x: -35, y: 36}
+      - {x: -36, y: 35}
+    - - {x: 29, y: 36}
+      - {x: 28, y: 34}
+      - {x: 28, y: 29}
+      - {x: 30, y: 28}
+      - {x: 35, y: 28}
+      - {x: 36, y: 30}
+      - {x: 36, y: 35}
+      - {x: 34, y: 36}
+    - - {x: 93, y: 36}
+      - {x: 92, y: 34}
+      - {x: 92, y: 29}
+      - {x: 94, y: 28}
+      - {x: 99, y: 28}
+      - {x: 100, y: 30}
+      - {x: 100, y: 35}
+      - {x: 98, y: 36}
+    - - {x: -173, y: 58}
+      - {x: -187, y: 49}
+      - {x: -187, y: 42}
+      - {x: -182, y: 34}
+      - {x: -177, y: 34}
+      - {x: -163, y: 40}
+      - {x: -163, y: 58}
+    - - {x: -157, y: 56}
+      - {x: -157, y: 42}
+      - {x: -152, y: 35}
+      - {x: -139, y: 35}
+      - {x: -134, y: 42}
+      - {x: -134, y: 45}
+      - {x: -148, y: 59}
+      - {x: -149, y: 59}
+    - - {x: 76, y: 56}
+      - {x: 73, y: 56}
+      - {x: 72, y: 55}
+      - {x: 72, y: 48}
+      - {x: 79, y: 36}
+      - {x: 82, y: 35}
+      - {x: 87, y: 35}
+      - {x: 93, y: 41}
+      - {x: 93, y: 47}
+      - {x: 92, y: 51}
+    - - {x: 112, y: 56}
+      - {x: 100, y: 49}
+      - {x: 99, y: 46}
+      - {x: 99, y: 41}
+      - {x: 105, y: 35}
+      - {x: 111, y: 35}
+      - {x: 115, y: 36}
+      - {x: 120, y: 52}
+      - {x: 120, y: 55}
+      - {x: 119, y: 56}
+    - - {x: 136, y: 56}
+      - {x: 136, y: 46}
+      - {x: 142, y: 35}
+      - {x: 150, y: 35}
+      - {x: 157, y: 41}
+      - {x: 157, y: 55}
+      - {x: 149, y: 56}
+    - - {x: 176, y: 56}
+      - {x: 164, y: 49}
+      - {x: 163, y: 46}
+      - {x: 163, y: 41}
+      - {x: 169, y: 35}
+      - {x: 175, y: 35}
+      - {x: 179, y: 36}
+      - {x: 184, y: 52}
+      - {x: 184, y: 55}
+      - {x: 183, y: 56}
+    - - {x: 217, y: 48}
+      - {x: 208, y: 42}
+      - {x: 208, y: 37}
+      - {x: 210, y: 35}
+      - {x: 217, y: 35}
+      - {x: 221, y: 42}
+      - {x: 221, y: 48}
+    - - {x: 229, y: 48}
+      - {x: 227, y: 46}
+      - {x: 227, y: 39}
+      - {x: 234, y: 35}
+      - {x: 240, y: 35}
+      - {x: 240, y: 39}
+      - {x: 234, y: 48}
+    - - {x: -113, y: 42}
+      - {x: -108, y: 48}
+      - {x: -106, y: 46}
+      - {x: -112, y: 40}
+      - {x: -111, y: 40}
+      - {x: -111, y: 41}
+    - - {x: -86, y: 46}
+      - {x: -84, y: 49}
+      - {x: -79, y: 44}
+      - {x: -82, y: 41}
+      - {x: -81, y: 39}
+      - {x: -80, y: 40}
+    - - {x: -49, y: 42}
+      - {x: -44, y: 48}
+      - {x: -42, y: 46}
+      - {x: -48, y: 40}
+      - {x: -47, y: 40}
+      - {x: -47, y: 41}
+    - - {x: -22, y: 46}
+      - {x: -20, y: 49}
+      - {x: -15, y: 44}
+      - {x: -18, y: 41}
+      - {x: -17, y: 39}
+      - {x: -16, y: 40}
+    - - {x: -235, y: 59}
+      - {x: -235, y: 45}
+      - {x: -213, y: 45}
+      - {x: -213, y: 59}
+    - - {x: 249, y: 130}
+      - {x: 139, y: 130}
+      - {x: 133, y: 128}
+      - {x: 126, y: 119}
+      - {x: 126, y: 71}
+      - {x: 129, y: 62}
+      - {x: 253, y: 62}
+      - {x: 256, y: 76}
+      - {x: 256, y: 120}
+    - - {x: -230, y: 91}
+      - {x: -230, y: 70}
+      - {x: -218, y: 70}
+      - {x: -218, y: 91}
+    - - {x: -159, y: 92}
+      - {x: -161, y: 92}
+      - {x: -163, y: 91}
+      - {x: -166, y: 74}
+      - {x: -166, y: 71}
+      - {x: -164, y: 70}
+      - {x: -156, y: 70}
+      - {x: -154, y: 72}
+      - {x: -154, y: 74}
+      - {x: -157, y: 90}
+    - - {x: -107, y: 93}
+      - {x: -117, y: 88}
+      - {x: -117, y: 80}
+      - {x: -110, y: 73}
+      - {x: -106, y: 74}
+      - {x: -99, y: 89}
+      - {x: -99, y: 93}
+    - - {x: -93, y: 93}
+      - {x: -93, y: 88}
+      - {x: -88, y: 79}
+      - {x: -83, y: 73}
+      - {x: -80, y: 73}
+      - {x: -75, y: 77}
+      - {x: -74, y: 81}
+      - {x: -74, y: 84}
+      - {x: -87, y: 93}
+    - - {x: -54, y: 118}
+      - {x: -54, y: 73}
+      - {x: -10, y: 73}
+      - {x: -10, y: 115}
+      - {x: -11, y: 118}
+    - - {x: 77, y: 119}
+      - {x: 73, y: 110}
+      - {x: 73, y: 80}
+      - {x: 78, y: 73}
+      - {x: 108, y: 73}
+      - {x: 119, y: 78}
+      - {x: 119, y: 107}
+      - {x: 114, y: 119}
+    - - {x: 91, y: 80}
+      - {x: 86, y: 83}
+      - {x: 83, y: 86}
+      - {x: 80, y: 91}
+      - {x: 80, y: 95}
+      - {x: 79, y: 96}
+      - {x: 80, y: 97}
+      - {x: 80, y: 101}
+      - {x: 83, y: 106}
+      - {x: 86, y: 109}
+      - {x: 91, y: 112}
+      - {x: 95, y: 112}
+      - {x: 96, y: 113}
+      - {x: 97, y: 112}
+      - {x: 101, y: 112}
+      - {x: 106, y: 109}
+      - {x: 109, y: 106}
+      - {x: 112, y: 101}
+      - {x: 112, y: 97}
+      - {x: 113, y: 96}
+      - {x: 112, y: 95}
+      - {x: 112, y: 91}
+      - {x: 109, y: 86}
+      - {x: 106, y: 83}
+      - {x: 101, y: 80}
+      - {x: 97, y: 80}
+      - {x: 96, y: 79}
+      - {x: 95, y: 80}
+    - - {x: 151, y: 92}
+      - {x: 151, y: 100}
+      - {x: 155, y: 104}
+      - {x: 164, y: 105}
+      - {x: 168, y: 101}
+      - {x: 169, y: 92}
+      - {x: 165, y: 88}
+      - {x: 157, y: 87}
+      - {x: 155, y: 88}
+    - - {x: 215, y: 92}
+      - {x: 215, y: 100}
+      - {x: 219, y: 104}
+      - {x: 228, y: 105}
+      - {x: 231, y: 103}
+      - {x: 233, y: 100}
+      - {x: 233, y: 92}
+      - {x: 229, y: 88}
+      - {x: 221, y: 87}
+      - {x: 219, y: 88}
+    - - {x: 27, y: 90}
+      - {x: 32, y: 88}
+      - {x: 39, y: 88}
+      - {x: 41, y: 89}
+      - {x: 41, y: 95}
+      - {x: 39, y: 101}
+      - {x: 28, y: 101}
+      - {x: 27, y: 99}
+    - - {x: 91, y: 90}
+      - {x: 96, y: 88}
+      - {x: 103, y: 88}
+      - {x: 105, y: 89}
+      - {x: 105, y: 95}
+      - {x: 103, y: 101}
+      - {x: 92, y: 101}
+      - {x: 91, y: 99}
+    - - {x: -250, y: 102}
+      - {x: -250, y: 92}
+      - {x: -248, y: 90}
+      - {x: -246, y: 90}
+      - {x: -230, y: 92}
+      - {x: -229, y: 95}
+      - {x: -229, y: 102}
+    - - {x: -219, y: 102}
+      - {x: -219, y: 94}
+      - {x: -217, y: 93}
+      - {x: -207, y: 90}
+      - {x: -198, y: 90}
+      - {x: -198, y: 102}
+    - - {x: -184, y: 102}
+      - {x: -186, y: 100}
+      - {x: -186, y: 91}
+      - {x: -184, y: 90}
+      - {x: -173, y: 90}
+      - {x: -164, y: 94}
+      - {x: -164, y: 98}
+      - {x: -165, y: 99}
+    - - {x: -136, y: 102}
+      - {x: -145, y: 102}
+      - {x: -156, y: 99}
+      - {x: -156, y: 93}
+      - {x: -147, y: 90}
+      - {x: -136, y: 90}
+      - {x: -134, y: 92}
+      - {x: -134, y: 101}
+    - - {x: -87, y: 118}
+      - {x: -93, y: 105}
+      - {x: -93, y: 98}
+      - {x: -91, y: 98}
+      - {x: -87, y: 99}
+      - {x: -75, y: 107}
+      - {x: -75, y: 113}
+      - {x: -78, y: 118}
+    - - {x: -118, y: 108}
+      - {x: -108, y: 99}
+      - {x: -99, y: 99}
+      - {x: -99, y: 106}
+      - {x: -105, y: 117}
+      - {x: -107, y: 118}
+      - {x: -112, y: 118}
+      - {x: -118, y: 115}
+    - - {x: -230, y: 122}
+      - {x: -230, y: 110}
+      - {x: -227, y: 101}
+      - {x: -221, y: 101}
+      - {x: -218, y: 113}
+      - {x: -218, y: 121}
+      - {x: -220, y: 122}
+    - - {x: -156, y: 122}
+      - {x: -164, y: 122}
+      - {x: -166, y: 120}
+      - {x: -166, y: 112}
+      - {x: -162, y: 101}
+      - {x: -159, y: 101}
+      - {x: -157, y: 103}
+      - {x: -154, y: 116}
+      - {x: -154, y: 121}
+    - - {x: -233, y: 194}
+      - {x: -256, y: 173}
+      - {x: -256, y: 154}
+      - {x: -234, y: 126}
+      - {x: -218, y: 126}
+      - {x: -190, y: 157}
+      - {x: -190, y: 167}
+      - {x: -221, y: 194}
+    - - {x: 5, y: 193}
+      - {x: -1, y: 174}
+      - {x: -1, y: 136}
+      - {x: 9, y: 127}
+      - {x: 49, y: 127}
+      - {x: 65, y: 133}
+      - {x: 65, y: 180}
+      - {x: 50, y: 193}
+    - - {x: -113, y: 190}
+      - {x: -126, y: 180}
+      - {x: -126, y: 140}
+      - {x: -123, y: 130}
+      - {x: -71, y: 130}
+      - {x: -66, y: 138}
+      - {x: -66, y: 175}
+      - {x: -70, y: 190}
+    - - {x: -57, y: 190}
+      - {x: -62, y: 184}
+      - {x: -62, y: 147}
+      - {x: -55, y: 130}
+      - {x: -6, y: 130}
+      - {x: -2, y: 138}
+      - {x: -2, y: 183}
+      - {x: -14, y: 190}
+    - - {x: -147, y: 186}
+      - {x: -171, y: 186}
+      - {x: -179, y: 184}
+      - {x: -186, y: 173}
+      - {x: -186, y: 151}
+      - {x: -184, y: 141}
+      - {x: -173, y: 134}
+      - {x: -149, y: 134}
+      - {x: -141, y: 136}
+      - {x: -134, y: 147}
+      - {x: -134, y: 169}
+      - {x: -136, y: 179}
+    - - {x: 140, y: 186}
+      - {x: 134, y: 172}
+      - {x: 134, y: 142}
+      - {x: 144, y: 134}
+      - {x: 180, y: 134}
+      - {x: 186, y: 148}
+      - {x: 186, y: 178}
+      - {x: 176, y: 186}
+    - - {x: 204, y: 186}
+      - {x: 198, y: 172}
+      - {x: 198, y: 142}
+      - {x: 208, y: 134}
+      - {x: 244, y: 134}
+      - {x: 250, y: 148}
+      - {x: 250, y: 178}
+      - {x: 240, y: 186}
+    - - {x: -103, y: 139}
+      - {x: -108, y: 141}
+      - {x: -115, y: 148}
+      - {x: -117, y: 153}
+      - {x: -118, y: 158}
+      - {x: -119, y: 161}
+      - {x: -118, y: 162}
+      - {x: -117, y: 167}
+      - {x: -115, y: 172}
+      - {x: -108, y: 179}
+      - {x: -103, y: 181}
+      - {x: -98, y: 182}
+      - {x: -95, y: 183}
+      - {x: -94, y: 182}
+      - {x: -89, y: 181}
+      - {x: -84, y: 179}
+      - {x: -77, y: 172}
+      - {x: -75, y: 167}
+      - {x: -74, y: 162}
+      - {x: -73, y: 159}
+      - {x: -74, y: 158}
+      - {x: -75, y: 153}
+      - {x: -77, y: 148}
+      - {x: -84, y: 141}
+      - {x: -89, y: 139}
+      - {x: -94, y: 138}
+      - {x: -97, y: 137}
+      - {x: -98, y: 138}
+    - - {x: 97, y: 184}
+      - {x: 95, y: 184}
+      - {x: 72, y: 161}
+      - {x: 72, y: 159}
+      - {x: 95, y: 136}
+      - {x: 97, y: 136}
+      - {x: 120, y: 159}
+      - {x: 120, y: 161}
+    - - {x: -103, y: 181}
+      - {x: -117, y: 179}
+      - {x: -117, y: 141}
+      - {x: -103, y: 139}
+      - {x: -89, y: 139}
+      - {x: -75, y: 141}
+      - {x: -75, y: 179}
+      - {x: -89, y: 181}
+    - - {x: 27, y: 142}
+      - {x: 26, y: 143}
+      - {x: 24, y: 143}
+      - {x: 21, y: 145}
+      - {x: 17, y: 149}
+      - {x: 15, y: 152}
+      - {x: 15, y: 154}
+      - {x: 14, y: 155}
+      - {x: 14, y: 159}
+      - {x: 13, y: 160}
+      - {x: 14, y: 161}
+      - {x: 14, y: 165}
+      - {x: 15, y: 166}
+      - {x: 15, y: 168}
+      - {x: 17, y: 171}
+      - {x: 21, y: 175}
+      - {x: 24, y: 177}
+      - {x: 26, y: 177}
+      - {x: 27, y: 178}
+      - {x: 31, y: 178}
+      - {x: 32, y: 179}
+      - {x: 33, y: 178}
+      - {x: 37, y: 178}
+      - {x: 38, y: 177}
+      - {x: 40, y: 177}
+      - {x: 43, y: 175}
+      - {x: 47, y: 171}
+      - {x: 49, y: 168}
+      - {x: 49, y: 166}
+      - {x: 50, y: 165}
+      - {x: 50, y: 161}
+      - {x: 51, y: 160}
+      - {x: 50, y: 159}
+      - {x: 50, y: 155}
+      - {x: 49, y: 154}
+      - {x: 49, y: 152}
+      - {x: 47, y: 149}
+      - {x: 43, y: 145}
+      - {x: 40, y: 143}
+      - {x: 38, y: 143}
+      - {x: 37, y: 142}
+      - {x: 33, y: 142}
+      - {x: 32, y: 141}
+      - {x: 31, y: 142}
+    - - {x: -233, y: 144}
+      - {x: -238, y: 148}
+      - {x: -238, y: 149}
+      - {x: -240, y: 153}
+      - {x: -242, y: 156}
+      - {x: -238, y: 156}
+      - {x: -237, y: 154}
+      - {x: -233, y: 148}
+      - {x: -228, y: 146}
+      - {x: -228, y: 142}
+      - {x: -229, y: 143}
+    - - {x: -220, y: 146}
+      - {x: -219, y: 146}
+      - {x: -211, y: 151}
+      - {x: -210, y: 155}
+      - {x: -206, y: 156}
+      - {x: -214, y: 145}
+      - {x: -220, y: 142}
+    - - {x: 142, y: 156}
+      - {x: 157, y: 156}
+      - {x: 160, y: 159}
+      - {x: 160, y: 161}
+      - {x: 157, y: 164}
+      - {x: 156, y: 178}
+      - {x: 156, y: 163}
+      - {x: 159, y: 160}
+      - {x: 161, y: 160}
+      - {x: 164, y: 163}
+      - {x: 178, y: 164}
+      - {x: 163, y: 164}
+      - {x: 160, y: 161}
+      - {x: 160, y: 159}
+      - {x: 163, y: 156}
+      - {x: 164, y: 142}
+      - {x: 164, y: 157}
+      - {x: 161, y: 160}
+      - {x: 159, y: 160}
+      - {x: 156, y: 157}
+      - {x: 156, y: 142}
+      - {x: 154, y: 143}
+    - - {x: 214, y: 144}
+      - {x: 210, y: 148}
+      - {x: 206, y: 156}
+      - {x: 217, y: 156}
+      - {x: 220, y: 159}
+      - {x: 220, y: 161}
+      - {x: 217, y: 164}
+      - {x: 206, y: 164}
+      - {x: 210, y: 172}
+      - {x: 216, y: 177}
+      - {x: 220, y: 178}
+      - {x: 220, y: 166}
+      - {x: 223, y: 163}
+      - {x: 224, y: 163}
+      - {x: 228, y: 167}
+      - {x: 228, y: 178}
+      - {x: 236, y: 174}
+      - {x: 241, y: 168}
+      - {x: 242, y: 164}
+      - {x: 231, y: 164}
+      - {x: 228, y: 161}
+      - {x: 228, y: 159}
+      - {x: 231, y: 156}
+      - {x: 242, y: 156}
+      - {x: 238, y: 148}
+      - {x: 232, y: 143}
+      - {x: 228, y: 142}
+      - {x: 228, y: 153}
+      - {x: 224, y: 157}
+      - {x: 223, y: 157}
+      - {x: 220, y: 154}
+      - {x: 220, y: 142}
+      - {x: 218, y: 143}
+    - - {x: -165, y: 146}
+      - {x: -168, y: 148}
+      - {x: -172, y: 152}
+      - {x: -174, y: 155}
+      - {x: -174, y: 165}
+      - {x: -173, y: 166}
+      - {x: -169, y: 162}
+      - {x: -169, y: 161}
+      - {x: -164, y: 156}
+      - {x: -164, y: 155}
+      - {x: -158, y: 148}
+      - {x: -156, y: 146}
+      - {x: -159, y: 146}
+      - {x: -160, y: 145}
+      - {x: -161, y: 146}
+    - - {x: -101, y: 147}
+      - {x: -104, y: 149}
+      - {x: -107, y: 152}
+      - {x: -109, y: 155}
+      - {x: -109, y: 159}
+      - {x: -110, y: 160}
+      - {x: -109, y: 161}
+      - {x: -109, y: 165}
+      - {x: -107, y: 168}
+      - {x: -104, y: 171}
+      - {x: -101, y: 173}
+      - {x: -97, y: 173}
+      - {x: -96, y: 174}
+      - {x: -95, y: 173}
+      - {x: -91, y: 173}
+      - {x: -88, y: 171}
+      - {x: -85, y: 168}
+      - {x: -83, y: 165}
+      - {x: -83, y: 161}
+      - {x: -82, y: 160}
+      - {x: -83, y: 159}
+      - {x: -83, y: 155}
+      - {x: -85, y: 152}
+      - {x: -88, y: 149}
+      - {x: -91, y: 147}
+      - {x: -95, y: 147}
+      - {x: -96, y: 146}
+      - {x: -97, y: 147}
+    - - {x: -40, y: 149}
+      - {x: -45, y: 155}
+      - {x: -45, y: 165}
+      - {x: -43, y: 168}
+      - {x: -37, y: 173}
+      - {x: -27, y: 173}
+      - {x: -21, y: 168}
+      - {x: -19, y: 165}
+      - {x: -19, y: 155}
+      - {x: -21, y: 152}
+      - {x: -27, y: 147}
+      - {x: -36, y: 147}
+      - {x: -37, y: 148}
+    - - {x: -156, y: 164}
+      - {x: -156, y: 165}
+      - {x: -162, y: 172}
+      - {x: -164, y: 174}
+      - {x: -155, y: 174}
+      - {x: -152, y: 172}
+      - {x: -148, y: 168}
+      - {x: -146, y: 165}
+      - {x: -146, y: 154}
+    - - {x: 96, y: 161}
+      - {x: 94, y: 162}
+      - {x: 95, y: 160}
+      - {x: 97, y: 160}
+      - {x: 98, y: 162}
+      - {x: 96, y: 161}
+      - {x: 96, y: 159}
+      - {x: 98, y: 158}
+      - {x: 97, y: 160}
+      - {x: 95, y: 160}
+      - {x: 94, y: 158}
+      - {x: 96, y: 159}
+    - - {x: -241, y: 166}
+      - {x: -238, y: 171}
+      - {x: -237, y: 173}
+      - {x: -236, y: 173}
+      - {x: -230, y: 177}
+      - {x: -228, y: 177}
+      - {x: -228, y: 173}
+      - {x: -230, y: 173}
+      - {x: -237, y: 167}
+      - {x: -238, y: 164}
+      - {x: -241, y: 164}
+    - - {x: -212, y: 169}
+      - {x: -214, y: 171}
+      - {x: -220, y: 174}
+      - {x: -220, y: 177}
+      - {x: -213, y: 174}
+      - {x: -210, y: 170}
+      - {x: -206, y: 164}
+      - {x: -210, y: 164}
+    - - {x: 63, y: 256}
+      - {x: 62, y: 252}
+      - {x: 62, y: 196}
+      - {x: 66, y: 190}
+      - {x: 73, y: 190}
+      - {x: 73, y: 256}
+    - - {x: 256, y: 244}
+      - {x: 247, y: 255}
+      - {x: 222, y: 256}
+      - {x: 119, y: 256}
+      - {x: 119, y: 190}
+      - {x: 200, y: 190}
+      - {x: 224, y: 196}
+      - {x: 256, y: 219}
+    - - {x: 143, y: 199}
+      - {x: 137, y: 199}
+      - {x: 136, y: 203}
+      - {x: 135, y: 209}
+      - {x: 134, y: 220}
+      - {x: 133, y: 227}
+      - {x: 134, y: 228}
+      - {x: 135, y: 239}
+      - {x: 136, y: 245}
+      - {x: 137, y: 249}
+      - {x: 143, y: 249}
+      - {x: 156, y: 250}
+      - {x: 164, y: 251}
+      - {x: 165, y: 250}
+      - {x: 177, y: 249}
+      - {x: 183, y: 249}
+      - {x: 184, y: 245}
+      - {x: 185, y: 239}
+      - {x: 186, y: 228}
+      - {x: 187, y: 221}
+      - {x: 186, y: 220}
+      - {x: 185, y: 209}
+      - {x: 184, y: 203}
+      - {x: 183, y: 199}
+      - {x: 157, y: 197}
+      - {x: 156, y: 198}
+    - - {x: -237, y: 243}
+      - {x: -243, y: 238}
+      - {x: -243, y: 213}
+      - {x: -241, y: 205}
+      - {x: -207, y: 205}
+      - {x: -205, y: 212}
+      - {x: -205, y: 237}
+      - {x: -214, y: 243}
+    - - {x: 16, y: 241}
+      - {x: 15, y: 235}
+      - {x: 15, y: 209}
+      - {x: 21, y: 207}
+      - {x: 47, y: 207}
+      - {x: 49, y: 212}
+      - {x: 49, y: 239}
+      - {x: 44, y: 241}
+    - - {x: -109, y: 240}
+      - {x: -112, y: 232}
+      - {x: -112, y: 212}
+      - {x: -106, y: 208}
+      - {x: -83, y: 208}
+      - {x: -80, y: 216}
+      - {x: -80, y: 236}
+      - {x: -86, y: 240}
+    - - {x: -45, y: 240}
+      - {x: -48, y: 232}
+      - {x: -48, y: 212}
+      - {x: -42, y: 208}
+      - {x: -19, y: 208}
+      - {x: -16, y: 216}
+      - {x: -16, y: 236}
+      - {x: -22, y: 240}
+    - - {x: -230, y: 216}
+      - {x: -234, y: 221}
+      - {x: -234, y: 227}
+      - {x: -232, y: 230}
+      - {x: -227, y: 234}
+      - {x: -221, y: 234}
+      - {x: -216, y: 230}
+      - {x: -214, y: 227}
+      - {x: -214, y: 221}
+      - {x: -216, y: 218}
+      - {x: -221, y: 214}
+      - {x: -227, y: 214}
+      - {x: -227, y: 215}
+    - - {x: -100, y: 215}
+      - {x: -105, y: 220}
+      - {x: -105, y: 223}
+      - {x: -106, y: 224}
+      - {x: -105, y: 225}
+      - {x: -105, y: 228}
+      - {x: -100, y: 233}
+      - {x: -97, y: 233}
+      - {x: -96, y: 234}
+      - {x: -95, y: 233}
+      - {x: -92, y: 233}
+      - {x: -87, y: 228}
+      - {x: -87, y: 225}
+      - {x: -86, y: 224}
+      - {x: -87, y: 223}
+      - {x: -87, y: 220}
+      - {x: -92, y: 215}
+      - {x: -95, y: 215}
+      - {x: -96, y: 214}
+      - {x: -97, y: 215}
+    - - {x: 28, y: 215}
+      - {x: 23, y: 220}
+      - {x: 23, y: 223}
+      - {x: 22, y: 224}
+      - {x: 23, y: 225}
+      - {x: 23, y: 228}
+      - {x: 28, y: 233}
+      - {x: 31, y: 233}
+      - {x: 32, y: 234}
+      - {x: 33, y: 233}
+      - {x: 36, y: 233}
+      - {x: 41, y: 228}
+      - {x: 41, y: 225}
+      - {x: 42, y: 224}
+      - {x: 41, y: 223}
+      - {x: 41, y: 220}
+      - {x: 36, y: 215}
+      - {x: 33, y: 215}
+      - {x: 32, y: 214}
+      - {x: 31, y: 215}
+    - - {x: -163, y: 229}
+      - {x: -165, y: 227}
+      - {x: -165, y: 221}
+      - {x: -163, y: 219}
+      - {x: -157, y: 219}
+      - {x: -155, y: 221}
+      - {x: -155, y: 227}
+      - {x: -157, y: 229}
+    - - {x: -99, y: 229}
+      - {x: -101, y: 227}
+      - {x: -101, y: 221}
+      - {x: -99, y: 219}
+      - {x: -93, y: 219}
+      - {x: -91, y: 221}
+      - {x: -91, y: 227}
+      - {x: -93, y: 229}
+    - - {x: 29, y: 229}
+      - {x: 27, y: 227}
+      - {x: 27, y: 221}
+      - {x: 29, y: 219}
+      - {x: 35, y: 219}
+      - {x: 37, y: 221}
+      - {x: 37, y: 227}
+      - {x: 35, y: 229}
+    - - {x: 93, y: 229}
+      - {x: 91, y: 227}
+      - {x: 91, y: 221}
+      - {x: 93, y: 219}
+      - {x: 99, y: 219}
+      - {x: 101, y: 221}
+      - {x: 101, y: 227}
+      - {x: 99, y: 229}
+    - - {x: 157, y: 229}
+      - {x: 155, y: 227}
+      - {x: 155, y: 221}
+      - {x: 157, y: 219}
+      - {x: 163, y: 219}
+      - {x: 165, y: 221}
+      - {x: 165, y: 227}
+      - {x: 163, y: 229}
+    - - {x: -228, y: 220}
+      - {x: -220, y: 220}
+      - {x: -220, y: 228}
+      - {x: -228, y: 228}
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
