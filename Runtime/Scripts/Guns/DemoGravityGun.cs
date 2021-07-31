@@ -88,13 +88,13 @@ namespace ClassicFPS.Guns
                         Debug.DrawLine(weaponController.weaponMount.position, hit.point, Color.red, 0.1f);
 
                         if (shootSounds.Count > 0)
-                        SFXManager.PlayClipFromSource(shootSounds[Random.Range(0,shootSounds.Count)].sound, weaponController.weaponSoundSource);
+                            shootSounds[Random.Range(0, shootSounds.Count)].PlayFromSource(weaponController.weaponSoundSource);
                         gravityGun.OnPickup(hit.transform, this);
 
                     }
                     else {
                         //Can't Pickup
-                        SFXManager.PlayClipFromSource(cantPickupOrThrowSound, weaponController.weaponSoundSource);
+                        cantPickupOrThrowSound.PlayFromSource(weaponController.weaponSoundSource);
                     }
 
                 }
@@ -111,15 +111,14 @@ namespace ClassicFPS.Guns
                     {
                         returnedBody.GetComponent<BreakableObject>().thrown = true;
                     }
-
-                    SFXManager.PlayClipFromSource(releaseSound, weaponController.weaponSoundSource);
+                    releaseSound.PlayFromSource(weaponController.weaponSoundSource);
 
                     //Throw the object by setting velocity
                     returnedBody.velocity = playerCamera.transform.forward * gravityGun.throwSpeed;
                 }
                 else {
                     //Unable to throw
-                    SFXManager.PlayClipFromSource(cantPickupOrThrowSound, weaponController.weaponSoundSource);
+                    cantPickupOrThrowSound.PlayFromSource(weaponController.weaponSoundSource);
                 }
             }
             else
@@ -138,7 +137,8 @@ namespace ClassicFPS.Guns
             if (gravityGun.currentlyPickedObject != null && !gravityGun.controller.hasJumped)
             {
                 var a = gravityGun.ResetObject();
-                if ( a == null ) SFXManager.PlayClipFromSource(cantPickupOrThrowSound, weaponController.weaponSoundSource);
+                
+                if ( a == null ) cantPickupOrThrowSound.PlayFromSource(weaponController.weaponSoundSource);
             }
         }
 

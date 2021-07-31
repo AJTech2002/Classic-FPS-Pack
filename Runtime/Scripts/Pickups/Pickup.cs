@@ -61,7 +61,7 @@ namespace ClassicFPS.Pickups
 
         public void RunSFX()
         {
-            SFXManager.PlayClipAt(collectSFX, transform.position, volume);
+            collectSFX.PlayAt(transform.position, volume);
             if (playFlashEffect)
             {
                 GameManager.PlayerStatistics.whiteFlashAnimator.ResetTrigger("Flash");

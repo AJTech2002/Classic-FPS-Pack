@@ -7,41 +7,20 @@ namespace ClassicFPS.Audio
     // Helper for managing & playing all the sounds in the game
     public class SFXManager : MonoBehaviour
     {
-        [Header("Sound Manager Scriptable Object")]
-        public SoundManager soundManager;
-
-        [Header("General Sound Groupings")]
-        private Dictionary<string, SoundGroup> soundGroupings = new Dictionary<string, SoundGroup>();
 
         public static SFXManager instance;
 
-        // List of all the sound groups inside the SoundManager
-        private List<SoundGroup> soundGroups
-        {
-            get
-            {
-                return soundManager.soundGroups;
-            }
-        }
-
+  
         // List of all the gorund sounds in the SoundManager
-        private List<GroundSound> groundSounds
-        {
-            get
-            {
-                return soundManager.groundSounds;
-            }
-        }
+        [Space(20)]
+        [Header("Ground/Terrain Sound Groupings")]
+        public List<GroundSound> groundSounds = new List<GroundSound>();
+
 
         // Mapping the sounds to strings so that they can be called based on tags
         private Dictionary<string, GroundSound> mappedTerrainSounds = new Dictionary<string, GroundSound>();
         private Dictionary<string, GroundSound> mappedGroundSounds = new Dictionary<string, GroundSound>();
 
-        //List of all Sound Groups
-        public List<SoundGroup> _SoundGroups()
-        {
-            return soundGroups;
-        }
 
         private void Awake()
         {
@@ -50,19 +29,9 @@ namespace ClassicFPS.Audio
                 instance = this;
             }
             
-            // Clear all the sounds
-            soundGroupings.Clear();
             mappedGroundSounds.Clear();
             mappedTerrainSounds.Clear();
 
-            // Maps the sound groups from the manager's sound groups to local sound groups
-            for (int i = 0; i < soundGroups.Count; i++)
-            {
-                soundGroupings.Add(soundGroups[i].group, soundGroups[i]);
-                soundGroups[i].Init();
-            }
-
-            // Repeat the mapping for ground sounds
             for (int i = 0; i < groundSounds.Count; i++)
             {
                 // Depending on whether or not it is a terrain layer put into the correct dictionary
@@ -96,151 +65,9 @@ namespace ClassicFPS.Audio
             return null;
         }
 
-        // Get the sound group from the name of the group
-        public static SoundGroup SoundGroup(string group)
-        {
-            if (instance.soundGroupings.ContainsKey(group))
-            {
-                return instance.soundGroupings[group];
-            }
-            else
-            {
-                return new SoundGroup();
-            }
-        }
-
-        // Get Clip from the Sound asset
-        public static AudioClip GetClip(Sound sound)
-        {
-            if (sound.group != "" && sound.clipName != "")
-            {
-                string group = sound.group;
-                string clipName = sound.clipName;
-
-                return SoundGroup(group).Clip(clipName);
-            }
-            else
-            {
-                return null;
-            }
-        }
-
-        
-
-        public SoundGroup _SoundGroup(string group)
-        {
-            for (int i = 0; i < soundGroups.Count; i++)
-            {
-                if (soundGroups[i].group == group) return soundGroups[i];
-            }
-
-            return null;
-        }
-
-        public static List<SoundGroup> SoundGroups()
-        {
-            return instance.soundGroups;
-        }
-
-        // Wait and then play clip at point
-        public IEnumerator Wait(float delay, Sound sound, Vector3 point, float volume)
-        {
-            yield return new WaitForSeconds(delay);
-            var clip = GetClip(sound);
-
-            if (clip != null)
-                AudioSource.PlayClipAtPoint(clip, point, volume);
-        }
-
-        // Wait then play clip at source
-        public IEnumerator WaitSource(float delay, Sound sound, AudioSource source)
-        {
-            yield return new WaitForSeconds(delay);
-            AudioClip clip = GetClip(sound);
-            if (clip != null)
-            {
-                source.clip = clip;
-                source.Play();
-            }
-        }
-
-        // Play a certain sound at a point, with volume and delay
-        public static void PlayClipAt(Sound sound, Vector3 point, float volume = 1f, float delay = 0f)
-        {
-            if (sound.group != "" && sound.clipName != "")
-            {   
-                //If there is no delay play immediately 
-                if (delay == 0f)
-                {
-                    var clip = GetClip(sound);
-                    if (clip != null)
-                        AudioSource.PlayClipAtPoint(clip, point, volume);
-                }
-                else
-                    instance.StartCoroutine(instance.Wait(delay, sound, point, volume));
-            }
-        }
-
-        // Find the Audio Source within a Transform 
-        public AudioSource FindAudioSource(Transform t)
-        {
-            if (t.GetComponent<AudioSource>() != null) return t.GetComponent<AudioSource>();
-            if (t.GetComponentInChildren<AudioSource>() != null) return t.GetComponentInChildren<AudioSource>();
-
-            return null;
-        }
-
-        // Stop Clip that is playing at a source
-        public static void StopClip(AudioSource source)
-        {
-            source.Stop();
-        }
-
-        //  Play Clip from Source at a Delay
-        public static void PlayClipFromSource(Sound sound, AudioSource source, float delay = 0f)
-        {
-            if (sound.group != "" && sound.clipName != "")
-            {
-                if (delay == 0f)
-                {
-                    AudioClip clip = GetClip(sound);
-                    if (source != null)
-                    {
-                        // Play One Shot so that multiple clips can be overlayed ontop of each other
-                        source.PlayOneShot(clip);
-                    }
-                }
-                else
-                {
-                    instance.StartCoroutine(instance.WaitSource(delay, sound, source));
-                }
-            }
-        }
+        // Get the sound g
 
 
-    }
-
-    // An asset that can be used within a List, ex. List<ListSound> 
-    [System.Serializable]
-    public class ListSound {
-        public Sound sound;
-    }
-
-
-    // An asset that can be used to store a reference to a certain clip in the SoundManager
-    [System.Serializable]
-    public class Sound
-    {
-        [SerializeField]
-        public string group;
-        [SerializeField]
-        public string clipName;
-
-        public Sound(string group, string clipName)
-        {
-            this.group = group;
-            this.clipName = clipName;
-        }
     }
 
     //An Asset to Store the Ground Sounds (Footsteps)
@@ -256,41 +83,56 @@ namespace ClassicFPS.Audio
         public List<AudioClip> footsteps; //The sounds to play during this time
 
     }
+    
 
-    //The different groups of sounds (allows you to organize different clips into different sections)
+    //Stores an AudioClip and some functions to use them
     [System.Serializable]
-    public class SoundGroup
-    {
-        public string group;
-        public List<AudioClip> clips;
+    public class Sound {
+        public AudioClip sound;
+        [Range(0f, 2f)]
+        public float defaultVolume;
 
-
-        private Dictionary<string, AudioClip> clipNameDictionary = new Dictionary<string, AudioClip>();
-
-        public AudioClip Clip(string name)
+        IEnumerator RunIn (float delay, Vector3 position, float volume)
         {
-            if (clipNameDictionary.ContainsKey(name))
-            {
-                return clipNameDictionary[name];
-            }
-            else
-            {
-                return null;
-            }
+            yield return new WaitForSeconds(delay);
+            PlayAt(position, volume, 0f);
         }
 
-        public void Init()
+        IEnumerator RunSourceIn (float delay, AudioSource source, float volume)
         {
-            clipNameDictionary.Clear();
-            for (int i = 0; i < clips.Count; i++)
-            {
-                if (clipNameDictionary.ContainsKey(clips[i].name))
-                    continue;
+            yield return new WaitForSeconds(delay);
+            PlayFromSource(source, 0f, volume);
+        }
 
-                clipNameDictionary.Add(clips[i].name, clips[i]);
+        //Play from a position
+        public void PlayAt (Vector3 position, float volume = -1f, float delay = 0f)
+        {
+            if (volume < 0) volume = defaultVolume;
+            if (sound != null)
+            {
+                if (delay == 0f)
+                    AudioSource.PlayClipAtPoint(sound, position, volume);
+                else
+                    SFXManager.instance.StartCoroutine(RunIn(delay, position, volume));
             }
+
+        }
+        
+        //Play from a source this clip
+        public void PlayFromSource (AudioSource source, float delay=0f, float volume = -1f)
+        {
+            if (volume < 0) volume = defaultVolume;
+            if (sound != null)
+            {
+                if (delay == 0f)
+                    source.PlayOneShot(sound, volume);
+                else
+                    SFXManager.instance.StartCoroutine(RunSourceIn(delay, source, volume));
+            }
+
         }
 
     }
+
 
 }

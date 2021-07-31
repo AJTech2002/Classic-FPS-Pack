@@ -109,7 +109,7 @@ namespace ClassicFPS.Guns
 
                 //if (doesExplode) SFXManager.PlayClipAt(explosionSound, transform.position, 0.2f);
                 if (doesExplode) {
-                    SFXManager.PlayClipAt(explosionSound, GameObject.Find("Controller").transform.position, 0.2f);
+                    explosionSound.PlayAt(GameObject.Find("Controller").transform.position, 0.2f);
                     if (explosionParticles != null) {
                         explosionParticles.gameObject.SetActive(true);
                         explosionParticles.transform.parent = null;
@@ -147,7 +147,7 @@ namespace ClassicFPS.Guns
                 DamageableEntity de = hit.GetComponent<DamageableEntity>();
                 PlayerStatistics stat = hit.GetComponent<PlayerStatistics>();
 
-                if (doesExplode) SFXManager.PlayClipAt(explosionSound, transform.position, 0.2f);
+                if (doesExplode) explosionSound.PlayAt(transform.position,0.2f); 
 
                 //Rigidbody Handle
                 if (rb != null)

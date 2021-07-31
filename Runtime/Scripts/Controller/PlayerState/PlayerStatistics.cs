@@ -168,7 +168,7 @@ namespace ClassicFPS.Controller.PlayerState
             playerOptions.health -= damage;
 
             //Play the damage audio
-            SFXManager.PlayClipFromSource(onTakeDamage, damageAudioSource, 0f);
+            onTakeDamage.PlayFromSource(damageAudioSource, 0f);
 
             playerOptions.health = Mathf.Clamp(playerOptions.health, 0, 1000);
 
@@ -178,7 +178,7 @@ namespace ClassicFPS.Controller.PlayerState
 
             if (playerOptions.health <= 0)
             {
-                SFXManager.PlayClipFromSource(onDeath, damageAudioSource, 0f);
+                onDeath.PlayFromSource(damageAudioSource, 0f);
                 Death();
             }
 

@@ -166,17 +166,15 @@ namespace ClassicFPS.Guns
 
                 PushableObject pushableObj = hit.transform.GetComponent<PushableObject>();
 
-                if (hit.transform.CompareTag("Enemy") == false && percImpact > 0.2f && (pushableObj == null || ((pushableObj != null && pushableObj.onShootSound.clipName == ""))))
+                if (hit.transform.CompareTag("Enemy") == false && percImpact > 0.2f && (pushableObj == null || ((pushableObj != null && pushableObj.onShootSound == null))))
                 {
                     //Run a SFX for just object hits
-
-                    SFXManager.PlayClipAt(onHitObjectSFX, hit.point, 0.5f, 0.1f);
+                    onHitObjectSFX.PlayAt(hit.point, 0.5f, 0.1f);
                 }
 
-                if (pushableObj != null && pushableObj.onShootSound.clipName != "")
+                if (pushableObj != null && pushableObj.onShootSound.sound != null)
                 {
-
-                    SFXManager.PlayClipAt(pushableObj.onShootSound, hit.point, 1f);
+                    pushableObj.onShootSound.PlayAt(hit.point, 1f);
                 }
 
 
@@ -259,7 +257,7 @@ namespace ClassicFPS.Guns
             if (tempState.ammoRemaining <= 0 && requiresAmmo)
             {
                 if (weaponSoundsSource != null)
-                    SFXManager.PlayClipFromSource(emptyAmmoSound, this.weaponSoundsSource);
+                    emptyAmmoSound.PlayFromSource(this.weaponSoundsSource);
             }
             
             

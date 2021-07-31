@@ -104,7 +104,7 @@ namespace ClassicFPS.Pushable
 
             if (objectRigidbody.velocity.magnitude >= minimumVelocityBeforeAudio && canBePickedUp && !waitingSFX)
             {
-                SFXManager.PlayClipAt(impactSound, transform.position);
+                impactSound.PlayAt(transform.position);
                 WaitForSFX(waitBeforePlayingSFXAgain);
             }
         }

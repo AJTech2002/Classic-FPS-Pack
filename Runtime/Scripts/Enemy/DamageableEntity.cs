@@ -70,11 +70,12 @@ namespace ClassicFPS.Enemy
             health -= damage;
             if(hitParticles) hitParticles.Emit(5);
             //Play with small delay so gun shoot sound doesn't overlap with damage sound
-            SFXManager.PlayClipAt(onTakeDamage, (transform.position + GameManager.PlayerController.gameObject.transform.position)/2, 1f, delay);
+
+            onTakeDamage.PlayAt((transform.position + GameManager.PlayerController.gameObject.transform.position) / 2, 1f);
 
             if (health <= 0)
             {
-                SFXManager.PlayClipAt(onDeath, GameManager.PlayerController.transform.position, 1.5f);
+                onDeath.PlayAt(GameManager.PlayerController.transform.position, 1.5f);
                 Die();
             }
         }

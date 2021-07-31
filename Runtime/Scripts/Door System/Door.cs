@@ -15,6 +15,7 @@ namespace ClassicFPS.Door_System
         //What key can open this door
         [Header("Door Options")]
         public KeyReference keyReference;
+        public bool locked = true;
 
         //The sound effect options for the door
         [Header("SFX")]
@@ -78,9 +79,9 @@ namespace ClassicFPS.Door_System
         {
             if (inTrigger)
             {
-                if (GameManager.PlayerStatistics.HasKey(keyReference.keyReference))
+                if (GameManager.PlayerStatistics.HasKey(keyReference.keyReference) || !locked)
                 {
-                    if (GameManager.keySettings[keyReference.keyReference].consumable)
+                    if (GameManager.keySettings[keyReference.keyReference].consumable && locked)
                     {
                         int index = GameManager.PlayerStatistics.keys.IndexOf(keyReference.keyReference);
                         GameManager.PlayerStatistics.keys.RemoveAt(index);
@@ -102,7 +103,7 @@ namespace ClassicFPS.Door_System
         {
             if (!hasBeenOpened)
             {
-                SFXManager.PlayClipAt(doorOpen, transform.position, volume);
+                doorOpen.PlayAt(transform.position, volume);
                 doorAnimation.Play(doorAnimationName);
                 hasBeenOpened = true;
             }
