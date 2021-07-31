@@ -75,10 +75,11 @@ namespace ClassicFPS.Utils
                     currentlyPickedObjectComponent.objectHoldingOffset.y = -currentlyPickedObject.InverseTransformPoint(currentlyPickedObject.GetComponent<Collider>().bounds.center).y * currentlyPickedObject.transform.localScale.y;
                     currentlyPickedObjectComponent.objectHoldingOffset.x = 0;
                     currentlyPickedObjectComponent.objectHoldingOffset.z = Mathf.Clamp(currentlyPickedObject.GetComponent<Collider>().bounds.extents.magnitude * currentlyPickedObject.localScale.magnitude * distanceFromCamera, 3, 15);
-                    currentlyPickedObject.transform.forward = playerCamera.transform.forward;
+                    
                     //   currentlyPickedObjectComponent.objectHoldingOffset.z = currentlyPickedObject.lossyScale.magnitude * distanceFromCamera;
                 }
-
+                
+                currentlyPickedObject.transform.forward = playerCamera.transform.forward;
                 colliderCenter = currentlyPickedObject.InverseTransformPoint(currentlyPickedObject.GetComponent<Collider>().bounds.center);
                 colliderExtents = currentlyPickedObject.GetComponent<Collider>().bounds.extents;
             }

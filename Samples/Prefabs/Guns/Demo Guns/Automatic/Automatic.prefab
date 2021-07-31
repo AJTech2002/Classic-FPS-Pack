@@ -149,7 +149,7 @@ MonoBehaviour:
     m_Bits: 1015
   hasLimitedRange: 0
   maxShootDistance: 30
-  shootDelay: 0.1
+  shootDelay: 0.2
   holdShoot: 1
   scatter: 0
   scatterBulletsInEachDirection: 3
