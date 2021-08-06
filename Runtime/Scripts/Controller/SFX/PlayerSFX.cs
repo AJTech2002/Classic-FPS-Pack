@@ -17,6 +17,8 @@ namespace ClassicFPS.Controller.SFX
         [Header("Sounds")]
         public Sound jumpSound;
         public Sound landSound;
+        public Sound onTakeDamage;
+        public Sound onDeath;
 
         [Header("Walking")]
         public float walkingPitch;

@@ -130,15 +130,17 @@ MonoBehaviour:
   yAxisDrag: 0
   zAxisDrag: 20
   maximumVelocity: 20
+  minimumVelocityBeforeAudio: 1
   canBePickedUp: 1
   objectHoldingOffset: {x: 0, y: 0, z: 2}
-  precalculateBounds: 0
+  precalculateBounds: 1
   impactSound:
-    group: General
-    clipName: object-drop
+    sound: {fileID: 0}
+    defaultVolume: 0
   onShootSound:
-    group: 
-    clipName: 
+    sound: {fileID: 0}
+    defaultVolume: 0
+  waitBeforePlayingSFXAgain: 0.4
 --- !u!114 &-4118060366318843222
 MonoBehaviour:
   m_ObjectHideFlags: 0

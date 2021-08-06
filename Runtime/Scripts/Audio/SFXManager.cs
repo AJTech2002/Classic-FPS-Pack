@@ -90,7 +90,7 @@ namespace ClassicFPS.Audio
     public class Sound {
         public AudioClip sound;
         [Range(0f, 2f)]
-        public float defaultVolume;
+        public float defaultVolume = 1f;
 
         IEnumerator RunIn (float delay, Vector3 position, float volume)
         {

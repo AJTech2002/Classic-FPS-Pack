@@ -251,6 +251,7 @@ GameObject:
   - component: {fileID: 272453565}
   - component: {fileID: 7842424357206085632}
   - component: {fileID: 1160072906772499080}
+  - component: {fileID: 1387611810448869183}
   m_Layer: 3
   m_Name: Controller
   m_TagString: Player
@@ -505,7 +506,7 @@ MonoBehaviour:
   controller: {fileID: 0}
   physics: {fileID: 0}
   inputManager: {fileID: 0}
-  playerSFX: {fileID: 2533103751043899857}
+  playerSFX: {fileID: 1387611810448869183}
   walkSpeed: 12
   sprintSpeed: 17
   jumpSpeed: 20
@@ -561,7 +562,7 @@ MonoBehaviour:
   pickup:
     pickupSpeed: 10
     throwSpeed: 10
-    distanceFromCamera: 0.3
+    fillUpPercentageScreen: 0.3
     maximumDamage: 100
     gravityGunCrosshairColor: {r: 0.8396226, g: 0.48397294, b: 0.21782663, a: 0.7294118}
     clippingObjectThreshold: 0.2
@@ -865,6 +866,28 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1387611810448869183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3223624194477315376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f86ae1ad146503a498d9c2e6bf50d228, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementAudioSource: {fileID: 1160072906772499080}
+  controller: {fileID: 2955798815778751625}
+  jumpSound:
+    sound: {fileID: 0}
+    defaultVolume: 0
+  landSound:
+    sound: {fileID: 0}
+    defaultVolume: 0
+  walkingPitch: 1
+  runningPitch: 1.5
 --- !u!1 &3223624194923742980
 GameObject:
   m_ObjectHideFlags: 0
@@ -940,7 +963,6 @@ GameObject:
   - component: {fileID: 698288527796717404}
   - component: {fileID: 198856230068354305}
   - component: {fileID: 4264993411462257135}
-  - component: {fileID: 2533103751043899857}
   m_Layer: 0
   m_Name: Gun Mount Position
   m_TagString: Weapon Mount
@@ -1077,28 +1099,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2533103751043899857
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4691109242431729614}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f86ae1ad146503a498d9c2e6bf50d228, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementAudioSource: {fileID: 1160072906772499080}
-  controller: {fileID: 2955798815778751625}
-  jumpSound:
-    sound: {fileID: 0}
-    defaultVolume: 0
-  landSound:
-    sound: {fileID: 0}
-    defaultVolume: 0
-  walkingPitch: 1
-  runningPitch: 1.5
 --- !u!114 &5399612420962991177
 MonoBehaviour:
   m_ObjectHideFlags: 0

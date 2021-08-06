@@ -17,7 +17,7 @@ namespace ClassicFPS.Utils
         [Header("Gravity Gun Options")]
         public float pickupSpeed = 10; //Speed of pickup and drop
         public float throwSpeed = 100; //Speed of throw
-        public float distanceFromCamera = 1.2f; //How far the object should be held from camera
+        public float fillUpPercentageScreen = 0.3f; //How far the object should be held from camera
         public float maximumDamage = 100; //The amount of damage you can do by throwing the item
 
         [Header("UI Options")]
@@ -74,9 +74,9 @@ namespace ClassicFPS.Utils
                 {
                     currentlyPickedObjectComponent.objectHoldingOffset.y = -currentlyPickedObject.InverseTransformPoint(currentlyPickedObject.GetComponent<Collider>().bounds.center).y * currentlyPickedObject.transform.localScale.y;
                     currentlyPickedObjectComponent.objectHoldingOffset.x = 0;
-                    currentlyPickedObjectComponent.objectHoldingOffset.z = Mathf.Clamp(currentlyPickedObject.GetComponent<Collider>().bounds.extents.magnitude * currentlyPickedObject.localScale.magnitude * distanceFromCamera, 3, 15);
+                    currentlyPickedObjectComponent.objectHoldingOffset.z = Mathf.Clamp(currentlyPickedObject.GetComponent<Collider>().bounds.extents.magnitude * currentlyPickedObject.localScale.magnitude * fillUpPercentageScreen, 3, 15);
                     
-                    //   currentlyPickedObjectComponent.objectHoldingOffset.z = currentlyPickedObject.lossyScale.magnitude * distanceFromCamera;
+                    //   currentlyPickedObjectComponent.objectHoldingOffset.z = currentlyPickedObject.lossyScale.magnitude * fillUpPercentageScreen;
                 }
                 
                 currentlyPickedObject.transform.forward = playerCamera.transform.forward;
@@ -116,9 +116,9 @@ namespace ClassicFPS.Utils
                 {
                     currentlyPickedObjectComponent.objectHoldingOffset.y = -currentlyPickedObject.InverseTransformPoint(currentlyPickedObject.GetComponent<Collider>().bounds.center).y * currentlyPickedObject.transform.localScale.y;
                     currentlyPickedObjectComponent.objectHoldingOffset.x = 0;
-                    currentlyPickedObjectComponent.objectHoldingOffset.z = Mathf.Clamp(currentlyPickedObject.GetComponent<Collider>().bounds.extents.magnitude * currentlyPickedObject.localScale.magnitude * distanceFromCamera, 3, 30);
+                    currentlyPickedObjectComponent.objectHoldingOffset.z = Mathf.Clamp(currentlyPickedObject.GetComponent<Collider>().bounds.extents.magnitude * currentlyPickedObject.localScale.magnitude * fillUpPercentageScreen, 3, 30);
                     currentlyPickedObject.transform.forward = playerCamera.transform.forward;
-                    //   currentlyPickedObjectComponent.objectHoldingOffset.z = currentlyPickedObject.lossyScale.magnitude * distanceFromCamera;
+                    //   currentlyPickedObjectComponent.objectHoldingOffset.z = currentlyPickedObject.lossyScale.magnitude * fillUpPercentageScreen;
                 }
 
                 colliderCenter =currentlyPickedObject.InverseTransformPoint( currentlyPickedObject.GetComponent<Collider>().bounds.center);
@@ -220,13 +220,13 @@ namespace ClassicFPS.Utils
 
                     if (colliderExtents.x > useExtents) useExtents = colliderExtents.x;
 
-                    var expectedFrustrumHeight = 1 / distanceFromCamera * useExtents * 2;
+                    var expectedFrustrumHeight = 1 / fillUpPercentageScreen * useExtents * 2;
                     var distance = expectedFrustrumHeight * 0.5f / Mathf.Tan(playerCamera.fieldOfView * 0.5f * Mathf.Deg2Rad);
 
-                //Mathf.Clamp(currentlyPickedObject.GetComponent<Collider>().bounds.extents.magnitude * currentlyPickedObject.localScale.magnitude * distanceFromCamera, 3, 30);
+                //Mathf.Clamp(currentlyPickedObject.GetComponent<Collider>().bounds.extents.magnitude * currentlyPickedObject.localScale.magnitude * fillUpPercentageScreen, 3, 30);
                 currentlyPickedObjectComponent.objectHoldingOffset.z = Mathf.Clamp(distance, 3, 100);
                 currentlyPickedObject.transform.forward = playerCamera.transform.forward;
-                    //   currentlyPickedObjectComponent.objectHoldingOffset.z = currentlyPickedObject.lossyScale.magnitude * distanceFromCamera;
+                    //   currentlyPickedObjectComponent.objectHoldingOffset.z = currentlyPickedObject.lossyScale.magnitude * fillUpPercentageScreen;
                 }
             
                 //Check if the position was modified

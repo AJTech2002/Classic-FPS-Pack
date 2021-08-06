@@ -10,6 +10,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using ClassicFPS.Pickups;
+using ClassicFPS.Controller.SFX;
 
 namespace ClassicFPS.Controller.PlayerState
 {
@@ -28,11 +29,6 @@ namespace ClassicFPS.Controller.PlayerState
 
         [Header("Saving Options")]
         public bool resetHealthOnLoad = true;
-
-        [Header("SFX")]
-        public AudioSource damageAudioSource;
-        public Sound onTakeDamage;
-        public Sound onDeath;
 
         public List<string> keys = new List<string>();
 
@@ -168,7 +164,7 @@ namespace ClassicFPS.Controller.PlayerState
             playerOptions.health -= damage;
 
             //Play the damage audio
-            onTakeDamage.PlayFromSource(damageAudioSource, 0f);
+            PlayerSFX.instance.onTakeDamage.PlayFromSource(PlayerSFX.instance.movementAudioSource, 0f);
 
             playerOptions.health = Mathf.Clamp(playerOptions.health, 0, 1000);
 
@@ -178,7 +174,7 @@ namespace ClassicFPS.Controller.PlayerState
 
             if (playerOptions.health <= 0)
             {
-                onDeath.PlayFromSource(damageAudioSource, 0f);
+                PlayerSFX.instance.onDeath.PlayFromSource(PlayerSFX.instance.movementAudioSource, 0f);
                 Death();
             }
 
